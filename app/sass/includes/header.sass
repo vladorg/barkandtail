@@ -1,1 +1,148 @@
 @import "../var.sass"
+
+
+.cat_link a, .dog_link a
+	+flex(0,0,flex-start,center)
+	+before
+		display: block
+		width: 28px
+		height: 24px
+		background-size: contain
+		margin-right: 8px
+
+.cat_link
+	a
+	 +before
+		 background-image: url('../img/icons/cat.svg')
+	+hover
+		a
+			+before
+				background-image: url('../img/icons/cat_fill.svg')
+.dog_link
+	a
+		+before
+			background-image: url('../img/icons/dog.svg')
+		+hover
+			+before
+				background-image: url('../img/icons/dog_fill.svg')
+
+.submenu
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	z-index: -1
+	background: $prim_color
+	padding-bottom: 46px
+	z-index: -1
+	padding-top: 27px
+	transform: translateY(-200%)
+	+tran(all,.8s)
+	+flex(0,0,center,flex-start)
+	&__col
+		padding-left: 24px
+		border-left: 1px solid #AEAEAE
+		&:not(:last-child)
+			margin-right: 40px
+	&__title
+		+text(18,400,24,#000)
+	&__list
+		padding-top: 24px
+		li
+			&:not(:last-child)
+				margin-bottom: 16px
+			a
+				+text(16,300,24,#000)
+				+hover
+					text-decoration: underline
+
+.header
+	&__toolbar
+		background: #fff
+		position: relative
+		z-index: 2
+		.container
+			background: #fff
+			padding: 7px 0 9px 0
+			+flex(0,0,flex-start,center)
+	&__social
+		li
+			a
+	&__numbers
+		margin-left: 36px
+		+flex(0,0,flex-start,center)
+		+before
+			margin-right: 8px
+		li
+			&:not(:last-child)
+				margin-right: 16px
+			a
+				+text(14,400,18,0)
+	&__links
+		margin-left: auto
+		ul
+			+flex(0,0,flex-start,center)
+			li
+				&:not(:last-child)
+					margin-right: 32px
+				a
+					+text(14,400,18,0)
+	&__langs
+		margin-left: 106px
+		button
+			+text(14,400,18,$text_color)
+			+hover
+				text-decoration: underline
+		.header__langsActive
+			color: #fff
+			padding: 0 8px
+			background: $btn_color
+	&__inner
+		position: relative
+		z-index: 1
+		background: $prim_color
+		.container
+			background: $prim_color
+			padding: 7px 0
+			+flex(0,0,space-between,center)
+	&__logo
+		img
+	&__menu
+		> ul
+			height: 80px
+			margin: -7px 0
+			+flex(0,0,flex-start,center)
+			> li
+				height: 100%
+				+flex(0,0,center,center)
+				&:not(:last-child)
+					margin-right: 48px
+				+hover
+					> .submenu
+						transform: translateY(0%)
+						//margin-top: 0
+						display: flex
+						opacity: 1
+						//pointer-events: auto
+					> a
+						text-decoration: none
+						color: $btn_color
+						+after
+							background: $btn_color
+				> a
+					position: relative
+					+text(18,400,24,$text_color)
+					+after
+						position: absolute
+						left: 0
+						right: 0
+						bottom: -16px
+						height: 1px
+						background: $transparent
+
+	&__tools
+		+flex(0,0,flex-start,center)
+		li
+			&:not(:last-child)
+				margin-right: 32px
+			a

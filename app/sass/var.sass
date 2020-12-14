@@ -1,26 +1,13 @@
-$ff: 'Montserrat'
-$ff_accent: 'PT Serif'
+$ff: 'Roboto'
 $fz: 16px
-$fw: 500
-$prim_color: #FFC830
-$sup_color: #F5F6F7
-$text_color: #242426
-$ov_color: rgba(0, 0, 0, 0.5)
-$ov_color_light: rgba(0, 0, 0, 0.25)
-$tc_06: #7b7b7c
-$tc_025: #c8c8c8
-$container: 1600px
+$fw: 300
+$prim_color: #F6F1ED
+$btn_color: #755139
+$btn_cat_color: #006B38
+$transparent: rgba(0,0,0,0)
+$text_color: #3A3A3C
+$container: 1760px
 
-$product_content_size_full: calc(100% - 544px)
-$product_content_size_medium: calc(100% - 415px)
-$product_content_size_medium_checkout: calc(100% - 360px)
-
-$sticker_new: #1B891B
-$sticker_special: #D9214F
-$sticker_credit: #2373E3 // не будет
-$sticker_soon: #FFC830
-$sticker_top: #7341D9
-$sticker_best: #F77225 // не будет
 
 @mixin flex($dir: 0, $wrap: 0, $just: 0, $align: 0)
   display: flex
@@ -48,7 +35,7 @@ $sticker_best: #F77225 // не будет
 	display: block
 	width: $w+px
 	height: $h+px
-	background: url('../img/sprites/all.png') $pos -5px no-repeat
+	background: url('../img/sprite.png') $pos -5px no-repeat
 
 @mixin lg
   @media (min-width: 1200px)
