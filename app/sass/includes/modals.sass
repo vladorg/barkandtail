@@ -1,0 +1,71 @@
+@import "../var.sass"
+
+.modal
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 10
+	background: rgba(0, 0, 0, 0.5)
+	opacity: 0
+	pointer-events: none
+	+flex(0,0,center,center)
+	+tran(all,.6s)
+	&--open
+		opacity: 1
+		pointer-events: auto
+	&__win
+		width: 100%
+		max-width: 674px
+	&--right
+		.modal__win
+			max-width: 415px
+			position: absolute
+			top: 0
+			right: -100%
+			bottom: 0
+			background: #fff
+			+flex(column,0,0,0)
+			+tran(all,.6s)
+		.modal__close
+			position: absolute
+			top: 34px
+			right: 18px
+	&Cart
+		.modal__win			
+		&--open
+			.modal__win
+				right: 0
+		&__title
+			padding: 20px 0 0 32px
+			+text(24,300,40,0)
+		&__items
+			max-height: 463px
+			overflow: auto
+		&__item
+			padding: 16px 11px 18px 11px
+			position: relative
+			border-bottom: 1px solid rgba(117, 81, 57, 0.25)
+			+flex(0,0,space-between,flex-start)
+		&__remove
+			position: absolute
+			top: 16px
+			right: 11px
+		&__thumb
+			img
+				width: 118px
+				height: 118px
+				object-fit: contain
+		&__name
+			+text(14,400,18,0)
+		&__quantly
+		&__price
+		&__discount
+		&__cost
+		&__info
+			margin-top: auto
+		&__row
+		&__key
+		&__val
+		&__total

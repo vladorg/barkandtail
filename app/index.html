@@ -16,7 +16,7 @@
 	
 	
 </head>
-<body>
+<body class="no_scroll">
 
 	<header class="header">
 		<div class="header__toolbar">
@@ -390,81 +390,108 @@
 
 
 
-	<div class="modal modal--right modalCart">
+	<div class="modal modal--right modal--open modalCart modalCart--open">
 		<div class="modal__win">
-			<button class="btn ic_trash close_cart"></button>
+			<button class="btn ic_close close_cart modal__close"></button>
 			<div class="modalCart__title">Корзина</div>
 			<div class="modalCart__items">
 
 				<div class="modalCart__item">
-					<button class="btn ic_trash"></button>
+					<button class="btn ic_trash modalCart__remove"></button>
 					<div class="modalCart__thumb">
-						<img src="img/products/image2-2.png" alt="">
+						<img src="img/cart_product.png" alt="">
 					</div>
-					<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-					Grain Free Yorkshire Salmon & Tuna</div>
-					<div class="modalCart__quantly quantly">
-						<button class="btn quantly__minus">-</button>
-						<input type="text" name="quantly">
-						<button class="btn quantly__plus">+</button>
-					</div>
-					<div class="modalCart__price">
-						<div class="modalCart__discount"></div>
-						<div class="modalCart__cost">3250 грн</div>
+					<div class="modalCart__inner">
+						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</div>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost">1350 грн</div>
+						</div>
 					</div>
 				</div>
 
 				<div class="modalCart__item">
-					<button class="btn ic_trash"></button>
+					<button class="btn ic_trash modalCart__remove"></button>
 					<div class="modalCart__thumb">
-						<img src="img/products/image2-2.png" alt="">
+						<img src="img/cart_product.png" alt="">
 					</div>
-					<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-					Grain Free Yorkshire Salmon & Tuna</div>
-					<div class="modalCart__quantly quantly">
-						<button class="btn quantly__minus">-</button>
-						<input type="text" name="quantly">
-						<button class="btn quantly__plus">+</button>
-					</div>
-					<div class="modalCart__price">
-						<div class="modalCart__discount">478 грн</div>
-						<div class="modalCart__cost">1350 грн</div>
+					<div class="modalCart__inner">
+						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</div>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount">478 грн</div>
+							<div class="modalCart__cost">1350 грн</div>
+						</div>
 					</div>
 				</div>
 
 				<div class="modalCart__item">
-					<button class="btn ic_trash"></button>
+					<button class="btn ic_trash modalCart__remove"></button>
 					<div class="modalCart__thumb">
-						<img src="img/products/image2-2.png" alt="">
+						<img src="img/cart_product.png" alt="">
 					</div>
-					<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-					Grain Free Yorkshire Salmon & Tuna</div>
-					<div class="modalCart__quantly quantly">
-						<button class="btn quantly__minus">-</button>
-						<input type="text" name="quantly">
-						<button class="btn quantly__plus">+</button>
-					</div>
-					<div class="modalCart__price">
-						<div class="modalCart__discount"></div>
-						<div class="modalCart__cost">3250 грн</div>
+					<div class="modalCart__inner">
+						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</div>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost">1350 грн</div>
+						</div>
 					</div>
 				</div>
 
 			</div>
 
 			<div class="modalCart__info">
-				<div class="modalCartPromo">
-
+				<div class="modalCart__row modalCartPromo">
+					<div class="modalCart__key">Промокод :</div>
+					<div class="modalCart__val">
+						<button class="btn btn--dashed add_promo">Добавить</button>
+					</div>
+					<div class="modalCartPromo__add">
+						<input type="text">
+						<button class="btn btn--primary">ок</button>
+					</div>
+					<div class="modalCart__row modalCartPromo__inner">
+						<div class="modalCart__key">Промокод :</div>
+						<div class="modalCart__val">-100 грн</div>
+					</div>
 				</div>
 				<div class="modalCart__row">
-					<div class="modalCart__key"></div>
-					<div class="modalCart__val"></div>
+					<div class="modalCart__key">Всего:</div>
+					<div class="modalCart__val">4600 грн</div>
 				</div>
 				<div class="modalCart__row">
-					<div class="modalCart__key"></div>
-					<div class="modalCart__val"></div>
+					<div class="modalCart__key">Скидка:</div>
+					<div class="modalCart__val">-10%</div>
+				</div>
+				<div class="modalCart__row modalCart__total">
+					<div class="modalCart__key">Итого:</div>
+					<div class="modalCart__val">4240 грн</div>
 				</div>
 			</div>
+
+			<div class="modalCart__tools">
+				<a href="checkout.html" class="btn btn--primary">Оформить покупку</a>
+				<button class="btn btn--dashed close_cart">Продолжить покупки</button>
+			</div>
+
 		</div>
 	</div>
 

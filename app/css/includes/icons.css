@@ -151,3 +151,17 @@
   width: 24px;
   height: 22px;
   background: url("../img/icons/heart_small.svg"); }
+
+.ic_close::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../img/icons/close.svg"); }
+
+.ic_trash::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/trash.svg"); }

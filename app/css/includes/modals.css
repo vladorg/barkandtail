@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 3;
+  z-index: 10;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
@@ -20,224 +20,76 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s; }
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition: all 0.6s; }
   .modal--open {
     opacity: 1;
     pointer-events: auto; }
   .modal__win {
-    position: relative;
     width: 100%;
-    max-width: 1056px;
+    max-width: 674px; }
+  .modal--right .modal__win {
+    max-width: 415px;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
     background: #fff;
-    padding: 32px 24px; }
-    @media (max-width: 768px) {
-      .modal__win {
-        max-height: 100vh;
-        overflow: auto; } }
-  .modal__close {
-    position: absolute;
-    top: 32px;
-    right: 24px;
-    padding: 0; }
-  .modalReview__form {
-    padding: 34px; }
-    @media (max-width: 768px) {
-      .modalReview__form {
-        padding: 25px 10px; } }
-    .modalReview__form form {
-      padding-top: 0; }
-  .modalReview__success {
-    display: none;
-    padding: 15px 0; }
-    @media (max-width: 768px) {
-      .modalReview__success {
-        text-align: center; } }
-  @media (max-width: 768px) {
-    .modalReview .productTest__rate {
-      width: 100%;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center; } }
-  @media (max-width: 768px) {
-    .modalReview .productTest__rateComment {
-      margin: 16px 0 0 0;
-      width: 100%;
-      text-align: center; } }
-  @media (max-width: 768px) {
-    .modalReview .close_modal_review {
-      top: 15px; } }
-  .modalLogin .modal__win {
-    width: 100%;
-    max-width: 450px;
-    padding: 24px 40px;
-    border: 1px solid #FFC830;
-    border-radius: 4px; }
-    @media (max-width: 768px) {
-      .modalLogin .modal__win {
-        max-height: 80vh; } }
-    @media (max-width: 500px) {
-      .modalLogin .modal__win {
-        padding: 15px 10px; } }
-  .modalLogin .modal__close {
-    top: 15px;
-    right: 20px; }
-  .modalLogin__title {
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px; }
-    @media (max-width: 500px) {
-      .modalLogin__title {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 20px; } }
-  .modalLogin__msg {
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px; }
-    @media (max-width: 500px) {
-      .modalLogin__msg {
-        font-size: 14px; } }
-    .modalLogin__msg--err {
-      color: #EB001B; }
-  .modalLogin__row {
-    position: relative; }
-    .modalLogin__row .input {
-      width: 100%;
-      height: 56px;
-      padding-left: 9px; }
-      @media (max-width: 500px) {
-        .modalLogin__row .input {
-          height: 40px; } }
-    .modalLogin__row:not(:first-child) {
-      margin-top: 16px; }
-  .modalLogin__showPass {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    width: 25px;
-    height: 24px; }
-    .modalLogin__showPass::before {
-      content: '';
-      position: absolute;
-      opacity: 1;
-      top: 0;
-      right: 0;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s; }
-    .modalLogin__showPass::after {
-      content: '';
-      position: absolute;
-      opacity: 0;
-      width: 25px;
-      height: 24px;
-      top: 0;
-      right: 0;
-      background: url(../img/icons/ic_eye_open.svg) no-repeat;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s; }
-    .modalLogin__showPass--showed::before {
-      content: '';
-      opacity: 0; }
-    .modalLogin__showPass--showed::after {
-      content: '';
-      opacity: 1; }
-  .modalLogin__forgot {
-    border-bottom: 1px dashed #242426;
-    border-radius: 0;
-    display: block;
-    margin: 16px 0 16px auto;
-    padding: 0;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px; }
-    .modalLogin__forgot:hover {
-      border-color: transparent; }
-    @media (max-width: 500px) {
-      .modalLogin__forgot {
-        font-size: 12px; } }
-  .modalLogin__submit {
-    margin-bottom: 16px; }
-  .modalLogin__supBtn {
-    margin: 0;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 18px; }
-    @media (max-width: 500px) {
-      .modalLogin__supBtn {
-        font-size: 14px; } }
-  .modalLoginSocial {
-    padding-top: 29px; }
-    @media (max-width: 500px) {
-      .modalLoginSocial {
-        padding-top: 14px; } }
-    .modalLoginSocial__title {
-      margin-bottom: 16px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 17px; }
-      @media (max-width: 500px) {
-        .modalLoginSocial__title {
-          font-size: 12px; } }
-  .modalLogin__auth {
-    font-weight: 700;
-    margin: 0 auto; }
-  .modalLogin__register {
-    margin-top: 24px; }
-  .modalLogin__comm {
-    margin-top: 24px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px; }
-  .modalLogin__repeatSend {
-    padding-top: 8px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    @media (max-width: 500px) {
-      .modalLogin__repeatSend {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        padding-top: 15px; } }
-    @media (max-width: 500px) {
-      .modalLogin__repeatSend span {
-        font-size: 14px; } }
-    .modalLogin__repeatSend .modalLogin__forgot {
-      margin: 0 0 0 3px; }
-  .modalAuth {
-    z-index: 11; }
-  .modalRegister {
-    z-index: 11; }
-  .modalRecovery {
-    z-index: 11; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s; }
+  .modal--right .modal__close {
+    position: absolute;
+    top: 34px;
+    right: 18px; }
+  .modalCart--open .modal__win {
+    right: 0; }
+  .modalCart__title {
+    padding: 20px 0 0 32px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 40px; }
+  .modalCart__items {
+    max-height: 463px;
+    overflow: auto; }
+  .modalCart__item {
+    padding: 16px 11px 18px 11px;
+    position: relative;
+    border-bottom: 1px solid rgba(117, 81, 57, 0.25);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .modalCart__remove {
+    position: absolute;
+    top: 16px;
+    right: 11px; }
+  .modalCart__thumb img {
+    width: 118px;
+    height: 118px;
+    -o-object-fit: contain;
+       object-fit: contain; }
+  .modalCart__name {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px; }
+  .modalCart__info {
+    margin-top: auto; }
