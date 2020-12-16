@@ -57,6 +57,7 @@
 					text-decoration: underline
 
 .header
+	position: relative
 	&__toolbar
 		background: #fff
 		position: relative
@@ -145,4 +146,29 @@
 		li
 			&:not(:last-child)
 				margin-right: 32px
-			a
+.search
+	position: absolute
+	bottom: 0
+	left: 50%
+	width: 50%
+	padding: 16px
+	//background: $prim_color
+	transform: translateX(-50%)
+	z-index: 1
+	opacity: 0
+	pointer-events: none
+	overflow: hidden
+	+tran(all,.2s)
+	input
+		height: 48px
+		border: 1px solid $btn_color
+		padding-right: 50px
+	button
+		position: absolute
+		top: 50%
+		right: 28px
+		transform: translateY(-50%)
+	&--open
+		opacity: 1
+		bottom: -60px
+		pointer-events: auto

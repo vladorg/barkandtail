@@ -28,7 +28,8 @@
     pointer-events: auto; }
   .modal__win {
     width: 100%;
-    max-width: 674px; }
+    max-width: 674px;
+    background: #fff; }
   .modal--right .modal__win {
     max-width: 415px;
     position: absolute;
@@ -56,16 +57,17 @@
     right: 0; }
   .modalCart__title {
     padding: 20px 0 0 32px;
+    text-transform: uppercase;
     font-size: 24px;
     font-weight: 300;
     line-height: 40px; }
   .modalCart__items {
-    max-height: 463px;
+    padding-top: 19px;
+    max-height: 590px;
     overflow: auto; }
   .modalCart__item {
-    padding: 16px 11px 18px 11px;
+    padding: 16px 11px 0 11px;
     position: relative;
-    border-bottom: 1px solid rgba(117, 81, 57, 0.25);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -78,18 +80,309 @@
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
+    .modalCart__item:not(:last-child) {
+      border-bottom: 1px solid rgba(117, 81, 57, 0.25); }
   .modalCart__remove {
     position: absolute;
     top: 16px;
     right: 11px; }
-  .modalCart__thumb img {
-    width: 118px;
-    height: 118px;
-    -o-object-fit: contain;
-       object-fit: contain; }
+  .modalCart__thumb {
+    padding-bottom: 18px; }
+    .modalCart__thumb img {
+      width: 118px;
+      height: 118px;
+      -o-object-fit: contain;
+         object-fit: contain; }
+  .modalCart__inner {
+    width: calc(100% - 134px);
+    padding: 15px 22px 0 0; }
   .modalCart__name {
+    display: block;
+    max-height: 37px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px; }
+  .modalCart__quantly {
+    padding: 8px 0; }
+  .modalCart__discount {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #A2A2A2; }
+  .modalCart__cost {
+    white-space: nowrap; }
+  .modalCart__price {
+    width: 72px;
+    text-align: right;
+    padding-bottom: 5px; }
+    .modalCart__price--discount .modalCart__cost {
+      color: #D64B59; }
   .modalCart__info {
-    margin-top: auto; }
+    margin-top: auto;
+    border-top: 1px solid rgba(117, 81, 57, 0.25);
+    padding-top: 14px; }
+  .modalCart__row {
+    padding: 0 16px 0 16px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .modalCart__row:not(:first-child) {
+      margin-top: 8px; }
+  .modalCart__val {
+    color: #3A3A3C; }
+  .modalCart__total {
+    border-top: 1px solid rgba(117, 81, 57, 0.25);
+    margin-top: 13px !important;
+    padding-top: 14px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000; }
+    .modalCart__total .modalCart__val {
+      font-size: 24px;
+      color: #000; }
+  .modalCart__tools {
+    padding: 25px 16px 24px 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .modalCart__continue {
+    margin-top: 16px; }
+  .modalWish--open .modal__win {
+    right: 0; }
+  .modalWish .modalCart__title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .modalWish .modalCart__title::before {
+      content: '';
+      margin-right: 8px; }
+  .modalWish .modalCart__items {
+    max-height: 800px; }
+  .modalWish .modalCart__price {
+    padding: 8px 0; }
+  .modalWish .modalCart__thumb img {
+    width: 134px;
+    height: 134px; }
+  .modalWish__buy {
+    display: block;
+    width: 155px;
+    padding: 6px 0; }
+    .modalWish__buy:hover {
+      -webkit-box-shadow: 0 10px 20px -10px #696969;
+              box-shadow: 0 10px 20px -10px #696969; }
+  .modalAuth .modal__win {
+    padding: 32px 48px 48px 48px; }
+  .modalAuth .modalCart__title {
+    padding: 0;
+    text-align: center; }
+  .modalAuth__inner {
+    margin-top: 37px;
+    padding: 40px 95px;
+    border: 1px solid #3A3A3C; }
+  .modalAuth__form .field {
+    padding: 0 25px; }
+  .modalAuth__submit {
+    margin-top: 32px; }
+  .modalAuth__forg {
+    margin: 24px auto 0 auto;
+    display: block; }
+  .modalAuthAlt {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+    color: rgba(51, 51, 51, 0.5); }
+    .modalAuthAlt__title {
+      padding: 0 6px;
+      white-space: nowrap;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .modalAuthAlt__title::before {
+        content: '';
+        display: block;
+        width: 130px;
+        height: 1px;
+        background: #E6E6E6; }
+      .modalAuthAlt__title::after {
+        content: '';
+        display: block;
+        width: 130px;
+        height: 1px;
+        background: #E6E6E6; }
+    .modalAuthAlt__btns {
+      padding-top: 24px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .modalAuthAlt__btns a {
+        width: 188px;
+        height: 60px;
+        background: rgba(199, 199, 199, 0.3);
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s; }
+        .modalAuthAlt__btns a:hover {
+          background: #F6F1ED; }
+  .modalAuth__colTitle {
+    margin-bottom: 24px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px; }
+  .modalRegister .modal__win {
+    max-width: 1614px;
+    padding: 32px; }
+  .modalRegister .modalAuth__inner {
+    padding: 40px 32px 47px 32px; }
+  .modalRegister .modalAuth__form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .modalRegister .field {
+    padding: 0;
+    margin-top: 0; }
+    .modalRegister .field:not(:last-child) {
+      margin-bottom: 36px; }
+  .modalRegister__customer {
+    width: 63%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .modalRegister__customer .field {
+      width: 46%; }
+  .modalRegister__password {
+    width: 32%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .modalRegister__password .field {
+      width: 100%; }
+  .modalRegister__submit {
+    width: 66%;
+    margin-left: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .modalRegister__notif {
+    min-height: 60px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: auto; }
+  .modalRegister .modalAuth__submit {
+    margin-top: 0;
+    max-width: 388px; }

@@ -16,7 +16,7 @@
 	
 	
 </head>
-<body class="no_scroll">
+<body>
 
 	<header class="header">
 		<div class="header__toolbar">
@@ -362,23 +362,41 @@
 
 
 				<ul class="header__tools">
+					<!-- if logged -->
+					<!-- <li>
+						<a class="ic_user" href="account.html"></a>
+					</li> -->
+					<!-- else -->
 					<li>
-						<a class="ic_user" href="#"></a>
+						<a class="ic_user open_auth" href="#"></a>
 					</li>
 					<li>
-						<a class="ic_search" href="#"></a>
+						<a class="ic_search open_search" href="#"></a>
 					</li>
 					<li>
-						<a class="ic_heart_small" href="#"></a>
+						<a class="ic_heart_small open_wish" href="#"></a>
 					</li>
 					<li>
-						<a class="ic_cart" href="#"></a>
+						<a class="ic_cart open_cart" href="#"></a>
 					</li>
 				</ul>
 			</div>
 		</div>
+		<form action="#" class="search">
+			<input type="text" name="search" placeholder="Поиск..." class="input">
+			<button class="btn ic_search_brown"></button>
+		</form>
 	</header>
 
+	<!-- if main page -->
+	<section class="heading heading--main">
+		<div class="container">
+			<h1>Интернет зоомагазин Bark&Tail</h1>
+		</div>		
+	</section>
+
+	<!-- if inner pages -->
+	<!-- <section class="heading breadcrumbs"></section> -->
 
 
 
@@ -390,68 +408,149 @@
 
 
 
-	<div class="modal modal--right modal--open modalCart modalCart--open">
+
+	<div class="modal modal--right modalCart">
 		<div class="modal__win">
 			<button class="btn ic_close close_cart modal__close"></button>
 			<div class="modalCart__title">Корзина</div>
-			<div class="modalCart__items">
+			<div class="modalCart__items scroll">
 
 				<div class="modalCart__item">
 					<button class="btn ic_trash modalCart__remove"></button>
-					<div class="modalCart__thumb">
+					<a href="/product.html" class="modalCart__thumb">
 						<img src="img/cart_product.png" alt="">
-					</div>
+					</a>
 					<div class="modalCart__inner">
-						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-						Grain Free Yorkshire Salmon & Tuna</div>
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
 						<div class="modalCart__quantly quantly">
 							<button class="btn quantly__minus">-</button>
-							<input type="text" name="quantly">
+							<input type="text" name="quantly" class="input" value="1">
 							<button class="btn quantly__plus">+</button>
 						</div>
 						<div class="modalCart__price">
 							<div class="modalCart__discount"></div>
-							<div class="modalCart__cost">1350 грн</div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="modalCart__item">
 					<button class="btn ic_trash modalCart__remove"></button>
-					<div class="modalCart__thumb">
+					<a href="/product.html" class="modalCart__thumb">
 						<img src="img/cart_product.png" alt="">
-					</div>
+					</a>
 					<div class="modalCart__inner">
-						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-						Grain Free Yorkshire Salmon & Tuna</div>
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
 						<div class="modalCart__quantly quantly">
 							<button class="btn quantly__minus">-</button>
-							<input type="text" name="quantly">
+							<input type="text" name="quantly" class="input" value="1">
 							<button class="btn quantly__plus">+</button>
 						</div>
-						<div class="modalCart__price">
+						<div class="modalCart__price modalCart__price--discount">
 							<div class="modalCart__discount">478 грн</div>
-							<div class="modalCart__cost">1350 грн</div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="modalCart__item">
 					<button class="btn ic_trash modalCart__remove"></button>
-					<div class="modalCart__thumb">
+					<a href="/product.html" class="modalCart__thumb">
 						<img src="img/cart_product.png" alt="">
-					</div>
+					</a>
 					<div class="modalCart__inner">
-						<div class="modalCart__name">Сухой корм для собак Brit Care Mini 
-						Grain Free Yorkshire Salmon & Tuna</div>
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
 						<div class="modalCart__quantly quantly">
 							<button class="btn quantly__minus">-</button>
-							<input type="text" name="quantly">
+							<input type="text" name="quantly" class="input" value="1">
 							<button class="btn quantly__plus">+</button>
 						</div>
 						<div class="modalCart__price">
 							<div class="modalCart__discount"></div>
-							<div class="modalCart__cost">1350 грн</div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly" class="input" value="1">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly" class="input" value="1">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly" class="input" value="1">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__quantly quantly">
+							<button class="btn quantly__minus">-</button>
+							<input type="text" name="quantly" class="input" value="1">
+							<button class="btn quantly__plus">+</button>
+						</div>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
 						</div>
 					</div>
 				</div>
@@ -459,20 +558,6 @@
 			</div>
 
 			<div class="modalCart__info">
-				<div class="modalCart__row modalCartPromo">
-					<div class="modalCart__key">Промокод :</div>
-					<div class="modalCart__val">
-						<button class="btn btn--dashed add_promo">Добавить</button>
-					</div>
-					<div class="modalCartPromo__add">
-						<input type="text">
-						<button class="btn btn--primary">ок</button>
-					</div>
-					<div class="modalCart__row modalCartPromo__inner">
-						<div class="modalCart__key">Промокод :</div>
-						<div class="modalCart__val">-100 грн</div>
-					</div>
-				</div>
 				<div class="modalCart__row">
 					<div class="modalCart__key">Всего:</div>
 					<div class="modalCart__val">4600 грн</div>
@@ -480,6 +565,22 @@
 				<div class="modalCart__row">
 					<div class="modalCart__key">Скидка:</div>
 					<div class="modalCart__val">-10%</div>
+				</div>
+				<div class="promocode modalCart__row">
+					<div class="promocode__def">
+						<div class="modalCart__key">Промокод :</div>
+						<div class="modalCart__val">
+							<button class="btn btn--dashed add_promo">Добавить</button>
+						</div>
+					</div>					
+					<div class="promocode__add">
+						<input type="text" name="promocode" class="input" placeholder="Введите промокод">
+						<button class="btn btn--primary confirm_promo">ок</button>
+					</div>
+					<div class="promocode__result clearfix">
+						<div class="modalCart__key">Промокод:</div>
+						<div class="modalCart__val">-100 грн</div>
+					</div>
 				</div>
 				<div class="modalCart__row modalCart__total">
 					<div class="modalCart__key">Итого:</div>
@@ -489,10 +590,196 @@
 
 			<div class="modalCart__tools">
 				<a href="checkout.html" class="btn btn--primary">Оформить покупку</a>
-				<button class="btn btn--dashed close_cart">Продолжить покупки</button>
+				<button class="btn btn--dashed close_cart modalCart__continue">Продолжить покупки</button>
 			</div>
 
 		</div>
+	</div>
+
+	<div class="modal modal--right modalWish">
+		<div class="modal__win">
+			<button class="btn ic_close close_wish modal__close"></button>
+			<div class="modalCart__title ic_heart">избранное</div>
+			<div class="modalCart__items scroll">
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price modalCart__price--discount">
+							<div class="modalCart__discount">478 грн</div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price modalCart__price--discount">
+							<div class="modalCart__discount">478 грн</div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+				<div class="modalCart__item">
+					<button class="btn ic_trash modalCart__remove"></button>
+					<a href="/product.html" class="modalCart__thumb">
+						<img src="img/cart_product.png" alt="">
+					</a>
+					<div class="modalCart__inner">
+						<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+						Grain Free Yorkshire Salmon & Tuna</a>
+						<div class="modalCart__price">
+							<div class="modalCart__discount"></div>
+							<div class="modalCart__cost subtitle">1350 грн</div>
+						</div>
+						<a href="#" class="modalWish__buy btn btn--primary">Купить</a>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="modalCart__tools">
+				<button class="btn btn--dashed modalCart__continue">Очистить список</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="modal modal modalAuth modalLogin">
+		<div class="modal__win">
+			<div class="modalCart__title">Вход в личный кабинет</div>
+			<div class="modalLogin__inner">
+				<form action="#" class="modalLogin__form">
+					<div class="field">
+						<label for="login_email" class="field__label">E mail</label>
+						<input type="text" name="email" class="input field__input" placeholder="Введите email" id="login_email">
+					</div>
+					<div class="field">
+						<label for="login_pass" class="field__label">Пароль</label>
+						<input type="text" name="email" class="input field__input" placeholder="Введите пароль" id="login_pass">
+					</div>
+					<button type="button" class="btn btn--primary modalLogin__submit">Войти</button>
+				</form>
+				<button class="btn btn--dashed modalLogin__forg">Забыли пароль?</button>
+				<div class="modalLoginAlt">
+					<div class="modalLoginAlt__title">или с помощью</div>
+					<div class="modalLoginAlt__btns">
+						<a href="#" class="ic_fcb_colored"></a>
+						<a href="#" class="ic_google_colored"></a>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="modal modal--open modalAuth modalRegister">
+		<div class="modal__win">
+			<div class="modalCart__title">рЕГИСТРАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ</div>
+			<div class="modalAuth__inner">
+				<form action="#" class="modalAuth__form">
+
+					<div class="modalRegister__customer">
+						<div class="modalAuth__colTitle">Личные данные</div>
+						<div class="field">
+							<label for="register_first_name" class="field__label">Имя*</label>
+							<input type="text" name="first_name" class="input field__input" placeholder="Введите имя" id="register_first_name">
+						</div>
+						<div class="field">
+							<label for="register_email" class="field__label">Эл. почта* </label>
+							<input type="text" name="email" class="input field__input" placeholder="Введите e-mail" id="register_email">
+						</div>
+						<div class="field">
+							<label for="register_last_name" class="field__label">Фамилия*</label>
+							<input type="text" name="last_name" class="input field__input" placeholder="Введите фамилию" id="register_last_name">
+						</div>
+						<div class="field">
+							<label for="register_phone" class="field__label">Ваш номер телефона*</label>
+							<input type="text" name="phone" class="input field__input" placeholder="Введите контактный номер" id="register_phone">
+						</div>
+						<div class="field modalRegister__notif">					
+							<input type="checkbox" name="notifications" class="input field__input checkbox" placeholder="****************" id="register_notifications">
+							<label for="register_notifications" class="field__label">Получать уведомления о новинках,скидках, акциях </label>
+						</div>
+					</div>
+
+					<div class="modalRegister__password">
+						<div class="modalAuth__colTitle">Пароль</div>
+						<div class="field">
+							<label for="register_pass" class="field__label">Пароль</label>
+							<input type="text" name="password" class="input field__input" placeholder="****************" id="register_pass">
+						</div>
+						<div class="field">
+							<label for="register_pass_repeat" class="field__label">Повторите пароль</label>
+							<input type="text" name="password_repeat" class="input field__input" placeholder="****************" id="register_pass_repeat">
+						</div>
+						<button type="button" class="btn btn--primary modalAuth__submit">Зарегистрироваться</button>
+					</div>
+
+				</form>
+			</div>
+		</div>		
 	</div>
 
 

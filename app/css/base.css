@@ -50,10 +50,14 @@ body {
   font-size: 16px;
   color: #3A3A3C;
   overflow-x: hidden;
-  min-height: 200vh; }
+  min-height: 200vh;
+  background: #F6F1ED; }
 
 img {
   max-width: 100%; }
+
+button {
+  font-family: "Roboto"; }
 
 input, textarea {
   font-family: "Roboto"; }
@@ -92,7 +96,36 @@ a {
   outline: none;
   border-radius: 0;
   background: rgba(0, 0, 0, 0);
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
+  .btn--primary {
+    background: #755139;
+    padding: 18px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #fff;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+    .btn--primary:hover {
+      -webkit-box-shadow: 0 20px 20px -20px #696969;
+              box-shadow: 0 20px 20px -20px #696969;
+      text-decoration: none; }
+  .btn--dashed {
+    border-bottom: 1px dashed #755139;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #755139;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    .btn--dashed:hover {
+      border-color: rgba(0, 0, 0, 0); }
 
 .social {
   display: -webkit-box;
@@ -134,3 +167,210 @@ a {
 .no_scroll {
   overflow-y: hidden;
   padding-right: 16px; }
+
+.clearfix::after {
+  content: '';
+  display: inline-block;
+  clear: both; }
+
+.input {
+  width: 100%;
+  min-height: 30px;
+  border: none;
+  border-bottom: 1px solid rgba(117, 81, 57, 0.25);
+  padding: 0 0 0 8px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000; }
+  .input::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #9D9D9D; }
+  .input::-moz-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #9D9D9D; }
+  .input:-moz-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #9D9D9D; }
+  .input:-ms-input-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #9D9D9D; }
+  .input--err {
+    border-color: #D64B59; }
+  .input--ok {
+    border-color: #006B38; }
+
+.promocode {
+  padding: 0 16px; }
+  .promocode__def {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .promocode__add {
+    width: 100%;
+    position: relative;
+    display: none; }
+    .promocode__add input {
+      width: calc(100% - 62px); }
+    .promocode__add .btn {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  .promocode__result {
+    width: 100%;
+    display: none; }
+    .promocode__result .modalCart__key {
+      display: inline-block; }
+    .promocode__result .modalCart__val {
+      float: right; }
+
+.quantly {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .quantly__minus {
+    margin-right: 12px;
+    font-size: 29px;
+    font-weight: 300;
+    color: #755139; }
+  .quantly__plus {
+    margin-left: 12px;
+    font-size: 25px;
+    font-weight: 300;
+    color: #755139; }
+  .quantly input {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgba(117, 81, 57, 0.25);
+    border-radius: 4px;
+    text-align: center; }
+
+.scroll::-webkit-scrollbar {
+  width: 2px;
+  height: 3px;
+  background: transparent; }
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #755139; }
+
+.heading {
+  padding: 7px 0;
+  background: #fff; }
+  .heading--main {
+    text-align: center; }
+    .heading--main h1 {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 24px;
+      color: #000; }
+
+.field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .field:not(:first-child) {
+    margin-top: 42px; }
+  .field label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px; }
+  .field input {
+    width: 271px; }
+
+.checkbox {
+  display: none; }
+  .checkbox + label {
+    padding-left: 33px;
+    position: relative;
+    cursor: pointer;
+    line-height: 20px; }
+    .checkbox + label::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(117, 81, 57, 0.5);
+      border-radius: 4px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      opacity: 1;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+    .checkbox + label::after {
+      content: '';
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../img/icons/checkbox.svg");
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+  .checkbox:checked + label::before {
+    content: '';
+    opacity: 0; }
+  .checkbox:checked + label::after {
+    content: '';
+    opacity: 1; }
