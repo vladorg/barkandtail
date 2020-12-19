@@ -73,6 +73,8 @@ a
 	width: $container
 	max-width: 100%
 	margin: 0 auto
+	+break(1800)
+		width: 92%
 
 .btn
 	border: none
@@ -104,6 +106,8 @@ a
 	li
 		&:not(:last-child)
 			margin-right: 8px
+			+md
+				margin-right: 4px
 		a
 			background: $text_color
 			border-radius: 50%
@@ -116,6 +120,8 @@ a
 .no_scroll
 	overflow-y: hidden
 	padding-right: 16px
+	+xs
+		padding-right: 0
 
 .clearfix
 	+after

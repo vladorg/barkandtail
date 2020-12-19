@@ -21,6 +21,7 @@
 	<header class="header">
 		<div class="header__toolbar">
 			<div class="container">
+				<div class="header__logoMob">BARK&TAIL</div>
 				<ul class="header__social social">
 					<li>
 						<a class="ic_instagram" href="#"></a>
@@ -63,15 +64,17 @@
 					<button class="btn">Рус</button>
 					<button class="btn header__langsActive">Укр</button>
 				</div>
+				<button class="header__burger ic_burger open_menu btn"></button>
 			</div>
 		</div>
 		<div class="header__inner">
 			<div class="container">
-				<div class="header__logo">
-					<img src="img/logo.png" alt="">
-				</div>
+				<div class="header__innerWrap">
+					<div class="header__logo">
+						<img src="img/logo.png" alt="">
+					</div>
 
-				<!-- menu ver 1 -->
+					<!-- menu ver 1 -->
 				<!-- <nav class="header__menu">
 					<ul>
 						<li> 
@@ -358,11 +361,12 @@
 						</li>
 					</ul>
 				</nav>
+			</div>
 
 
 
-				<ul class="header__tools">
-					<!-- if logged -->
+			<ul class="header__tools">
+				<!-- if logged -->
 					<!-- <li>
 						<a class="ic_user" href="account.html"></a>
 					</li> -->
@@ -707,11 +711,12 @@
 		</div>
 	</div>
 
-	<div class="modal modal modalAuth modalLogin">
+	<div class="modal modalAuth modalLogin">
 		<div class="modal__win">
+			<button class="btn ic_close close_auth modal__close"></button>
 			<div class="modalCart__title">Вход в личный кабинет</div>
-			<div class="modalLogin__inner">
-				<form action="#" class="modalLogin__form">
+			<div class="modalAuth__inner">
+				<form action="#" class="modalAuth__form">
 					<div class="field">
 						<label for="login_email" class="field__label">E mail</label>
 						<input type="text" name="email" class="input field__input" placeholder="Введите email" id="login_email">
@@ -720,13 +725,13 @@
 						<label for="login_pass" class="field__label">Пароль</label>
 						<input type="text" name="email" class="input field__input" placeholder="Введите пароль" id="login_pass">
 					</div>
-					<button type="button" class="btn btn--primary modalLogin__submit">Войти</button>
+					<button type="button" class="btn btn--primary modalAuth__submit">Войти</button>
 				</form>
-				<button class="btn btn--dashed modalLogin__forg">Забыли пароль?</button>
-				<div class="modalLoginAlt">
-					<div class="modalLoginAlt__title">или с помощью</div>
-					<div class="modalLoginAlt__btns">
-						<a href="#" class="ic_fcb_colored"></a>
+				<button class="btn btn--dashed modalAuth__forg open_forgot">Забыли пароль?</button>
+				<div class="modalAuthAlt">
+					<div class="modalAuthAlt__title">или с помощью</div>
+					<div class="modalAuthAlt__btns">
+						<a href="#" class="ic_fcb_colored open_register"></a>
 						<a href="#" class="ic_google_colored"></a>
 					</div>
 				</div>
@@ -734,8 +739,9 @@
 		</div>		
 	</div>
 
-	<div class="modal modal--open modalAuth modalRegister">
+	<div class="modal modalAuth modalRegister">
 		<div class="modal__win">
+			<button class="btn ic_close close_register modal__close"></button>
 			<div class="modalCart__title">рЕГИСТРАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ</div>
 			<div class="modalAuth__inner">
 				<form action="#" class="modalAuth__form">
@@ -774,10 +780,61 @@
 							<label for="register_pass_repeat" class="field__label">Повторите пароль</label>
 							<input type="text" name="password_repeat" class="input field__input" placeholder="****************" id="register_pass_repeat">
 						</div>
-						<button type="button" class="btn btn--primary modalAuth__submit">Зарегистрироваться</button>
+						<button type="button" class="btn btn--primary modalAuth__submit open_success">Зарегистрироваться</button>
 					</div>
 
 				</form>
+			</div>
+		</div>		
+	</div>
+
+	<div class="modal modalAuth modalForgot">
+		<div class="modal__win">
+			<button class="btn ic_close close_forgot modal__close"></button>
+			<div class="modalCart__title">Сброс пароля</div>
+			<div class="modalAuth__inner">
+				<form action="#" class="modalAuth__form">
+					<div class="field">
+						<label for="forgot_email" class="field__label">E mail</label>
+						<input type="text" name="email" class="input field__input" placeholder="Введите email" id="forgot_email">
+					</div>
+					<button type="button" class="btn btn--primary modalAuth__submit open_change">Отправить</button>
+				</form>
+				<button class="btn btn--dashed modalAuth__forg open_auth">Вспомнили пароль?</button>
+			</div>
+		</div>		
+	</div>
+
+	<div class="modal modalAuth modalChange">
+		<div class="modal__win">
+			<button class="btn ic_close close_change modal__close"></button>
+			<div class="modalCart__title">Изменение пароля</div>
+			<div class="modalAuth__inner">
+				<form action="#" class="modalAuth__form">
+					<div class="field">
+						<label for="change_password" class="field__label">Новый пароль</label>
+						<input type="password" name="password" class="input field__input" placeholder="Новый пароль" id="change_password">
+					</div>
+					<div class="field">
+						<label for="change_repeat" class="field__label">Повторите пароль</label>
+						<input type="password" name="password_repeat" class="input field__input" placeholder="Повторите пароль" id="change_repeat">
+					</div>
+					<button type="button" class="btn btn--primary modalAuth__submit">Отправить</button>
+				</form>
+			</div>
+		</div>		
+	</div>
+
+	<div class="modal modalAuth modalSuccess">
+		<div class="modal__win">
+			<button class="btn ic_close close_success modal__close"></button>
+			<div class="modalCart__title">Спасибо за регистрацию!</div>
+			<div class="modalAuth__inner">
+				<div class="modal__info">Вам на почту будет отправленно письмо с сылкой для подтверждения регистрации.</div>
+				<div class="modal__info">
+					Не пришло письмо?
+					<button class="btn btn--dashed modalSuccess__repeat">Повторить отправку</button>
+				</div>				
 			</div>
 		</div>		
 	</div>

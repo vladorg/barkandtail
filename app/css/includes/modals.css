@@ -20,16 +20,24 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.6s;
-  -o-transition: all 0.6s;
-  transition: all 0.6s; }
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s; }
+  .modal__info {
+    text-align: center;
+    margin: 10px 0; }
+  .modal .modal__close {
+    position: absolute;
+    top: 34px;
+    right: 18px; }
   .modal--open {
     opacity: 1;
     pointer-events: auto; }
   .modal__win {
     width: 100%;
     max-width: 674px;
-    background: #fff; }
+    background: #fff;
+    position: relative; }
   .modal--right .modal__win {
     max-width: 415px;
     position: absolute;
@@ -49,10 +57,6 @@
     -webkit-transition: all 0.6s;
     -o-transition: all 0.6s;
     transition: all 0.6s; }
-  .modal--right .modal__close {
-    position: absolute;
-    top: 34px;
-    right: 18px; }
   .modalCart--open .modal__win {
     right: 0; }
   .modalCart__title {
@@ -210,7 +214,9 @@
     padding: 32px 48px 48px 48px; }
   .modalAuth .modalCart__title {
     padding: 0;
-    text-align: center; }
+    text-align: center;
+    font-size: 32px;
+    line-height: 40px; }
   .modalAuth__inner {
     margin-top: 37px;
     padding: 40px 95px;
@@ -300,6 +306,8 @@
   .modalRegister .modal__win {
     max-width: 1614px;
     padding: 32px; }
+  .modalRegister--open .modal__win {
+    opacity: 1; }
   .modalRegister .modalAuth__inner {
     padding: 40px 32px 47px 32px; }
   .modalRegister .modalAuth__form {
@@ -386,3 +394,5 @@
   .modalRegister .modalAuth__submit {
     margin-top: 0;
     max-width: 388px; }
+  .modalSuccess .modalAuth__inner {
+    padding: 20px; }
