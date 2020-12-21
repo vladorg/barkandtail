@@ -46,7 +46,7 @@ body
 	font-size: $fz
 	color: $text_color
 	overflow-x: hidden
-	min-height: 200vh
+	min-height: 2200vh
 	background: $prim_color
 img
 	max-width: 100%
@@ -63,7 +63,10 @@ a
 		text-decoration: underline
 
 .title
+	margin-bottom: 35px
 	+text(32,300,40,$text_color)
+	+xxs
+		text-align: center
 .subtitle
 	+text(18,400,24,$text_color)
 .heading
@@ -215,10 +218,17 @@ a
 	+flex(0,0,space-between,center)
 	&:not(:first-child)
 		margin-top: 42px
+		+xs
+			margin-top: 24px
 	label
 		+text(14,400,18,0)
+		+xs
+			display: none
 	input
 		width: 271px
+		+xs
+			width: 100%
+			background: $transparent
 
 .checkbox
 	display: none
@@ -237,6 +247,7 @@ a
 			border-radius: 4px
 			box-sizing: border-box
 			opacity: 1
+			background: #fff
 			+tran(all,.2s)
 		+after
 			opacity: 0
@@ -253,3 +264,131 @@ a
 				opacity: 0
 			+after
 				opacity: 1
+
+
+.products
+	display: grid
+	grid-template-columns: repeat(4,22%)
+	grid-gap: 56px
+	justify-content: space-between
+	+md
+		grid-template-columns: repeat(3, 29%)
+		grid-gap: 20px
+	+sm
+		grid-template-columns: repeat(2, 48%)
+	+xxs
+		grid-template-columns: repeat(1, 100%)
+
+.preview
+	width: 100%
+	max-width: 386px
+	position: relative
+	+xxs
+		margin: 0 auto
+	&__sticker
+		position: absolute
+		width: 82px
+		height: 66px
+		+text(24,700,18,0)
+		+flex(0,0,center,center)
+		+before
+			position: absolute
+			z-index: -1
+	&__wish
+		position: absolute
+		top: 0
+		right: 0
+		+before
+			opacity: 1
+			+tran(all,.2s)
+		+after
+			position: absolute
+			top: 0
+			right: 0
+			opacity: 0
+			width: 31px
+			height: 28px
+			background: url('../img/icons/heart_red.svg')
+			+tran(all,.2s)
+		&--inwish
+			+before
+				opacity: 0
+			+after
+				opacity: 1
+	&__thumb
+		margin-bottom: 7px
+		display: block
+		img
+			display: block
+			width: 100%
+			height: 268px
+			object-fit: contain
+	&__name
+		margin-bottom: 8px
+		display: block
+		height: 48px
+		overflow: hidden
+		text-overflow: ellipsis
+		+text(18,400,24,0)
+	&__dropdown
+		margin-bottom: 8px
+	&__price
+		min-height: 46px
+		margin-bottom: 19px
+		+flex(column,0,center,0)
+		+text(24,500,32,0)
+	&__discount
+		text-decoration: line-through
+		+text(14,400,16,#A2A2A2)
+	&__total
+		color: #D64B59	
+	&__buy
+
+
+
+.dropdown
+	position: relative
+	+text(14,400,18,0)
+	&__title
+		cursor: pointer
+		padding: 11px 40px 11px 8px
+		background: #fff
+		border: 1px solid $btn_color
+		border-radius: 4px
+		position: relative
+		z-index: 1
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		+after
+			position: absolute
+			width: 18px
+			height: 10px
+			background: url("../img/sprite.png") -142px -5px no-repeat
+			top: 16px
+			right: 19px
+			+tran(all,.3s)
+		&--open
+			+after
+				transform: rotate(-180deg)
+				top: 14px
+	&__list
+		display: none
+		border: 1px solid $btn_color
+		padding: 11px 19px 11px 8px
+		border-radius: 4px
+		background: #fff
+		position: absolute
+		top: calc(100% - 5px)
+		left: 0
+		right: 0
+	&__checked
+	&__row
+		&:not(:last-child)
+			margin-bottom: 8px
+		label
+			cursor: pointer
+			+hover
+				text-decoration: underline
+		input
+			display: none

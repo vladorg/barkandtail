@@ -30,6 +30,17 @@
     position: absolute;
     top: 34px;
     right: 18px; }
+    @media (max-width: 768px) {
+      .modal .modal__close {
+        top: 19px;
+        right: 16px; } }
+    .modal .modal__close::before {
+      content: ''; }
+      @media (max-width: 768px) {
+        .modal .modal__close::before {
+          width: 18px;
+          height: 18px;
+          background: url(../img/icons/close_big.svg); } }
   .modal--open {
     opacity: 1;
     pointer-events: auto; }
@@ -38,6 +49,10 @@
     max-width: 674px;
     background: #fff;
     position: relative; }
+    @media (max-width: 768px) {
+      .modal__win {
+        max-width: 100%;
+        background: #F6F1ED; } }
   .modal--right .modal__win {
     max-width: 415px;
     position: absolute;
@@ -57,6 +72,10 @@
     -webkit-transition: all 0.6s;
     -o-transition: all 0.6s;
     transition: all 0.6s; }
+    @media (max-width: 768px) {
+      .modal--right .modal__win {
+        max-width: 100%;
+        background: #F6F1ED; } }
   .modalCart--open .modal__win {
     right: 0; }
   .modalCart__title {
@@ -65,13 +84,24 @@
     font-size: 24px;
     font-weight: 300;
     line-height: 40px; }
+    @media (max-width: 768px) {
+      .modalCart__title {
+        padding: 16px;
+        background: #000;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #fff; } }
   .modalCart__items {
     padding-top: 19px;
-    max-height: 590px;
     overflow: auto; }
+    @media (max-width: 768px) {
+      .modalCart__items {
+        padding-top: 0; } }
   .modalCart__item {
     padding: 16px 11px 0 11px;
     position: relative;
+    border-bottom: 1px solid rgba(117, 81, 57, 0.25);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -84,12 +114,19 @@
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
-    .modalCart__item:not(:last-child) {
-      border-bottom: 1px solid rgba(117, 81, 57, 0.25); }
+    @media (max-width: 768px) {
+      .modalCart__item {
+        padding: 19px 0 8px 0;
+        margin: 0 16px;
+        border-color: #755139; } }
   .modalCart__remove {
     position: absolute;
     top: 16px;
     right: 11px; }
+    @media (max-width: 768px) {
+      .modalCart__remove {
+        top: 32px;
+        right: 0; } }
   .modalCart__thumb {
     padding-bottom: 18px; }
     .modalCart__thumb img {
@@ -97,9 +134,17 @@
       height: 118px;
       -o-object-fit: contain;
          object-fit: contain; }
+      @media (max-width: 768px) {
+        .modalCart__thumb img {
+          width: 93px;
+          height: 93px; } }
   .modalCart__inner {
     width: calc(100% - 134px);
     padding: 15px 22px 0 0; }
+    @media (max-width: 768px) {
+      .modalCart__inner {
+        padding-right: 25px;
+        width: calc(100% - 99px); } }
   .modalCart__name {
     display: block;
     max-height: 37px;
@@ -128,6 +173,9 @@
     margin-top: auto;
     border-top: 1px solid rgba(117, 81, 57, 0.25);
     padding-top: 14px; }
+    @media (max-width: 768px) {
+      .modalCart__info {
+        border-top: 0; } }
   .modalCart__row {
     padding: 0 16px 0 16px;
     font-size: 16px;
@@ -158,6 +206,11 @@
     font-weight: 400;
     line-height: 24px;
     color: #000; }
+    @media (max-width: 768px) {
+      .modalCart__total {
+        border-color: #755139;
+        padding: 14px 0 0 0;
+        margin: 13px 16px 0 16px; } }
     .modalCart__total .modalCart__val {
       font-size: 24px;
       color: #000; }
@@ -196,13 +249,19 @@
     .modalWish .modalCart__title::before {
       content: '';
       margin-right: 8px; }
-  .modalWish .modalCart__items {
-    max-height: 800px; }
+      @media (max-width: 768px) {
+        .modalWish .modalCart__title::before {
+          -webkit-filter: brightness(0) invert(1);
+                  filter: brightness(0) invert(1); } }
   .modalWish .modalCart__price {
     padding: 8px 0; }
   .modalWish .modalCart__thumb img {
     width: 134px;
     height: 134px; }
+    @media (max-width: 768px) {
+      .modalWish .modalCart__thumb img {
+        width: 93px;
+        height: 93px; } }
   .modalWish__buy {
     display: block;
     width: 155px;
@@ -210,19 +269,41 @@
     .modalWish__buy:hover {
       -webkit-box-shadow: 0 10px 20px -10px #696969;
               box-shadow: 0 10px 20px -10px #696969; }
+  .modalWish .modalCart__tools {
+    margin-top: auto; }
   .modalAuth .modal__win {
     padding: 32px 48px 48px 48px; }
+    @media (max-width: 768px) {
+      .modalAuth .modal__win {
+        padding: 0; } }
   .modalAuth .modalCart__title {
     padding: 0;
     text-align: center;
     font-size: 32px;
     line-height: 40px; }
+    @media (max-width: 768px) {
+      .modalAuth .modalCart__title {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: left;
+        padding: 16px; } }
   .modalAuth__inner {
     margin-top: 37px;
     padding: 40px 95px;
     border: 1px solid #3A3A3C; }
+    @media (max-width: 1199px) {
+      .modalAuth__inner {
+        padding: 40px; } }
+    @media (max-width: 768px) {
+      .modalAuth__inner {
+        border: none;
+        padding: 16px;
+        margin-top: 16px; } }
   .modalAuth__form .field {
     padding: 0 25px; }
+    @media (max-width: 768px) {
+      .modalAuth__form .field {
+        padding: 0; } }
   .modalAuth__submit {
     margin-top: 32px; }
   .modalAuth__forg {
@@ -255,13 +336,20 @@
         display: block;
         width: 130px;
         height: 1px;
-        background: #E6E6E6; }
+        background: #E6E6E6;
+        margin-right: 6px;
+        margin-left: -18px; }
       .modalAuthAlt__title::after {
         content: '';
         display: block;
         width: 130px;
         height: 1px;
-        background: #E6E6E6; }
+        background: #E6E6E6;
+        margin-left: 6px;
+        margin-right: -18px; }
+      @media (max-width: 768px) {
+        .modalAuthAlt__title {
+          padding: 0; } }
     .modalAuthAlt__btns {
       padding-top: 24px;
       display: -webkit-box;
@@ -297,6 +385,10 @@
         transition: all 0.4s; }
         .modalAuthAlt__btns a:hover {
           background: #F6F1ED; }
+        @media (max-width: 768px) {
+          .modalAuthAlt__btns a {
+            width: 166px;
+            max-width: 45%; } }
   .modalAuth__colTitle {
     margin-bottom: 24px;
     width: 100%;
@@ -306,10 +398,17 @@
   .modalRegister .modal__win {
     max-width: 1614px;
     padding: 32px; }
+    @media (max-width: 768px) {
+      .modalRegister .modal__win {
+        padding: 0; } }
   .modalRegister--open .modal__win {
     opacity: 1; }
   .modalRegister .modalAuth__inner {
     padding: 40px 32px 47px 32px; }
+    @media (max-width: 768px) {
+      .modalRegister .modalAuth__inner {
+        padding: 16px 16px 24px 16px;
+        margin-top: 10px; } }
   .modalRegister .modalAuth__form {
     display: -webkit-box;
     display: -webkit-flex;
@@ -331,6 +430,9 @@
     margin-top: 0; }
     .modalRegister .field:not(:last-child) {
       margin-bottom: 36px; }
+      @media (max-width: 768px) {
+        .modalRegister .field:not(:last-child) {
+          margin-bottom: 24px; } }
   .modalRegister__customer {
     width: 63%;
     display: -webkit-box;
@@ -348,8 +450,25 @@
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
+    @media (max-width: 1199px) {
+      .modalRegister__customer {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
     .modalRegister__customer .field {
       width: 46%; }
+      @media (max-width: 1199px) {
+        .modalRegister__customer .field {
+          width: 100%; } }
+    @media (max-width: 1199px) {
+      .modalRegister__customer .input {
+        width: 75%; } }
+    @media (max-width: 768px) {
+      .modalRegister__customer .input {
+        width: 100%; } }
   .modalRegister__password {
     width: 32%;
     display: -webkit-box;
@@ -367,8 +486,22 @@
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
+    @media (max-width: 1199px) {
+      .modalRegister__password {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
     .modalRegister__password .field {
       width: 100%; }
+    @media (max-width: 1199px) {
+      .modalRegister__password .input {
+        width: 75%; } }
+    @media (max-width: 768px) {
+      .modalRegister__password .input {
+        width: 100%; } }
   .modalRegister__submit {
     width: 66%;
     margin-left: auto;
@@ -391,6 +524,14 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
     margin-left: auto; }
+    @media (max-width: 1199px) {
+      .modalRegister__notif {
+        margin-bottom: 36px; } }
+    @media (max-width: 768px) {
+      .modalRegister__notif {
+        margin-bottom: 24px; } }
+    .modalRegister__notif label {
+      display: block; }
   .modalRegister .modalAuth__submit {
     margin-top: 0;
     max-width: 388px; }

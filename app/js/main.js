@@ -5,12 +5,32 @@ window.onload = function () {
 
 	var body = document.querySelector('body');
 	var quant = document.querySelectorAll('.quantly');
+	var drop_open = $('.dropdown__title');
+
+	drop_open.on('click', function(){
+		$(this).next().slideToggle(200);
+		$(this).toggleClass('dropdown__title--open');
+	});
 
 	function disableScroll() {
 		body.classList.add('no_scroll');
 	}
 	function enableScroll() {
 		body.classList.remove('no_scroll');
+	}
+
+	function checkModal($modals) {
+		var picker = null;
+		for(var i=0;i<$modals.length;i++) {
+			if ($modals[i].classList.contains('modal--open')) {
+				picker = false;
+			} else {
+				if (picker != false) {
+					picker = true;
+				}							
+			}
+		}
+		return picker;
 	}
 
 	if (quant) {
@@ -130,24 +150,45 @@ window.onload = function () {
 		document.onclick = function(e){
 			if ( !modalCart_open[0].contains(e.target) && !modalCart_inner.contains(e.target) ) { // закрытие дропдауна корзины
 				modalCart.classList.remove('modalCart--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalWish_open[0].contains(e.target) && !modalWish_inner.contains(e.target) ) { // закрытие дропдауна избранное
 				modalWish.classList.remove('modalWish--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalLogin_open[0].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
 				modalLogin.classList.remove('modalLogin--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalRegister_open[0].contains(e.target) && !modalRegister_inner.contains(e.target) && !modalLogin_open[0].contains(e.target) ) { // закрытие регистрации
 				modalRegister.classList.remove('modalRegister--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalSearch_open[0].contains(e.target) && !search.contains(e.target) ) { // закрытие поиска
 				search.classList.remove('search--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalForgot_open[0].contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие формы сброса пароля
 				modalForgot.classList.remove('modalForgot--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 			if ( !modalChange_open[0].contains(e.target) && !modalChange_inner.contains(e.target) ) { // закрытие формы восстановления пароля
 				modalChange.classList.remove('modalChange--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
 			}
 		};
 	}
@@ -180,6 +221,7 @@ window.onload = function () {
 
 	var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess];
 
+
 	modal(modalCart,modalCart_open,modalCart_close,'modalCart--open',modals);
 	modal(modalWish,modalWish_open,modalWish_close,'modalWish--open',modals);
 	modal(modalLogin,modalLogin_open,modalLogin_close,'modalLogin--open',modals);
@@ -192,13 +234,37 @@ window.onload = function () {
 
 
 
-	// mobile menu ============
+	// mobile tools ============
 
-	var open_menu = $('.open_menu');
+	var open_menu = document.querySelectorAll('.open_menu');
+	var mob_menu = document.querySelector('.header__innerWrap');
+	var open_child = $('.submenu__title');
+	var open_cat = $('.header__menu > ul > li.has_child');
+	var submenu = $('.submenu');
 
-	open_menu.on('click', function(){
-		$('.header__innerWrap').slideToggle();
+	for (var i=0;i<open_menu.length;i++) {
+		open_menu[i].addEventListener('click', function(){
+			this.classList.toggle('header__burger--open');
+			mob_menu.classList.toggle('header__innerWrap--open');
+		});
+	}
+
+	open_child.on('click', function(e){
+		e.stopPropagation();
+		$(this).next().slideToggle();
 	});
+	open_cat.on('click', function(e){
+		//e.stopPropagation();
+		$(this).find('.submenu').slideToggle();
+	});
+	submenu.on('click', function(e){
+		e.stopPropagation();
+	});
+
+
+
+
+
 
 
 
