@@ -83,8 +83,10 @@
         margin: 0;
         padding: 0; } }
     .submenu__col:not(:last-child) {
-      margin-right: 40px;
-      margin-right: 0; }
+      margin-right: 40px; }
+      @media (max-width: 768px) {
+        .submenu__col:not(:last-child) {
+          margin-right: 0; } }
   .submenu__title {
     font-size: 18px;
     font-weight: 400;

@@ -535,5 +535,7 @@
   .modalRegister .modalAuth__submit {
     margin-top: 0;
     max-width: 388px; }
+  .modalChange .modalAuth__inner {
+    padding: 40px 60px; }
   .modalSuccess .modalAuth__inner {
     padding: 20px; }

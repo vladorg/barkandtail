@@ -42,12 +42,9 @@ article
 	~
 body
 	font-family: $ff
-	font-weight: $fw
-	font-size: $fz
-	color: $text_color
 	overflow-x: hidden
-	min-height: 2200vh
 	background: $prim_color
+	+text($fz,$fw,24,$text_color)
 img
 	max-width: 100%
 button
@@ -61,6 +58,12 @@ a
 	color: $text_color
 	+hover
 		text-decoration: underline
+
+p
+	margin-bottom: 20px
+
+.main
+	padding-bottom: 80px
 
 .title
 	margin-bottom: 35px
@@ -111,6 +114,8 @@ a
 			margin-right: 8px
 			+md
 				margin-right: 4px
+			+xs
+				margin-right: 16px
 		a
 			background: $text_color
 			border-radius: 50%
@@ -278,6 +283,7 @@ a
 		grid-template-columns: repeat(2, 48%)
 	+xxs
 		grid-template-columns: repeat(1, 100%)
+		grid-gap: 37px
 
 .preview
 	width: 100%
@@ -289,6 +295,8 @@ a
 		position: absolute
 		width: 82px
 		height: 66px
+		top: -9px
+		left: 0
 		+text(24,700,18,0)
 		+flex(0,0,center,center)
 		+before
@@ -333,7 +341,7 @@ a
 	&__dropdown
 		margin-bottom: 8px
 	&__price
-		min-height: 46px
+		min-height: 50px
 		margin-bottom: 19px
 		+flex(column,0,center,0)
 		+text(24,500,32,0)
@@ -392,3 +400,60 @@ a
 				text-decoration: underline
 		input
 			display: none
+
+.seo
+	padding: 56px 0 20px 0
+	position: relative
+	+xs
+		padding: 32px 0 20px 0
+	&__inner
+		max-height: 120px
+		overflow: hidden
+		+tran(all,.4s)
+	&__btn
+		display: block
+		margin: 0 auto
+		+text(16,300,24,$btn_color)
+	&--open
+		.seo__inner
+			max-height: 1500px
+
+
+.breadcrumbs
+	padding: 11px 0
+	ul
+		+flex(0,0,flex-start,center)
+	&__item
+		position: relative
+		+text(12,300,16,#000)
+		&:not(:last-child)
+			padding-right: 9px
+			margin-right: 4px
+			+after
+				content: '/'
+				display: block
+				position: absolute
+				right: 0
+				top: 0
+		a
+			+text(12,300,16,#000)
+	&__start
+	&__link
+	&__end
+
+
+.banner
+	padding-top: 84px
+	&__inner
+		position: relative
+	&__content
+		position: absolute
+		top: 50%
+		left: 200px
+		max-width: 435px
+		transform: translateY(-50%)
+	&__title
+		+text(48,500,54,#000)
+	&__link
+		display: block
+		margin-top: 45px

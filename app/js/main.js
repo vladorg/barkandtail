@@ -54,10 +54,38 @@ window.onload = function () {
 
 
 
+	// развернуть блок сео текста
+	$('.seo__btn').on('click', function(){
+		$(this).closest('.seo').toggleClass('seo--open');
+	});
+
+
+	// dropdown
+	// при выборе пункта записать его в input hidden + вывести его в заголовок дропдауна + закрыть дропдаун
+	$('.dropdown__row').on('click', function(e){
+		e.preventDefault();
+		var $this = $(this);
+		var item = $(this).find('input').val();
+		var lab = $(this).find('label').text();
+		$(this).closest('.dropdown__list').find('input[type=hidden]').val(item);
+		$(this).closest('.dropdown').find('.dropdown__title .dropdown__checked').fadeOut(200);		
+
+		setTimeout(function(){ // для плавности
+			$this.closest('.dropdown').find('.dropdown__title .dropdown__checked').text(lab);
+			$this.closest('.dropdown').find('.dropdown__title .dropdown__checked').fadeIn(200);
+		}, 200);
+
+		$(this).closest('.dropdown__list').slideUp(200);
+		$(this).closest('.dropdown').find('.dropdown__title').removeClass('dropdown__title--open');
+	});
+
+
+
+
 
 	// modal cart ============
 
-	var modalCart = document.querySelector('.modalCart');
+	var modalCart = document.querySelector('.modalCart'); 
 	var modalCart_inner = modalCart.querySelector('.modal__win');
 	var modalCart_open = document.querySelectorAll('.open_cart');
 	var modalCart_close = document.querySelectorAll('.close_cart');
@@ -261,6 +289,63 @@ window.onload = function () {
 		e.stopPropagation();
 	});
 
+
+
+
+	// main page ============
+
+	$('.brands .brands__list').slick({
+		dots: true,
+		infinite: false,
+		speed: 300,
+		arrows: false,
+		//autoplay: true,
+		slidesToShow: 7,
+		slidesToScroll: 1,
+		responsive: [
+		{
+			breakpoint: 1400,
+			settings: {
+				slidesToShow: 6,
+			}
+		},
+		{
+			breakpoint: 1200,
+			settings: {
+				slidesToShow: 5,
+			}
+		},
+		{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 4,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 3,
+			}
+		},
+		{
+			breakpoint: 500,
+			settings: {
+				slidesToShow: 2,
+			}
+		}
+		]
+	});
+
+	// category page ============
+
+	$('.slideshow').slick({
+		dots: true,
+		infinite: false,
+		speed: 300,
+		arrows: false,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	});
 
 
 
