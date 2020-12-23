@@ -333,34 +333,70 @@
 
 	
 	<!-- main content -->
-	<main class="main category">
 
+	<!-- classes:
+	category--dog
+	category--cat -->
+	<main class="main category category--dog category--cat1">
+
+
+
+		<!-- if dog - slider for dogs -->
 		<section class="slideshow slideshow--dog">
 			<div class="slideshow__slide">
 				<a href="#">
-					<img src="img/banner1.jpg" alt="">
+					<img src="img/banner1.jpg" alt="" class="slideshow__bannerD">
+					<img src="img/rectangle20.jpg" alt="" class="slideshow__bannerM"> <!-- mobile banner -->
 				</a>
 			</div>
 			<div class="slideshow__slide">
 				<a href="#">
-					<img src="img/banner1.jpg" alt="">
+					<img src="img/banner1.jpg" alt="" class="slideshow__bannerD">
+					<img src="img/rectangle20.jpg" alt="" class="slideshow__bannerM"> <!-- mobile banner -->
 				</a>
 			</div>
 			<div class="slideshow__slide">
 				<a href="#">
-					<img src="img/banner1.jpg" alt="">
+					<img src="img/banner1.jpg" alt="" class="slideshow__bannerD">
+					<img src="img/rectangle20.jpg" alt="" class="slideshow__bannerM"> <!-- mobile banner -->
 				</a>
 			</div>
 			<div class="slideshow__slide">
 				<a href="#">
-					<img src="img/banner1.jpg" alt="">
+					<img src="img/banner1.jpg" alt="" class="slideshow__bannerD">
+					<img src="img/rectangle20.jpg" alt="" class="slideshow__bannerM"> <!-- mobile banner -->
 				</a>
 			</div>
 		</section>
 
+		<!-- if cat - slider for cats -->
+		<section class="slideshow slideshow--cat">
+			<div class="slideshow__slide">
+				<a href="#">
+					<img src="img/banner4.jpg" alt="">
+				</a>
+			</div>
+			<div class="slideshow__slide">
+				<a href="#">
+					<img src="img/banner4.jpg" alt="">
+				</a>
+			</div>
+			<div class="slideshow__slide">
+				<a href="#">
+					<img src="img/banner4.jpg" alt="">
+				</a>
+			</div>
+			<div class="slideshow__slide">
+				<a href="#">
+					<img src="img/banner4.jpg" alt="">
+				</a>
+			</div>
+		</section>
+
+
 		<section class="categories">
 			<div class="container">
-				<div class="title">ТОВАРЫ ДЛЯ СОБАК</div>
+				<h1 class="title">ТОВАРЫ ДЛЯ СОБАК</h1>
 
 				<div class="categories__list">
 					<figure class="categories__item">
@@ -592,10 +628,12 @@
 
 		<section class="banner">
 			<div class="banner__inner">
-				<img src="img/banner2.jpg" class="banner__back">
+				<!-- 2 варианта баннеров -->
+				<img src="img/banner2.jpg" class="banner__back banner__back--desc">
+				<img src="img/rectangle23.jpg" class="banner__back banner__back--mobile">
 				<div class="banner__content">
 					<div class="banner__title">ПРОДАВЦЫ С ВЕТЕРИНАРНЫМ ОБРАЗОВАНИЕМ</div>
-					<a href="contacts.html" class="btn btn--primary banner__link">Связатсья с нами</a>
+					<a href="vethelp.html" class="btn btn--primary banner__link">Связаться с нами</a>
 				</div>
 			</div>			
 		</section>

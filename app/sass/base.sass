@@ -64,12 +64,15 @@ p
 
 .main
 	padding-bottom: 80px
+	&__heading
+		padding-top: 24px
 
 .title
 	margin-bottom: 35px
 	+text(32,300,40,$text_color)
-	+xxs
+	+xs
 		text-align: center
+		font-size: 24px
 .subtitle
 	+text(18,400,24,$text_color)
 .heading
@@ -356,6 +359,7 @@ p
 
 .dropdown
 	position: relative
+	z-index: 1
 	+text(14,400,18,0)
 	&__title
 		cursor: pointer
@@ -444,6 +448,8 @@ p
 
 .banner
 	padding-top: 84px
+	+xs
+		padding-top: 48px
 	&__inner
 		position: relative
 	&__content
@@ -452,8 +458,101 @@ p
 		left: 200px
 		max-width: 435px
 		transform: translateY(-50%)
+		+break(1400)
+			max-width: 270px
+			left: 8%
+		+xs
+			max-width: 200px
+		+xxs
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			transform: none
+			max-width: 100%
+			padding: 4%
+			background: linear-gradient(0.08deg, #000000 -26.99%, rgba(0, 0, 0, 0) 99.92%)
+			+flex(column,0,flex-end,center)
 	&__title
 		+text(48,500,54,#000)
+		+break(1400)
+			+text(32,0,40,0)
+		+md
+			+text(24,0,30,0)
+		+xs
+			+text(16,0,20,0)
+		+xxs
+			text-align: center
+			+text(24,0,32,#fff)
 	&__link
 		display: block
 		margin-top: 45px
+		+md
+			margin-top: 25px
+		+xs
+			margin-top: 15px
+			font-size: 14px
+			padding: 8px 0
+		+xxs
+			font-size: 18px
+			padding: 18px 0
+	&__back
+		width: 100%
+		&--desc
+			+xxs
+				display: none
+		&--mobile
+			display: none
+			+xxs
+				display: block
+				width: 100%
+
+.sidebar
+	width: $sidebar_width
+	background: $sidebar_color
+
+.main
+
+.content
+	padding-bottom: 40px
+
+.inner
+	+flex(0,0,space-between,flex-start)
+	.main
+		width: 100%
+		padding-bottom: 0
+	&--sidebar
+		.main
+			width: calc(100% - #{$sidebar_width} - 106px)
+		.products
+			grid-template-columns: repeat(3, 1fr)
+
+.filter
+	&__list
+		margin-top: 16px
+		display: none
+	&__item
+		padding: 16px 14px 20px 16px
+		&:not(:first-child)
+			border-top: 1px solid rgba(117, 81, 57, 0.5)
+		&--opened
+			.filter__list
+				display: block
+	&__title
+		width: 100%
+		border: 0
+		padding: 0
+		background: none
+		+flex(0,0,0,center)
+		+text(18,400,24,0)
+		+after
+			top: 9px
+	&__row
+		margin-bottom: 12px
+	&__count
+		margin-left: 8px
+		+text(14,400,24,rgba(36, 36, 38, .6))
+	&__allTitle
+		+text(12,400,18,$text_color)
+	label
+		+text(16,300,24,0)

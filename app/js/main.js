@@ -336,13 +336,16 @@ window.onload = function () {
 		]
 	});
 
+	
+
 	// category page ============
 
 	$('.slideshow').slick({
 		dots: true,
 		infinite: false,
+		fade: true,
 		speed: 300,
-		arrows: false,
+		arrows: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
