@@ -360,130 +360,348 @@
 
 
 	
-	<div class="content container">
+	<!-- по дефолту кнопки коричневые под категорию собак, добавить класс для котов category--cat -->
+	<div class="content container category category--cat1">
 
 		<div class="title">BON APPETIT</div>
 
+		<!-- if sidebar - inner--sidebar -->
 		<div class="inner inner--sidebar">
 
 
 			<!-- filter -->
 			<aside class="sidebar">
+				<div class="category__mobileTools">
+					<button class="btn ic_filter filterMob open_filter">ФИЛЬТРЫ</button>
+					<button class="btn ic_sort category__sort category__sort--m open_sort"></button>
+				</div>
 				<div class="filter">
 
-					<!-- <div class="filter__item filter__price filter__block filter__block--slider">
-						<button class="btn filter__title filter__title--open icon__right">Ціна <span class="filter__count"></span></button>
+					<div class="filter__active">
+						<!-- reset button -->
+						<button class="btn filter__removeAll">Сбросить</button>
 
-						<div class="filter__list filter__list--open">
-							<div class="rangePrice filter__cost table">
-								<div class="rangePrice__vals">
-									<div class="table-cell">
-										<input id="priceMin" type="text" data-min="1000" value="1000" class="input rangePrice__min">
-									</div>
-									<div class="rangePrice__delim"></div>
-									<div class="table-cell">
-										<input id="priceMax" type="text" data-max="10000" value="10000" class="input rangePrice__max">
+						<!-- foreach buttons -->
+						<button class="btn filter__activeItem">Acana</button>
+						<button class="btn filter__activeItem">Рост и развитие</button>
+
+					</div>
+
+					<div class="filter__wrap">			
+
+						<div class="filter__item filter__item--opened filter__price filter__block filter__block--slider">
+
+							<button class="btn filter__title dropdown__title dropdown__title--open">Цена <span class="filter__count"></span></button>
+
+							<div class="filter__list filter__list--open">
+								<div class="rangePrice filter__cost table">
+									<div class="rangePrice__vals">
+										<div class="table-cell">
+											<input id="priceMin" type="text" data-min="1000" value="1000" class="input rangePrice__min">
+										</div>
+										<div class="rangePrice__delim"></div>
+										<div class="table-cell">
+											<input id="priceMax" type="text" data-max="10000" value="10000" class="input rangePrice__max">
+										</div>
+										<button class="btn btn--primary filter__ok">ОК</button>
 									</div>
 								</div>
-							</div>
 
-							<div class="filter__slider">
-								<div id="filter__range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"><span class="price-range-min value">1000</span></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"><span class="price-range-max value">10000</span></span></div>
-							</div>					
+								<div class="filter__slider">
+									<div id="filter__range"></div>
+								</div>				
+							</div>				
 						</div>
 
-						
+						<div class="filter__item filter__item--opened">
+							<button class="btn filter__title dropdown__title dropdown__title--open">Бренд <span class="filter__count">(38)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_8in1" class="checkbox">
+									<label class="icon__checkOn" for="filter_8in1">8in1 <span class="filter__count">(158)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_acana" class="checkbox">
+									<label for="filter_acana">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_biosphere" class="checkbox">
+									<label for="filter_biosphere">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_bowl" class="checkbox">
+									<label for="filter_bowl">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_brit" class="checkbox">
+									<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
+								</div>
 
-					</div> -->
-
-					<div class="filter__item filter__item--opened">
-						<button class="btn filter__title dropdown__title dropdown__title--open">Бренд <span class="filter__count">(38)</span></button>
-						<div class="filter__list">
-							<div class="filter__row">
-								<input type="checkbox" id="filter_8in1" class="checkbox">
-								<label class="icon__checkOn" for="filter_8in1">8in1 <span class="filter__count">(158)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_acana" class="checkbox">
-								<label for="filter_acana">Acana <span class="filter__count">(143)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_biosphere" class="checkbox">
-								<label for="filter_biosphere">Biosphere <span class="filter__count">(105)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_bowl" class="checkbox">
-								<label for="filter_bowl">Bowl and Bone <span class="filter__count">(40)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_brit" class="checkbox">
-								<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
-							</div>
-							<div class="filter__all">
-								<button class="btn btn--dashed filter__allTitle">Показать все бренды</button>
-								<span class="filter__count">(32)</span>
+								<div class="filter__row filter__row--more">
+									<input type="checkbox" id="filter_brit" class="checkbox">
+									<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
+								</div>
+								<div class="filter__row filter__row--more">
+									<input type="checkbox" id="filter_brit" class="checkbox">
+									<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
+								</div>
+								<div class="filter__row filter__row--more">
+									<input type="checkbox" id="filter_brit" class="checkbox">
+									<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
+								</div>
+								<div class="filter__row filter__row--more">
+									<input type="checkbox" id="filter_brit" class="checkbox">
+									<label for="filter_brit">Brit <span class="filter__count">(220)</span></label>
+								</div>
+								<div class="filter__all">
+									<button class="btn btn--dashed filter__allTitle">Показать все бренды</button>
+									<span class="filter__count">(32)</span>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="filter__item filter__item--opened">
-						<button class="btn filter__title dropdown__title dropdown__title--open">Предназначение <span class="filter__count">(7)</span></button>
-						<div class="filter__list">
-							<div class="filter__row">
-								<input type="checkbox" id="filter_1" class="checkbox">
-								<label class="icon__checkOn" for="filter_1">Гипоаллергенный <span class="filter__count">(178)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_2" class="checkbox">
-								<label for="filter_2">Зубы <span class="filter__count">(2862)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_3" class="checkbox">
-								<label for="filter_3">Иммунитет <span class="filter__count">(4852)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_4" class="checkbox">
-								<label for="filter_4">Кожа и шерсть <span class="filter__count">(3649)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_5" class="checkbox">
-								<label for="filter_5">Лечебная серия <span class="filter__count">(2932)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_6" class="checkbox">
-								<label for="filter_6">Лишний вес <span class="filter__count">(1003)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_7" class="checkbox">
-								<label for="filter_7">Рост и развитие  <span class="filter__count">(4534)</span></label>
+						<div class="filter__item filter__item--opened">
+							<button class="btn filter__title dropdown__title dropdown__title--open">Предназначение <span class="filter__count">(7)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_1" class="checkbox">
+									<label class="icon__checkOn" for="filter_1">Гипоаллергенный <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_2" class="checkbox">
+									<label for="filter_2">Зубы <span class="filter__count">(2862)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_3" class="checkbox">
+									<label for="filter_3">Иммунитет <span class="filter__count">(4852)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_4" class="checkbox">
+									<label for="filter_4">Кожа и шерсть <span class="filter__count">(3649)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_5" class="checkbox">
+									<label for="filter_5">Лечебная серия <span class="filter__count">(2932)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_6" class="checkbox">
+									<label for="filter_6">Лишний вес <span class="filter__count">(1003)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_7" class="checkbox">
+									<label for="filter_7">Рост и развитие  <span class="filter__count">(4534)</span></label>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="filter__item">
-						<button class="btn filter__title dropdown__title">Бренд <span class="filter__count">(7)</span></button>
-						<div class="filter__list">
-							<div class="filter__row">
-								<input type="checkbox" id="filter_samsung" class="checkbox">
-								<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_xiaomi" class="checkbox">
-								<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_huawei" class="checkbox">
-								<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_motorola" class="checkbox">
-								<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
-							</div>
-							<div class="filter__row">
-								<input type="checkbox" id="filter_apple" class="checkbox">
-								<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Вид <span class="filter__count">(16)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
 							</div>
 						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Цвет <span class="filter__count">(5)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Материал <span class="filter__count">(9)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Тип корма <span class="filter__count">(6)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Возраст <span class="filter__count">(9)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Вкус <span class="filter__count">(186)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Вес <span class="filter__count">(8)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="filter__item">
+							<button class="btn filter__title dropdown__title">Породы <span class="filter__count">(6)</span></button>
+							<div class="filter__list">
+								<div class="filter__row">
+									<input type="checkbox" id="filter_samsung" class="checkbox">
+									<label class="icon__checkOn" for="filter_samsung">8in1 <span class="filter__count">(178)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_xiaomi" class="checkbox">
+									<label for="filter_xiaomi">Acana <span class="filter__count">(143)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_huawei" class="checkbox">
+									<label for="filter_huawei">Biosphere <span class="filter__count">(105)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_motorola" class="checkbox">
+									<label for="filter_motorola">Bowl and Bone <span class="filter__count">(40)</span></label>
+								</div>
+								<div class="filter__row">
+									<input type="checkbox" id="filter_apple" class="checkbox">
+									<label for="filter_apple">Brit <span class="filter__count">(220)</span></label>
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 				</div>
@@ -493,7 +711,7 @@
 
 
 			<!-- main content -->
-			<main class="main category category--dog category--cat1">
+			<main class="main">
 
 				<div class="dropdown category__sort">
 					<div class="dropdown__title">Порядок: <span class="dropdown__checked">По умолчанию</span></div>
@@ -831,11 +1049,38 @@
 					</div>
 
 				</div>
+
+				<button class="btn btn--dashed loadMore">Загрузить еще <span class="loadMore__val">9</span> товаров</button>
+
+				<div class="pagination">
+					<ul>
+						<li class="pagination__current">
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="#">4</a>
+						</li>
+						<li>
+							<a href="#">5</a>
+						</li>
+						<li class="pagination__delim">...</li>
+						<li>
+							<a href="#">18</a>
+						</li>
+					</ul>
+				</div>
+
 			</main>
 
 		</div>
 
-		<section class="seo">
+		<section class="seo seo--inner">
 			<div class="container">
 				<div class="title">BARK&TAIL – ЗООМАРКЕТ С УНИКАЛЬНОЙ КОНЦЕПЦИЕЙ</div>
 				<div class="seo__inner">
@@ -1405,6 +1650,8 @@
 
 	<script src="libs/jquery/jquery-3.5.1.min.js"></script>
 	<script src="libs/slick/slick.min.js"></script>
+	<script src="libs/jquery/jquery-ui.min.js"></script>
+	<script src="libs/jquery/jquery.ui.touch-punch.min.js"></script>
 	<!-- build:js -->
 	<script src="js/main.js"></script>
 	<!-- endbuild -->

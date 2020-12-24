@@ -7,19 +7,23 @@ window.onload = function () {
 	var quant = document.querySelectorAll('.quantly');
 	var drop_open = $('.dropdown__title');
 
-	drop_open.on('click', function(){
-		$(this).next().slideToggle(200);
-		$(this).toggleClass('dropdown__title--open');
-	});
+	if (drop_open) { // default drop
+		drop_open.on('click', function(){
+			$(this).next().slideToggle(200);
+			$(this).toggleClass('dropdown__title--open');
+		});
+	}
 
-	function disableScroll() {
+	
+
+	function disableScroll() { // отключить скролл при открытии модалок
 		body.classList.add('no_scroll');
 	}
-	function enableScroll() {
+	function enableScroll() { // включить скролл при закрытии модалок
 		body.classList.remove('no_scroll');
 	}
 
-	function checkModal($modals) {
+	function checkModal($modals) { // проверить есть ли в данный момент открытые модалки
 		var picker = null;
 		for(var i=0;i<$modals.length;i++) {
 			if ($modals[i].classList.contains('modal--open')) {
@@ -33,7 +37,7 @@ window.onload = function () {
 		return picker;
 	}
 
-	if (quant) {
+	if (quant) { // кнопки + - добавить/вычесть единицу товара
 		for (var i=0;i<quant.length;i++) {
 			var quantly_in = quant[i].querySelector('input[name=quantly]');
 			var quantly;
@@ -270,18 +274,18 @@ window.onload = function () {
 	var open_cat = $('.header__menu > ul > li.has_child');
 	var submenu = $('.submenu');
 
-	for (var i=0;i<open_menu.length;i++) {
+	for (var i=0;i<open_menu.length;i++) { // открыть моб меню
 		open_menu[i].addEventListener('click', function(){
 			this.classList.toggle('header__burger--open');
 			mob_menu.classList.toggle('header__innerWrap--open');
 		});
 	}
 
-	open_child.on('click', function(e){
+	open_child.on('click', function(e){ // открыть подменю
 		e.stopPropagation();
 		$(this).next().slideToggle();
 	});
-	open_cat.on('click', function(e){
+	open_cat.on('click', function(e){ // открыть подменю
 		//e.stopPropagation();
 		$(this).find('.submenu').slideToggle();
 	});
@@ -340,15 +344,117 @@ window.onload = function () {
 
 	// category page ============
 
-	$('.slideshow').slick({
-		dots: true,
-		infinite: false,
-		fade: true,
-		speed: 300,
-		arrows: true,
-		slidesToShow: 1,
-		slidesToScroll: 1
-	});
+	
+
+	var slideshow = document.querySelector('.slideshow');
+	var category = document.querySelector('.category');
+	var filter = document.querySelector('.filter');
+	var filter_btn_showAll = document.querySelectorAll('.filter__all');
+	var open_filter = document.querySelectorAll('.open_filter');
+	var open_sort = document.querySelectorAll('.open_sort');
+
+	if (slideshow) {
+		$('.slideshow').slick({
+			dots: true,
+			infinite: false,
+			fade: true,
+			speed: 300,
+			arrows: true,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		});
+	}
+
+	if (category) {
+		for(var i=0;i<filter_btn_showAll.length;i++) {
+		filter_btn_showAll[i].addEventListener('click', function(e){ // открыть остальные пункты
+			var others = this.parentNode.querySelectorAll('.filter__row--more')
+			for(var i=0;i<others.length;i++) {
+				others[i].classList.toggle('filter__row--open');
+			}
+		});
+	}
+
+	
+
+	if (filter) {
+
+		// range фильтр на странице категории
+		$(function () { 
+			var min_val = $("input#priceMin").data('min');
+			var max_val = $("input#priceMax").data('max');
+			$("#filter__range").slider({
+				min: min_val,
+				max: max_val,
+				values: [min_val,max_val],
+				range: true,
+				stop: function(event, ui) {
+					$("input#priceMin").val($("#filter__range").slider("values",0));
+					$("input#priceMax").val($("#filter__range").slider("values",1));
+
+					$('.price-range-min.value').html($("#filter__range").slider("values",0));
+					$('.price-range-max.value').html($("#filter__range").slider("values",1));
+				},
+				slide: function(event, ui){
+					$("input#priceMin").val($("#filter__range").slider("values",0));
+					$("input#priceMax").val($("#filter__range").slider("values",1));
+
+					$('.price-range-min.value').html($("#filter__range").slider("values",0));
+					$('.price-range-max.value').html($("#filter__range").slider("values",1));
+				}
+			});
+
+			$("input#priceMin").on('change', function(){
+				var value1=$("input#priceMin").val();
+				var value2=$("input#priceMax").val();
+				if(parseInt(value1) > parseInt(value2)){
+					value1 = value2;
+					$("input#priceMin").val(value1);
+					$('.price-range-min.value').html(value1);
+				}
+				$("#filter__range").slider("values", 0, value1);
+				$('.price-range-min.value').html(value1);
+			});
+
+			$("input#priceMax").on('change', function(){
+				var value1=$("input#priceMin").val();
+				var value2=$("input#priceMax").val();
+				if (value2 > max_val) { 
+					value2 = max_val; 
+					$("input#priceMax").val(max_val)
+				}
+				if(parseInt(value1) > parseInt(value2)){
+					value2 = value1;
+					$("input#priceMax").val(value2);
+					$('.price-range-max.value').html(value2);
+				}
+				$("#filter__range").slider("values",1,value2);
+				$('.price-range-max.value').html(value2);
+			});
+
+			$('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#filter__range').slider('values', 0 ) + '</span>');
+			$('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#filter__range').slider('values', 1 ) + '</span>');
+		});
+	}
+
+	// открыть фильтр/сортировку на моб
+	for(var i=0;i<open_filter.length;i++) {
+		open_filter[i].addEventListener('click', function(e){
+			filter.classList.toggle('filter--open');
+			this.classList.toggle('filterMob--active');
+		});
+	}
+	for(var i=0;i<open_sort.length;i++) {
+		open_sort[i].addEventListener('click', function(e){
+			console.log('open_sort');
+		});
+	}
+
+}
+
+	
+
+	
 
 
 

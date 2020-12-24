@@ -66,6 +66,8 @@ p
 	padding-bottom: 80px
 	&__heading
 		padding-top: 24px
+		+xs
+			padding-top: 16px
 
 .title
 	margin-bottom: 35px
@@ -92,6 +94,7 @@ p
 	background: $transparent
 	padding: 0
 	cursor: pointer
+	color: $text_color
 	&--primary
 		background: $btn_color
 		padding: 18px 0
@@ -298,6 +301,7 @@ p
 		position: absolute
 		width: 82px
 		height: 66px
+		z-index: 1
 		top: -9px
 		left: 0
 		+text(24,700,18,0)
@@ -309,6 +313,7 @@ p
 		position: absolute
 		top: 0
 		right: 0
+		z-index: 1
 		+before
 			opacity: 1
 			+tran(all,.2s)
@@ -359,7 +364,7 @@ p
 
 .dropdown
 	position: relative
-	z-index: 1
+	z-index: 2
 	+text(14,400,18,0)
 	&__title
 		cursor: pointer
@@ -421,6 +426,9 @@ p
 	&--open
 		.seo__inner
 			max-height: 1500px
+	&--inner
+		.container
+			width: 100%
 
 
 .breadcrumbs
@@ -509,7 +517,12 @@ p
 
 .sidebar
 	width: $sidebar_width
-	background: $sidebar_color
+	position: relative
+	+sm
+		width: 250px
+	+xs
+		width: 100%
+		margin-bottom: 20px
 
 .main
 
@@ -518,41 +531,27 @@ p
 
 .inner
 	+flex(0,0,space-between,flex-start)
+	+xs
+		flex-wrap: wrap
 	.main
 		width: 100%
 		padding-bottom: 0
+	.category__sort
+		margin-left: auto
 	&--sidebar
 		.main
 			width: calc(100% - #{$sidebar_width} - 106px)
+			+break(1400)
+				width: calc(100% - #{$sidebar_width} - 30px)
+			+sm
+				width: calc(100% - 250px - 30px)
+			+xs
+				width: 100%
 		.products
 			grid-template-columns: repeat(3, 1fr)
-
-.filter
-	&__list
-		margin-top: 16px
-		display: none
-	&__item
-		padding: 16px 14px 20px 16px
-		&:not(:first-child)
-			border-top: 1px solid rgba(117, 81, 57, 0.5)
-		&--opened
-			.filter__list
-				display: block
-	&__title
-		width: 100%
-		border: 0
-		padding: 0
-		background: none
-		+flex(0,0,0,center)
-		+text(18,400,24,0)
-		+after
-			top: 9px
-	&__row
-		margin-bottom: 12px
-	&__count
-		margin-left: 8px
-		+text(14,400,24,rgba(36, 36, 38, .6))
-	&__allTitle
-		+text(12,400,18,$text_color)
-	label
-		+text(16,300,24,0)
+			+md
+				grid-template-columns: repeat(2, 1fr)
+			+xxs
+				grid-template-columns: repeat(1, 1fr)
+		.category__sort
+			margin-left: 0

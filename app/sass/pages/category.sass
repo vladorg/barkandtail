@@ -220,6 +220,8 @@
 .category
 	.products
 		padding-top: 33px
+		+xs
+			padding-top: 25px
 	&--dog
 		.slideshow--cat
 			display: none
@@ -254,7 +256,7 @@
 		padding: 0 85px 80px 85px
 		margin-bottom: 62px
 		position: relative
-		+flex(0,0,space-between,flex-start)
+		+flex(0,wrap,space-between,flex-start)
 		+after
 			position: absolute
 			bottom: 0
@@ -264,20 +266,350 @@
 			background: linear-gradient(to right, $transparent, rgba(0,0,0,.5), $transparent)
 			max-width: 941px
 			margin: 0 auto
+		+md
+			padding: 0 0 40px 0
+			margin-bottom: 30px
+		+xs
+			justify-content: space-around
+		+xxs
+			padding-bottom: 0
 	&__item
 		+flex(column,0,0,center)
-		+hover
-			text-decoration: none
+		+xxs
+			margin-bottom: 47px
 	&__thumb
 		max-width: 234px
 		max-height: 234px
 		object-fit: contain
+		+md
+			max-width: 148px
+			max-height: 148px
 	&__name
 		margin-top: 16px
 		+text(24,400,24,0)
+		+md
+			font-size: 18px
+		+xs
+			font-size: 24px
+	&__mobileTools
+		display: none
+		+xs
+			+flex(0,0,space-between,center)
 	&__sort
 		max-width: 272px
 		.dropdown__title
 			padding: 4px 40px 4px 8px
 			+after
 				top: 9px
+		+xs
+			display: none
+		&--m
+			display: none
+			+xs
+				display: block
+
+
+.filter
+	+before
+		+xs
+			position: fixed
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			z-index: -1
+			background: rgba(0, 0, 0, 0.5)
+			opacity: 0
+			pointer-events: none
+			+tran(all,.4s)
+	+xs
+		position: absolute
+		top: 44px
+		left: -4%
+		left: -105%
+		z-index: 11
+		width: 336px
+		background: #E3D9D2
+		+tran(all,.4s)
+	&--open
+		+xs
+			left: -4%
+		+before
+			+xs
+				opacity: 1
+				pointer-events: auto
+	&__wrap
+		background: $sidebar_color
+		+xs
+			background: #E3D9D2
+	&__list
+		margin-top: 16px
+		display: none
+	&__item
+		padding: 16px 14px 20px 16px
+		&:not(:first-child)
+			border-top: 1px solid rgba(117, 81, 57, 0.5)
+			+xs
+				border-top: 0
+		&--opened
+			.filter__list
+				display: block
+	&__title
+		width: 100%
+		border: 0
+		padding: 0
+		background: none
+		+flex(0,0,0,center)
+		+text(18,400,24,0)
+		+after
+			top: 9px
+	&__row
+		margin-bottom: 12px
+		&--more
+			opacity: 0
+			max-height: 0
+			overflow: hidden
+			margin-bottom: 0
+			+tran(all,.4s)
+		&--open
+			opacity: 1
+			max-height: 200px
+			margin-bottom: 12px
+	&__count
+		margin-left: 8px
+		+text(14,400,24,rgba(36, 36, 38, .6))
+	&__allTitle
+		+text(12,400,18,$text_color)
+	label
+		+text(16,300,24,#242426)
+	&__ok
+		padding: 8px 24px
+		margin-left: auto
+		width: auto
+		+hover
+			box-shadow: 0 10px 10px -10px #696969
+		+sm
+			margin: 10px auto 0 auto
+			width: 100%
+		+xs
+			width: auto
+			margin: 0 0 0 auto
+	&__active
+		+flex(0,wrap,flex-start,center)
+		+xs
+			background: $prim_color
+		.btn
+			padding: 6px 25px 6px 8px
+			border: 1px solid #BAA89C
+			border-radius: 4px
+			margin: 8px 8px 8px 0
+			+text(14,400,18,#BAA89C)
+	&__removeAll
+		padding-right: 8px!important
+		color: #FF4A4A!important
+		border-color: #FF4A4A!important
+	&__activeItem
+		position: relative
+		+tran(all,.4s)
+		+after
+			display: block
+			width: 11px
+			height: 11px
+			background: url('../img/icons/close_red.svg')
+			position: absolute
+			top: 50%
+			right: 8px
+			transform: translateY(-50%)
+		+hover
+			border-color: $btn_color
+			color: $btn_color
+	.dropdown__title
+		+after
+			right: 0
+	&Mob
+		display: none
+		+xs
+			padding-left: 32px
+			position: relative
+			+flex(0,0,flex-start,center)
+			+text(18,400,24,0)
+			
+			+before
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+				opacity: 1
+			+after
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+				opacity: 0
+				width: 24px
+				height: 24px
+				background: url(../img/icons/close_big.svg) no-repeat
+				background-position: center
+				opacity: 0
+				filter: brightness(.2)
+		&--active
+			+xs
+				background: #e3d9d2
+				box-shadow: 0 0 0 10px #e3d9d2
+				position: relative
+				z-index: 12
+				transition: all .2s .4s
+			+before
+				+xs
+					opacity: 0
+					transition: all .4s .6s
+			+after
+				+xs
+					opacity: 1
+					transition: all .4s .8s
+
+
+.rangePrice
+	margin-bottom: 8px
+	input
+		width: 80px
+		height: 40px
+		border: 1px solid rgba(117, 81, 57, 0.5)
+		border-radius: 4px
+		+text(14,500,24,0)
+	&__vals
+		margin-bottom: 27px
+		+flex(0,0,flex-start,center)
+		+sm
+			flex-wrap: wrap
+			justify-content: space-between
+		+xs
+			flex-wrap: nowrap
+	&__min
+	&__max
+	&__delim
+		width: 14px
+		height: 1px
+		background: #242426
+		margin: 0 8px
+		+sm
+			margin: 0 10px
+
+.rangePrice__range
+	width: 100%
+	height: 2px
+	background: #fff
+	position: relative
+	.bar
+		position: absolute
+		left: 0
+		max-width: 100%!important
+		background: #FFC830
+		height: 2px
+		.lp
+			span
+				position: relative
+				left: -30px
+				display: none
+		.rp 
+			span
+				position: relative
+				left: 10px
+				display: none
+.rangePrice__range .bar .lp, .rangePrice__range .bar .rp
+	cursor: pointer
+	background: #fff
+	width: 24px
+	height: 24px
+	border-radius: 50%
+	position: absolute
+	border: 1px solid rgba(36, 36, 38, 0.5)
+.rangePrice__range .bar .lp
+	left: 0px
+	top: -11px
+.rangePrice__range .bar .rp
+	right: 0
+	top: -11px
+.ui-widget 
+	&.ui-widget-content 
+		border: 0 
+		height: 2px
+		border-radius: 0 
+		background: #fff
+		position: relative
+		width: calc(100% - 24px)
+.ui-slider-horizontal 
+	.ui-slider-range 
+		background: #fff
+		height: 2px
+		background: $btn_color
+		position: relative
+
+.category--cat
+	.ui-slider-range 
+		background: $btn_cat_color
+
+.ui-slider 
+	.ui-slider-handle 
+		display: block
+		width: 24px!important
+		height: 24px!important
+		background: #fff
+		border-radius: 50%
+		position: absolute
+		top: -13px
+		border: 1px solid rgba(36, 36, 38, 0.5)
+.price-range-min, .price-range-max  
+	display: none
+
+
+.loadMore
+	display: block
+	margin: 40px auto 0 auto
+	+text(18,500,26,#755139)
+	+xxs
+		margin-top: 36px
+
+.pagination
+	padding: 16px 0 0 0
+	ul
+		+flex(0,0,center,center)
+		li
+			margin-right: 16px
+			+xxs
+				margin-right: 8px
+			a
+				width: 40px
+				height: 40px
+				border: 2px solid $transparent
+				border-radius: 4px
+				text-decoration: underline
+				+flex(0,0,center,center)
+				+text(18,400,24,#242426)
+				+tran(all,.4s)
+				+hover
+					border-color: $btn_color
+	&__delim
+		margin: 0 24px 0 8px!important
+		+text(14,600,24,#242426)
+		+xxs
+			margin: 0 8px 0 0!important
+	&__current
+		a
+			background: $btn_color
+			color: #fff !important
+			text-decoration: none !important
+
+.category--cat
+	.pagination
+		ul
+			li
+				a
+					+hover
+						border-color: $btn_cat_color
+		&__current
+			a
+				background: $btn_cat_color
+	.ui-slider-horizontal
+		.ui-slider-range
+			background: $btn_cat_color
