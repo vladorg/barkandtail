@@ -71,6 +71,10 @@ a {
 p {
   margin-bottom: 20px; }
 
+hr {
+  background: #755139;
+  margin: 32px 0; }
+
 .main {
   padding-bottom: 80px; }
   .main__heading {

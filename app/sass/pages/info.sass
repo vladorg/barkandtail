@@ -1,0 +1,163 @@
+@import "../var.sass"
+
+.info
+	&__banner
+		position: relative		
+		+before
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: rgba(0, 0, 0, 0.52)
+		img
+			display: block
+			width: 100%
+	&__heading
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		text-transform: uppercase
+		width: 100%
+		text-align: center
+		+text(48,300,40,#fff)
+		+md
+			font-size: 32px
+		+break(350)
+			font-size: 24px
+	&__content
+		padding-top: 32px
+	&__title
+		text-transform: uppercase
+		margin-bottom: 16px
+		+text(24,300,40,#000)
+		+xs
+			text-align: center
+	&__subtitle
+		margin-bottom: 8px
+		+text(18,500,24,0)
+	&__delivery
+		max-width: 65%
+		+md
+			max-width: 100%
+	&__payment
+		max-width: 65%
+		+md
+			max-width: 100%
+
+
+.blog
+	&__categories
+		background: rgba(117, 81, 57, .15)
+		padding: 16px
+	&__category
+		padding: 0
+		a
+			font-weight: 300
+		&--active
+			a
+				font-weight: 400
+		&:not(:first-child)
+			border-top: 0
+			margin-top: 16px
+
+.articles
+	max-width: 1167px
+	+flex(0,wrap,space-between,flex-start)
+	&__thumb
+		width: 100%
+		display: block
+		transform: none
+		+tran(all,.4s)
+	&__name
+		position: absolute
+		top: 26px
+		left: 26px
+		z-index: 1
+		+text(24,300,32,#fff)
+	&__item
+		position: relative
+		width: 316px
+		overflow: hidden
+		&:nth-child(7n + 1)
+			width: 100%
+			margin-bottom: 24px
+			.articles__name
+				+text(36,300,40,#fff)
+		&:nth-child(7n + 2)
+			width: 473px
+			margin-bottom: 24px
+		&:nth-child(7n + 7)
+			width: 473px
+			margin-bottom: 24px
+		+before
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: rgba(0, 0, 0, 0.48)
+			z-index: 1
+			+tran(opacity,.4s)
+		+hover
+			+before
+				opacity: 0
+			.articles__thumb
+				transform: scale(1.1)
+	&__more
+		position: absolute
+		bottom: 26px
+		right: 26px
+		max-width: 206px
+		z-index: 1
+
+.article
+	&__content
+		max-width: 804px
+		margin: 0 auto
+		padding-top: 32px
+		img
+			display: block
+			margin-bottom: 40px
+		.info__subtitle
+			margin-bottom: 19px
+
+.about
+	&__text
+		padding: 150px 0 80px 0
+		+flex(0,0,space-between,center)
+		.title
+			text-transform: uppercase
+		.about__leftCol
+			width: 44%
+			margin: 0 auto
+			ul
+				li
+					&:not(:last-child)
+						margin-bottom: 20px
+		.about__rightCol
+			width: 50%
+			img
+				display: block
+				margin: 0 auto
+	&__intro
+		padding: 85px 0 80px 0
+		+flex(0,0,space-between,center)
+		.title
+			text-align: center
+			text-transform: uppercase
+		.about__leftCol
+			width: 45%
+		.about__rightCol
+			width: 55%
+	&__logo
+		display: block
+		margin: 0 auto 20px auto
+	
+	&__photos
+		+flex(0,0,space-between,flex-start)
+		img
+			width: 444px
+			height: 297px
+			object-fit: cover

@@ -494,6 +494,7 @@
     left: -105%;
     z-index: 11;
     width: 336px;
+    max-width: 100%;
     background: #E3D9D2;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
