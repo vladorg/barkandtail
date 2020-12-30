@@ -152,6 +152,13 @@
   height: 22px;
   background: url("../img/icons/heart_small.svg"); }
 
+.ic_heart_red::before {
+  content: '';
+  display: block;
+  width: 31px;
+  height: 28px;
+  background: url(../img/icons/heart_red.svg); }
+
 .ic_close::before {
   content: '';
   display: block;

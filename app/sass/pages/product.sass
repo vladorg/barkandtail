@@ -1,0 +1,108 @@
+@import "../var.sass"
+
+
+.product
+	&__main
+		+flex(0,0,space-between,flex-start)
+	&Images
+		max-width: 40%
+		padding-top: 24px
+		+flex(0,0,space-between,flex-start)
+		&__nav
+			max-width: 90px
+			.slick-slide
+				width: 90px
+				height: 90px
+				display: block
+				&:not(:last-child)
+					margin-bottom: 24px
+				img
+					height: 100%
+					object-fit: contain
+				iframe
+					pointer-events: none
+		&__thumbs
+			width: 575px
+			height: 575px
+			margin-left: 44px
+			.slick-slide
+				img
+					width: 575px
+					height: 575px
+					display: block
+					object-fit: contain
+	&Info
+		margin-left: 80px
+		&__wrap
+			padding: 24px 28px 32px 39px	
+			border: 1px solid rgba(117, 81, 57, 0.25)
+			border-top: 0
+		&__title
+			margin-bottom: 8px
+		&__articul
+			margin-bottom: 8px
+			+text(14,400,18,#A1A1A1)
+		&__avail
+			position: relative
+			padding-left: 22px
+			margin-bottom: 32px
+			+before
+				width: 19px
+				height: 19px
+				background: url("../img/sprite.png") -170px -5px no-repeat
+				position: absolute
+				top: 2px
+				left: 0
+				+tran(all,.4s)
+			+after
+				width: 19px
+				height: 19px				
+				background: url("../img/sprite.png") -199px -5px no-repeat
+				position: absolute
+				top: 2px
+				left: 0
+				+tran(all,.4s)
+			&--in
+				+before
+					opacity: 1
+				+after
+					opacity: 0
+			&--out
+				+before
+					opacity: 0
+				+after
+					opacity: 1
+		&Options
+			&__item
+				+flex(0,wrap,flex-start,center)
+			&__title
+				color: #000
+				width: 100%
+				margin-bottom: 16px
+			&__option
+				&:not(:last-child)
+					margin-right: 20px
+		&__tools
+			padding: 52px 40px 48px 40px
+			border: 1px solid rgba(117, 81, 57, 0.25)
+			border-top: 0
+			+flex(0,0,flex-start,center)
+		&__price
+			margin-right: 80px
+			.preview__price--discount
+				.preview__discount
+					+text(24,400,24,0)
+					margin-bottom: 4px
+				.preview__total
+					+text(40,700,48,0)
+		&__banner
+			margin-top: 29px
+			width: 100%
+			display: block
+		&__buy
+			max-width: 227px
+			margin-right: 40px
+		&__wish
+			+flex(0,0,flex-start,center)
+			+before
+				margin-right: 16px

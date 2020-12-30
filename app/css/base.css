@@ -75,6 +75,20 @@ hr {
   background: #755139;
   margin: 32px 0; }
 
+body.column {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  body.column .footer {
+    margin-top: auto; }
+
 .main {
   padding-bottom: 80px; }
   .main__heading {
@@ -82,6 +96,9 @@ hr {
     @media (max-width: 768px) {
       .main__heading {
         padding-top: 16px; } }
+  .main--category {
+    position: relative;
+    overflow: hidden; }
 
 .title {
   margin-bottom: 35px;
@@ -419,6 +436,55 @@ hr {
     content: '';
     opacity: 1; }
 
+.radio {
+  display: none; }
+  .radio + label {
+    padding-left: 33px;
+    position: relative;
+    cursor: pointer;
+    line-height: 24px;
+    display: block; }
+    .radio + label::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid #755139;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      opacity: 1;
+      background: #fff;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+    .radio + label::after {
+      content: '';
+      opacity: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      background: #755139;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+  .radio:checked + label::before {
+    content: ''; }
+  .radio:checked + label::after {
+    content: '';
+    opacity: 1; }
+  .radio--disabled + label {
+    color: #BEBEBE;
+    pointer-events: none; }
+    .radio--disabled + label::before {
+      content: '';
+      border-color: #BEBEBE; }
+
 .products {
   display: grid;
   grid-template-columns: repeat(4, 22%);
@@ -594,7 +660,8 @@ hr {
     position: absolute;
     top: calc(100% - 5px);
     left: 0;
-    right: 0; }
+    right: 0;
+    z-index: 2; }
   .dropdown__row:not(:last-child) {
     margin-bottom: 8px; }
   .dropdown__row label {
@@ -603,6 +670,9 @@ hr {
       text-decoration: underline; }
   .dropdown__row input {
     display: none; }
+  .dropdown__row--active label {
+    color: #755139;
+    font-weight: 500; }
 
 .seo {
   padding: 56px 0 20px 0;

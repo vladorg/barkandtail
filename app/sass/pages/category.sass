@@ -217,7 +217,42 @@
 		+xxs
 			margin-bottom: 24px
 
+.open_sort
+	transition: all .2s .4s
+	position: relative
+	+before
+		+xs
+			opacity: 1
+			transition: all .4s .6s
+	+after
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		opacity: 0
+		width: 24px
+		height: 24px
+		background: url(../img/icons/close_big.svg) no-repeat
+		background-position: center
+		opacity: 0
+		filter: brightness(.2)
+		transition: all .4s .6s
+	
+.open_sort--open
+	+xs
+		position: relative
+		z-index: 12
+		background: #e3d9d2
+		box-shadow: 0 0 0 10px #e3d9d2		
+	+before
+		+xs
+			opacity: 0
+	+after
+		+xs
+			opacity: 1
+
 .category
+	padding-top: 24px
 	.products
 		padding-top: 33px
 		+xs
@@ -252,9 +287,16 @@
 			color: $btn_cat_color
 		.categories__link
 			background: $btn_cat_color
+	&--inner
+		+xs
+			width: 100%
+		.sidebar, .products, .pagination, .seo 
+			+xs
+				padding-left: 4%
+				padding-right: 4%
 	&__items
 		padding: 0 85px 80px 85px
-		margin-bottom: 62px
+		margin-bottom: 38px
 		position: relative
 		+flex(0,wrap,space-between,flex-start)
 		+after
@@ -297,16 +339,43 @@
 			+flex(0,0,space-between,center)
 	&__sort
 		max-width: 272px
+		+before
+			+xs
+				position: fixed
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				z-index: -1
+				background: rgba(0, 0, 0, 0.5)
+				opacity: 0
+				pointer-events: none
+				+tran(all, .4s)
+		+xs
+			display: block
+			position: absolute
+			right: -100%
+			z-index: 11
+			+tran(all,.4s)
 		.dropdown__title
 			padding: 4px 40px 4px 8px
 			+after
 				top: 9px
-		+xs
-			display: none
-		&--m
-			display: none
 			+xs
-				display: block
+				display: none
+		.dropdown__list
+			+xs
+				position: relative
+				display: block !important
+				background: #E3D9D2
+				border: none
+				border-radius: 0
+		&--open
+			+xs
+				right: 0
+			+before
+				opacity: 1
+				pointer-events: auto
 
 
 .filter
@@ -334,7 +403,12 @@
 		+tran(all,.4s)
 	&--open
 		+xs
-			left: -4%
+			left: 0
+		+before
+			+xs
+				opacity: 1
+				pointer-events: auto
+	&--sort
 		+before
 			+xs
 				opacity: 1
@@ -434,13 +508,14 @@
 			position: relative
 			+flex(0,0,flex-start,center)
 			+text(18,400,24,0)
-			
+			transition: all .2s .4s
 			+before
 				position: absolute
 				top: 50%
 				transform: translateY(-50%)
 				left: 0
 				opacity: 1
+				transition: all .4s .6s
 			+after
 				position: absolute
 				top: 50%
@@ -453,21 +528,20 @@
 				background-position: center
 				opacity: 0
 				filter: brightness(.2)
+				transition: all .4s .8s
 		&--active
 			+xs
 				background: #e3d9d2
 				box-shadow: 0 0 0 10px #e3d9d2
 				position: relative
 				z-index: 12
-				transition: all .2s .4s
 			+before
 				+xs
-					opacity: 0
-					transition: all .4s .6s
+					opacity: 0					
 			+after
 				+xs
 					opacity: 1
-					transition: all .4s .8s
+					
 
 
 .rangePrice

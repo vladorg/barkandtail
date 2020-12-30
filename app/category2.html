@@ -330,11 +330,10 @@
 		</div>
 	</section>
 
-	<section class="container main__heading">
-		<h1 class="title">ТОВАРЫ ДЛЯ СОБАК</h1>
-	</section>
-
 	<!-- if child cats -->
+	<section class="container main__heading">
+		<div class="title">ТОВАРЫ ДЛЯ СОБАК</div>
+	</section>	
 	<section class="category__items container">
 		<a href="#" class="category__item">
 			<img class="category__thumb" src="img/category/Rectangle25.png" alt="">
@@ -357,13 +356,14 @@
 			<span class="category__name">ХРАНЕНИЕ</span>
 		</a>
 	</section>
+	<!-- endif -->
 
 
 	
 	<!-- по дефолту кнопки коричневые под категорию собак, добавить класс для котов category--cat -->
-	<div class="content container category category--cat1">
+	<div class="content container category category--inner category--cat1">
 
-		<div class="title">BON APPETIT</div>
+		<h1 class="title">BON APPETIT</h1>
 
 		<!-- if sidebar - inner--sidebar -->
 		<div class="inner inner--sidebar">
@@ -373,7 +373,7 @@
 			<aside class="sidebar">
 				<div class="category__mobileTools">
 					<button class="btn ic_filter filterMob open_filter">ФИЛЬТРЫ</button>
-					<button class="btn ic_sort category__sort category__sort--m open_sort"></button>
+					<button class="btn ic_sort open_sort"></button>
 				</div>
 				<div class="filter">
 
@@ -711,13 +711,13 @@
 
 
 			<!-- main content -->
-			<main class="main">
+			<main class="main main--category">
 
 				<div class="dropdown category__sort">
 					<div class="dropdown__title">Порядок: <span class="dropdown__checked">По умолчанию</span></div>
 					<div class="dropdown__list">
-						<input type="hidden" name="sort" value="6" class="dropdown__value">
-						<div class="dropdown__row">
+						<input type="hidden" name="sort" value="" class="dropdown__value">
+						<div class="dropdown__row dropdown__row--active">
 							<input type="radio" name="product_option" id="sort1" value="sort1">
 							<label for="sort1">Цена по возростанию</label>
 						</div>

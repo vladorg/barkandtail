@@ -66,12 +66,20 @@ hr
 	background: $btn_color
 	margin: 32px 0
 
+body.column
+	min-height: 100vh
+	+flex(column,0,0,0)
+	.footer
+		margin-top: auto
 .main
 	padding-bottom: 80px
 	&__heading
 		padding-top: 24px
 		+xs
 			padding-top: 16px
+	&--category
+		position: relative
+		overflow: hidden
 
 .title
 	margin-bottom: 35px
@@ -280,6 +288,49 @@ hr
 			+after
 				opacity: 1
 
+.radio
+	display: none
+	+ label
+		padding-left: 33px
+		position: relative
+		cursor: pointer
+		line-height: 24px
+		display: block
+		+before
+			position: absolute
+			top: 0
+			left: 0
+			width: 24px
+			height: 24px
+			border: 1px solid $btn_color
+			border-radius: 50%
+			box-sizing: border-box
+			opacity: 1
+			background: #fff
+			+tran(all,.2s)
+		+after
+			opacity: 0
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			position: absolute
+			top: 6px
+			left: 6px
+			background: $btn_color
+			+tran(all,.2s)
+	&:checked 
+		+ label
+			+before
+			+after
+				opacity: 1
+	&--disabled
+		+ label
+			color: #BEBEBE
+			pointer-events: none
+			+before
+				border-color: #BEBEBE
+
+
 
 .products
 	display: grid
@@ -403,6 +454,7 @@ hr
 		top: calc(100% - 5px)
 		left: 0
 		right: 0
+		z-index: 2
 	&__checked
 	&__row
 		&:not(:last-child)
@@ -413,6 +465,10 @@ hr
 				text-decoration: underline
 		input
 			display: none
+		&--active
+			label
+				color: #755139
+				font-weight: 500
 
 .seo
 	padding: 56px 0 20px 0
