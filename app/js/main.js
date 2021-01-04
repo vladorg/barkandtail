@@ -167,6 +167,13 @@ window.onload = function () {
 	var modalSuccess_open = document.querySelectorAll('.open_success');
 	var modalSuccess_close = document.querySelectorAll('.close_success');
 
+	// modal review add ============
+
+	var modalReview = document.querySelector('.modalReview');
+	var modalReview_inner = modalReview.querySelector('.modal__win');
+	var modalReview_open = document.querySelectorAll('.open_review');
+	var modalReview_close = document.querySelectorAll('.close_review');
+
 	// search ============
 
 	var search = document.querySelector('.search');
@@ -183,6 +190,9 @@ window.onload = function () {
 
 
 	if (modalCart) {
+		var review_open = document.querySelector('.open_review.reviews__add');
+		var review_auth = document.querySelector('.open_auth.reviews__add');
+
 		document.onclick = function(e){
 			if ( !modalCart_open[0].contains(e.target) && !modalCart_inner.contains(e.target) ) { // закрытие дропдауна корзины
 				modalCart.classList.remove('modalCart--open','modal--open');
@@ -196,10 +206,19 @@ window.onload = function () {
 					enableScroll();
 				}
 			}
-			if ( !modalLogin_open[0].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
-				modalLogin.classList.remove('modalLogin--open','modal--open');
-				if (checkModal(modals)) {
-					enableScroll();
+			if (review_auth) {
+				if ( !modalLogin_open[0].contains(e.target) && !modalLogin_open[1].contains(e.target) && !modalLogin_open[2].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
+					modalLogin.classList.remove('modalLogin--open','modal--open');
+					if (checkModal(modals)) {
+						enableScroll();
+					}
+				}
+			} else {
+				if ( !modalLogin_open[0].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
+					modalLogin.classList.remove('modalLogin--open','modal--open');
+					if (checkModal(modals)) {
+						enableScroll();
+					}
 				}
 			}
 			if ( !modalRegister_open[0].contains(e.target) && !modalRegister_inner.contains(e.target) && !modalLogin_open[0].contains(e.target) ) { // закрытие регистрации
@@ -222,6 +241,12 @@ window.onload = function () {
 			}
 			if ( !modalChange_open[0].contains(e.target) && !modalChange_inner.contains(e.target) ) { // закрытие формы восстановления пароля
 				modalChange.classList.remove('modalChange--open','modal--open');
+				if (checkModal(modals)) {
+					enableScroll();
+				}
+			}
+			if ( !modalReview_open[0].contains(e.target) && !modalReview_inner.contains(e.target) ) { // закрытие формы восстановления пароля
+				modalReview.classList.remove('modalReview--open','modal--open');
 				if (checkModal(modals)) {
 					enableScroll();
 				}
@@ -255,7 +280,7 @@ window.onload = function () {
 		}
 	}
 
-	var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess];
+	var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess,modalReview];
 
 
 	modal(modalCart,modalCart_open,modalCart_close,'modalCart--open',modals);
@@ -265,6 +290,7 @@ window.onload = function () {
 	modal(modalForgot,modalForgot_open,modalForgot_close,'modalForgot--open',modals);
 	modal(modalChange,modalChange_open,modalChange_close,'modalChange--open',modals);
 	modal(modalSuccess,modalSuccess_open,modalSuccess_close,'modalLogin--open',modals);
+	modal(modalReview,modalReview_open,modalReview_close,'modalReview--open',modals);
 
 
 
@@ -487,8 +513,22 @@ window.onload = function () {
 			centerMode: false,
 			responsive: [
 			{
-				breakpoint: 500,
+				breakpoint: 1400,
 				settings: {
+					slidesToShow: 4,
+				}
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					vertical: false,
+					verticalSwiping: false,
 					slidesToShow: 3,
 				}
 			}
@@ -497,6 +537,18 @@ window.onload = function () {
 
 		$('.productImages__nav .slick-slide').on('click', function (event) {
 			$('.productImages__thumbs').slick('slickGoTo', $(this).data('slickIndex'));
+		});
+
+		$('.productTabs__pick').on('click', function(){
+			var pick = $(this).data('tab');
+			$(this).siblings().removeClass('productTabs__pick--active');
+			$(this).addClass('productTabs__pick--active');
+			$('.productTabs__tab').each(function(){
+				if ( $(this).data('tab') == pick ) {
+					$(this).siblings().removeClass('productTabs__tab--active');
+					$(this).addClass('productTabs__tab--active');
+				}
+			});
 		});
 
 

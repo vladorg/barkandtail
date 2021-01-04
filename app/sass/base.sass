@@ -66,6 +66,11 @@ hr
 	background: $btn_color
 	margin: 32px 0
 
+textarea
+	width: 100%
+	height: 95px
+	resize: none
+
 body.column
 	min-height: 100vh
 	+flex(column,0,0,0)
@@ -244,10 +249,12 @@ body.column
 		+xs
 			margin-top: 24px
 	label
+		margin-right: 12px
+		min-width: 100px
 		+text(14,400,18,0)
 		+xs
 			display: none
-	input
+	.input
 		width: 271px
 		+xs
 			width: 100%
@@ -281,7 +288,8 @@ body.column
 			left: 0
 			background: url('../img/icons/checkbox.svg')
 			+tran(all,.2s)
-	&:checked 
+	&:checked
+		opacity: 2
 		+ label
 			+before
 				opacity: 0
@@ -494,7 +502,7 @@ body.column
 .breadcrumbs
 	padding: 11px 0
 	ul
-		+flex(0,0,flex-start,center)
+		+flex(0,wrap,flex-start,center)
 	&__item
 		position: relative
 		+text(12,300,16,#000)
@@ -584,8 +592,6 @@ body.column
 		width: 100%
 		margin-bottom: 20px
 
-.main
-
 .content
 	padding-bottom: 40px
 
@@ -615,3 +621,27 @@ body.column
 				grid-template-columns: repeat(1, 1fr)
 		.category__sort
 			margin-left: 0
+
+.listColored
+	width: 100%
+	max-width: 310px
+	min-width: 310px
+	+text(16,300,24,#000)
+	&__title
+		font-weight: 400
+		color: $btn_color
+		margin-bottom: 16px
+	&__list
+		li
+			width: 100%
+			padding: 8px
+			+flex(0,0,space-between,center)
+			&:nth-child(odd)
+				background: #EDEDED
+			span
+
+@keyframes fadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1

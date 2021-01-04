@@ -2,43 +2,103 @@
 
 
 .product
+	padding-bottom: 104px
+	+xs
+		padding-top: 16px
+	&__mobTitle
+		display: none
+		+xs
+			display: block
+			text-align: left
+			text-transform: uppercase
+			margin-bottom: 8px
+			+text(32,300,40,#000)
 	&__main
+		margin-bottom: 67px
+		max-height: 610px
+		overflow: hidden
 		+flex(0,0,space-between,flex-start)
+		+md
+			align-items: center
+		+sm
+			align-items: flex-start
+		+xs
+			flex-direction: column
+			max-height: unset
 	&Images
 		max-width: 40%
 		padding-top: 24px
 		+flex(0,0,space-between,flex-start)
+		+sm
+			flex-direction: column-reverse
+		+xs
+			max-width: 100%
+			padding-top: 0
 		&__nav
 			max-width: 90px
+			+sm
+				max-width: 100%
+				margin-top: 10px
 			.slick-slide
 				width: 90px
 				height: 90px
 				display: block
 				&:not(:last-child)
 					margin-bottom: 24px
+					+sm
+						margin-bottom: 0
 				img
 					height: 100%
 					object-fit: contain
+					width: 100%
 				iframe
 					pointer-events: none
+					width: 100%
 		&__thumbs
-			width: 575px
-			height: 575px
+			width: calc(100% - 134px)
 			margin-left: 44px
+			+sm
+				width: 100%
+				margin-left: 0
 			.slick-slide
+				height: 575px
+				+break(1400)
+					height: 463px
+				+md
+					height: 348px
 				img
-					width: 575px
-					height: 575px
+					width: 100%
+					height: 100%
 					display: block
 					object-fit: contain
+				iframe
+					width: 100%
+					height: 100%
+					display: block
 	&Info
 		margin-left: 80px
+		+break(1800)
+			margin-left: 25px
+		+xs
+			margin-left: 0
 		&__wrap
 			padding: 24px 28px 32px 39px	
 			border: 1px solid rgba(117, 81, 57, 0.25)
 			border-top: 0
+			+break(1400)
+				padding: 16px
+			+xs
+				padding: 16px 0
+				margin-top: 16px
+				border: 0
+				border-top: 1px solid rgba(117, 81, 57, 0.25)
 		&__title
 			margin-bottom: 8px
+			+md
+				font-size: 24px
+				line-height: 28px
+			+xs
+				display: none
 		&__articul
 			margin-bottom: 8px
 			+text(14,400,18,#A1A1A1)
@@ -80,6 +140,7 @@
 				width: 100%
 				margin-bottom: 16px
 			&__option
+				margin-bottom: 10px
 				&:not(:last-child)
 					margin-right: 20px
 		&__tools
@@ -87,22 +148,156 @@
 			border: 1px solid rgba(117, 81, 57, 0.25)
 			border-top: 0
 			+flex(0,0,flex-start,center)
+			+break(1400)
+				padding: 16px
+			+sm
+				flex-wrap: wrap
+			+xs
+				border: 0
+				border-top: 1px solid rgba(117, 81, 57, 0.25)
+				padding: 16px 0
 		&__price
 			margin-right: 80px
+			+break(1800)
+				margin-right: 40px
+			+md
+				margin-right: 20px
 			.preview__price--discount
 				.preview__discount
 					+text(24,400,24,0)
 					margin-bottom: 4px
+					+break(1400)
+						font-size: 20px
+					+md
+						font-size: 16px
 				.preview__total
+					white-space: nowrap
 					+text(40,700,48,0)
+					+break(1400)
+						font-size: 30px
+						line-height: 32px
+					+md
+						font-size: 24px
+						line-height: 24px
 		&__banner
 			margin-top: 29px
 			width: 100%
 			display: block
+			+md
+				margin-top: 10px
 		&__buy
 			max-width: 227px
 			margin-right: 40px
+			+break(1400)
+				max-width: 180px
+				padding: 12px 0
+			+md
+				font-size: 14px
+				max-width: 150px
+				padding: 8px 0
+				margin-right: 20px
+			+sm
+				order: 3
+				max-width: 200px
 		&__wish
 			+flex(0,0,flex-start,center)
+			+sm
+				margin-left: auto
 			+before
 				margin-right: 16px
+			span
+				white-space: nowrap
+	&Tabs
+		+xs
+			display: none
+		&__nav
+			+flex(0,0,flex-start,0)
+			+sm
+				overflow: auto
+		&__tab
+			display: none
+			&--active
+				display: block
+				animation: fadeIn 1s
+			&--chars
+				.productTabs__content
+					overflow: auto
+					+flex(0,0,flex-start,flex-start)
+				.listColored
+					&:not(:last-child)
+						margin-right: 72px
+					&:last-child
+						padding-right: 24px
+						box-sizing: content-box
+			&--rev
+				.productTabs__content
+					padding: 0
+		&__nav
+		&__pick
+			text-transform: uppercase
+			position: relative
+			padding: 8px 40px
+			cursor: pointer
+			white-space: nowrap
+			+tran(all,1s)
+			+text(32,300,40,0)
+			+break(1400)
+				font-size: 24px
+			+md
+				font-size: 18px
+				line-height: 30px
+			+after
+				position: absolute
+				left: 40px
+				right: 40px
+				bottom: 8px
+				height: 1px
+				background: $transparent
+				+tran(all,1s)
+			&--active
+				background: #fff
+				color: $btn_color
+				+after
+					background: $btn_color
+		&__content
+			background: #fff
+			padding: 24px
+
+.reviews
+	&__header
+		padding: 24px 24px 32px 24px
+		border-bottom: 1px solid $btn_color
+		.btn--dashed
+			+text(18,400,0,0)
+	&__add
+		max-width: 388px
+		margin-top: 12px
+	&__inner
+		padding: 38px 24px 24px 24px
+		max-width: 1162px
+	&__review
+		&:not(:last-child)
+			margin-bottom: 16px 
+	&__title
+		background: #F4F4F4
+		padding: 15px 24px
+		border: 1px solid #CCCCD1
+		+flex(0,0,space-between,center)
+	&__name
+		+text(18,400,24,#000)
+	&__date
+	&__text
+		border: 1px solid #CCCCD1
+		border-top: 0
+		padding: 15px 24px
+		p
+			margin: 0
+	&__footer
+		padding: 16px 24px 40px 24px
+		max-width: 1162px
+		.loadMore
+			margin-top: 0
+
+.related
+	.container
+		width: 100%
