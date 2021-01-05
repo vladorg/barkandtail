@@ -101,7 +101,6 @@
   .modalCart__item {
     padding: 16px 11px 0 11px;
     position: relative;
-    border-bottom: 1px solid rgba(117, 81, 57, 0.25);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -119,6 +118,8 @@
         padding: 19px 0 8px 0;
         margin: 0 16px;
         border-color: #755139; } }
+    .modalCart__item:not(:last-child) {
+      border-bottom: 1px solid rgba(117, 81, 57, 0.25); }
   .modalCart__remove {
     position: absolute;
     top: 16px;
