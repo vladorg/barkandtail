@@ -81,7 +81,7 @@ textarea {
   resize: none; }
 
 body.column {
-  min-height: 200vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -263,7 +263,8 @@ body.column {
     line-height: 18px;
     color: #9D9D9D; }
   .input--err {
-    border-color: #D64B59; }
+    border-color: #D64B59;
+    color: #D64B59; }
     .input--err::-webkit-input-placeholder {
       color: #D64B59; }
     .input--err::-moz-placeholder {
@@ -471,7 +472,10 @@ body.column {
     position: relative;
     cursor: pointer;
     line-height: 24px;
-    display: block; }
+    display: block;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
     .radio + label::before {
       content: '';
       position: absolute;

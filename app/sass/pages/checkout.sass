@@ -2,67 +2,166 @@
 
 .header
 	&--checkout
+		.container
+			max-width: 1391px
 		.header__inner
 			border-bottom: 1px solid rgba(117, 81, 57, 0.25)
+			+xs
+				border: 0
 			.container
 				padding: 35px 0 24px 0
+				+xs
+					flex-direction: column
+					padding: 8px 0 0 0
+					width: 100%
+
+		.header__logo
+			+xs
+				max-width: 140px
 		.header__info
 			text-align: right
+			+xs
+				display: none
+			&--m
+				display: none
+				+xs
+					display: block
+					width: 100%
+					background: #fff
+					padding: 8px 0
+					margin-top: 8px
+				.header__numbers
+					position: static
 			p
 				margin-bottom: 6px
 				+text(14,300,18,#000)
 			a
 				+text(16,400,24,0)
+.footer
+	&--checkout
+		background: $transparent
+		padding: 10px 0
+		border-top: 1px solid rgba(117, 81, 57, 0.25)
+		.container
+			max-width: 1391px
+		.footer__copy
+			margin-top: 0
+			+xs
+				display: block
 
 
 .checkout
 	position: relative
-	padding: 32px 0 185px 0
+	padding: 32px 0 140px 0
+	+xs
+		padding: 24px 0 37px 0
+	&__authorized
+		.checkoutCustomer__nav--m
+			display: none !important
+	&.container
+		max-width: 1391px
 	.modal__win
 		padding: 12px 24px 32px 24px
+		box-shadow: 0px 8px 9px rgba(117, 81, 57, 0.25)
+		+xs
+			padding: 16px 0 0 0
+			background: #fff
 	.title
 		text-transform: uppercase
 		margin-bottom: 16px
+		+xs
+			+text(26,0,40,0)
 	.modalCart__title
 		padding: 0
+		+xs
+			background: $transparent
+			+text(24,300,40,$text_color)
 	.modalCart__continue
 		margin: 0
 	.modalCart__items
 		padding: 19px 0 0 0
+		max-height: 348px
+		+sm
+			padding: 0
+		+xs
+			max-height: 275px
 	.modalCart__item
 		justify-content: flex-start
 		align-items: center
 		padding: 8px 0
+		+xs
+			margin: 0 0 16px 0
+			padding: 0 4% 11px 4%
 	.modalCart__inner
 		padding: 0 139px 0 0
 		position: relative
+		+sm
+			position: static
+			width: 100%
+			padding: 0 24px 0 0
 	.modalCart__thumb
 		padding-bottom: 0
 		margin-right: 10px
 		display: block
 		img
-			width: 86px
+			min-width: 86px
 			height: 86px
+	.modalCart__name
+		+sm
+			font-size: 12px
+		+xs
+			font-size: 14px
 	.modalCart__price
 		position: absolute
 		top: 0
 		right: 0
+		+sm
+			position: static
+			margin-top: 8px
+			width: auto
+			text-align: left
 	.modalCart__quantly
 		padding: 7px 0 0 0
+		+sm
+			padding: 0
 	.modalCart__info
 		padding: 16px 0
+		+xs
+			border-top: 1px solid rgba(117, 81, 57, 0.25)
 	.modalCart__row
 		padding: 0 30px 0 0
+		+xs
+			padding: 0 4%
 	.modalCart__total
 		padding-top: 16px
+		+xs
+			margin: 0
+			border-color: rgba(117, 81, 57, 0.25)
 	.modalCart__tools
 		padding: 16px 0 0 0
+		+xs
+			padding: 8px 4% 16px 4%
 	.field
 		label
 			min-width: 30%
 
+	&__policy
+		text-align: center
+		padding-top: 24px
+		+text(14,300,18,#000)
+		+xs
+			max-width: 90%
+			margin: 0 auto
+			padding-top: 35px
 	&__heading
 		+flex(0,0,space-between,center)
+		+sm
+			flex-direction: column
+			padding-bottom: 8px
+		+xs
+			flex-direction: row
+			padding: 0 4%
+			margin-bottom: 16px
 	&__steps
 		width: $product_content_size_full
 		+md
@@ -81,6 +180,10 @@
 			margin-left: 12px
 			+before
 				position: absolute
+			+xs
+				border: 0
+				padding: 25px 0 16px 0
+				margin: 0
 		&:first-child
 			.checkout__inner
 				display: block
@@ -133,12 +236,13 @@
 		top: 40px
 		width: 532px
 		float: right
+		+md
+			width: 450px
 		+sm
 			width: 320px
-			padding: 15px
 		+xs
 			position: static
-			margin: 42px 0 0 -5%
+			margin: 24px 0 0 -5%
 			width: calc(100% + 10%)
 			float: none
 		.modalCart__items
@@ -156,6 +260,8 @@
 		+flex(0,0,0,center)
 		display: none
 		margin-top: 8px
+		+xs
+			flex-wrap: wrap
 		span
 			padding-right: 5px
 			order: 1
@@ -174,21 +280,29 @@
 		top: 8px
 		right: 0
 		+text(14,300,18,0)
+		+xs
+			position: static
+			order: 2
+			margin: 8px auto 0 auto
+	&__break
+		+xs
+			display: block
+			width: 100%
+			order: 2
 	&__title
 		padding-bottom: 8px
 		padding: 8px 0
 		position: relative
 		+text(18,400,24,0)
-		+xs
-			font-size: 14px
 	&__next
 		margin-top: 35px
 		max-width: 270px
 		padding: 8px 0
 		+before
 			display: none
+		+sm
+			max-width: 100%
 		+xs
-			max-width: 156px
 			display: block
 			text-align: center
 	.input
@@ -316,6 +430,16 @@
 			margin-bottom: 24px
 			border-bottom: 1px solid rgba(117, 81, 57, 0.25)
 			+flex(0,0,flex-start,center)
+			+xs
+				display: none
+			&--m
+				display: none
+				+xs
+					display: block
+				p
+					+text(16,300,24,#000)
+				.open_auth
+					padding: 8px 0
 		&__btn
 			border-bottom: 2px solid transparent
 			border-radius: 0
@@ -341,6 +465,8 @@
 			+flex(column,0,0,0)
 			&:not(:first-child)
 				padding-top: 25px
+				+xs
+					padding-top: 16px
 			label
 				position: relative
 				padding-left: 40px
@@ -360,6 +486,8 @@
 		&__sam
 			.field
 				display: none
+				+xs
+					padding-left: 20px
 			input
 				display: none
 				&:checked
@@ -379,6 +507,7 @@
 				display: block
 				border-bottom: 1px dashed $text_color
 				cursor: pointer
+				margin-bottom: 8px
 				+text(14,400,18,$btn_color)
 				&:not(:first-child)
 					margin-left: 16px
@@ -453,6 +582,15 @@
 			+text(20,800,24,0)
 		.checkout__tooltip
 			padding: 8px 0 0 0
+	&From
+		padding-top: 24px
+		display: none
+		+xs
+			padding-top: 0
+		&__field
+			margin-top: 15px !important
+			label
+				+text(14,400,22,0)
 	&WidgetTools
 		position: relative
 		&__promo

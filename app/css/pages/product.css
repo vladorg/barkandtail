@@ -567,12 +567,13 @@
   .reviews__footer .loadMore {
     margin-top: 0; }
 
-@media (max-width: 768px) {
-  .related {
-    padding-top: 32px; } }
-
-.related .container {
-  width: 100%; }
+.related {
+  padding-top: 40px; }
   @media (max-width: 768px) {
-    .related .container {
-      width: 92%; } }
+    .related {
+      padding-top: 32px; } }
+  .related .container {
+    width: 100%; }
+    @media (max-width: 768px) {
+      .related .container {
+        width: 92%; } }

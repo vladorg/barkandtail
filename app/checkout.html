@@ -29,6 +29,18 @@
 					<p>Вопросы по телефону</p>
 					<a href="tel:380661333813">+38 066 133 38 13</a>
 				</div>
+
+				<div class="header__info header__info--m">
+					<ul class="header__numbers ic_mobile">
+						<li>
+							<a href="tel:380661333813">+38 066 133 38 13</a>
+						</li>
+						<li>
+							<a href="tel:380661333813">+38 066 133 38 13</a>
+						</li>
+					</ul>
+				</div>
+				
 			</div>
 		</div>
 	</header>
@@ -45,7 +57,7 @@
 				<div class="modal__win">
 					<div class="checkout__heading">
 						<div class="modalCart__title">Ваш заказ</div>
-						<button class="btn btn--dashed close_cart modalCart__continue">Продолжить покупки</button>
+						<button class="btn btn--dashed checkout__back modalCart__continue">Продолжить покупки</button>
 					</div>
 					
 					<div class="modalCart__items scroll">
@@ -64,6 +76,63 @@
 								</div>
 								<div class="modalCart__price">
 									<div class="modalCart__discount"></div>
+									<div class="modalCart__cost subtitle">1350 грн</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modalCart__item">
+							<a href="/product.html" class="modalCart__thumb">
+								<img src="img/cart_product.png" alt="">
+							</a>
+							<div class="modalCart__inner">
+								<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+								Grain Free Yorkshire Salmon &amp; Tuna</a>
+								<div class="modalCart__quantly quantly">
+									<button class="btn quantly__minus">-</button>
+									<input type="text" name="quantly" class="input" value="1">
+									<button class="btn quantly__plus">+</button>
+								</div>
+								<div class="modalCart__price modalCart__price--discount">
+									<div class="modalCart__discount">478 грн</div>
+									<div class="modalCart__cost subtitle">1350 грн</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modalCart__item">
+							<a href="/product.html" class="modalCart__thumb">
+								<img src="img/cart_product.png" alt="">
+							</a>
+							<div class="modalCart__inner">
+								<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+								Grain Free Yorkshire Salmon &amp; Tuna</a>
+								<div class="modalCart__quantly quantly">
+									<button class="btn quantly__minus">-</button>
+									<input type="text" name="quantly" class="input" value="1">
+									<button class="btn quantly__plus">+</button>
+								</div>
+								<div class="modalCart__price modalCart__price--discount">
+									<div class="modalCart__discount">478 грн</div>
+									<div class="modalCart__cost subtitle">1350 грн</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modalCart__item">
+							<a href="/product.html" class="modalCart__thumb">
+								<img src="img/cart_product.png" alt="">
+							</a>
+							<div class="modalCart__inner">
+								<a href="/product.html" class="modalCart__name">Сухой корм для собак Brit Care Mini 
+								Grain Free Yorkshire Salmon &amp; Tuna</a>
+								<div class="modalCart__quantly quantly">
+									<button class="btn quantly__minus">-</button>
+									<input type="text" name="quantly" class="input" value="1">
+									<button class="btn quantly__plus">+</button>
+								</div>
+								<div class="modalCart__price modalCart__price--discount">
+									<div class="modalCart__discount">478 грн</div>
 									<div class="modalCart__cost subtitle">1350 грн</div>
 								</div>
 							</div>
@@ -126,34 +195,47 @@
 					</div>
 
 				</div>
+				<div class="checkout__policy">Подтверждая заказ, я принимаю условия <a class="btn btn--dashed" href="#">Публичной оферты</a></div>
 			</div>
-			<form method="GET" class="checkout__steps" id="checkout_form">
+
+
+
+			<!-- if authorized - add class to form - "checkout__authorized" -->
+			<form method="GET" class="checkout__steps checkout__authorized1" id="checkout_form">
 
 				<div class="checkout__step checkout__step--stage checkout__step--stage1 checkout__step--active checkoutCustomer" data-complete="0">
 					<div class="checkout__title">
 						<span class="checkout__stageName">Контактные данные</span>
 						<div class="checkoutCustomer__completed checkout__completed">
+							<i class="checkout__break"></i> 
 							<button type="button" class="btn btn--dashed checkout__change checkoutCustomer__change">Редактировать данные</button>
 						</div>
 					</div>
 					<div class="checkout__inner">
 						<div class="checkoutCustomer__nav">
-							<button type="button" class="btn checkoutCustomer__btn checkoutCustomer__btn--active">НОВЫЙ ПОКУПАТЕЛЬ</button>
+							<button type="button" class="btn checkoutCustomer__btn checkoutCustomer__btn--active checkout__reset">НОВЫЙ ПОКУПАТЕЛЬ</button>
 							<button type="button" class="btn checkoutCustomer__btn open_auth">ПОСТОЯННЫЙ КЛИЕНТ</button>
 						</div>
+
+						<div class="checkoutCustomer__nav checkoutCustomer__nav--m">
+							<p>Если вы постоянный клиент, авторизируйтесь с помощью кнопки и мы автоматически заполним ваши данные и сохраним всю информацию по заказу и контактные данные.</p>
+							<button type="button" class="btn btn--primary open_auth">Я постоянный клиент</button>
+						</div>
+
 						<div class="checkoutCustomer__form">
 							<div class="field">
 								<label for="checkout_name" class="field__label">Имя и фамилия*</label>
-								<input class="input checkoutCustomer__input checkout__required" id="checkout_name" type="text" name="name" placeholder="Введите имя и фамилию">
+								<input class="input checkoutCustomer__input checkout__required" id="checkout_name" type="text" name="name" placeholder="Введите имя и фамилию" value="" autocomplete="off">
 							</div>
 							<div class="field">
 								<label for="checkout_phone" class="field__label">Ваш номер телефона*</label>
-								<input class="input checkoutCustomer__input checkout__required" id="checkout_phone" type="text" name="phone" placeholder="Введите контактный номер">
+								<input class="input checkoutCustomer__input checkout__required" id="checkout_phone" type="text" name="phone" placeholder="Введите контактный номер" value="" autocomplete="off">
 							</div>
 							<div class="field">
 								<label for="checkout_email" class="field__label">Эл. почта* </label>
-								<input class="input checkoutCustomer__input checkout__required" id="checkout_email" type="email" name="email" placeholder="Введите e-mail">
-							</div>	 							
+								<input class="input checkoutCustomer__input checkout__required" id="checkout_email" type="email" name="email" placeholder="Введите e-mail" value="" autocomplete="off">
+							</div>
+
 							<button type="button" class="btn btn--primary checkout__next" id="customer_complete">Выбрать способ доставки</button>
 						</div>
 					</div>
@@ -164,6 +246,7 @@
 					<div class="checkout__title">
 						<span class="checkout__stageName">Доставка</span>
 						<div class="checkoutDelivery__completed checkout__completed">
+							<i class="checkout__break"></i> 
 							<button type="button" class="btn btn--dashed checkout__change">Редактировать данные</button>
 						</div>
 					</div>
@@ -171,7 +254,7 @@
 						<div class="checkoutDelivery__form">
 							<div class="checkout__row">
 								<div class="checkout__rowTitle">Город доставки</div>
-								<input class="input checkoutDelivery__city checkout__required" type="text" name="city" placeholder="Киев">
+								<input class="input checkoutDelivery__city checkout__required" type="text" name="city" placeholder="Киев" autocomplete="off">
 								<div class="checkoutDelivery__cities">
 									<span>Харьков</span>
 									<span>Днепр</span>
@@ -185,12 +268,12 @@
 								<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__np">
 									<input class="checkbox" type="radio" name="delivery_type" id="delivery_np" value="Доставка в отделение “Нова Пошта”" checked>
 									<label class="icon__radioOn cursor" for="delivery_np">Доставка в отделение “Нова Пошта”</label>
-									<input class="input checkout__input checkout__required" type="text" name="address_np" placeholder="Укажате отделение">
+									<input class="input checkout__input checkout__required" type="text" name="address_np" placeholder="Укажите отделение" autocomplete="off">
 								</div>
 								<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__npCurier">
 									<input class="checkbox" type="radio" name="delivery_type" id="delivery_np_curier" value="Доставка курьером">
 									<label class="icon__radioOn cursor" for="delivery_np_curier">Доставка курьером</label>
-									<input class="input checkout__input checkout__required" type="text" name="address_np_curier" placeholder="Адрес">
+									<input class="input checkout__input checkout__required" type="text" name="address_np_curier" placeholder="Адрес" autocomplete="off">
 								</div>
 								<div class="checkout__rowItem checkout__hasFields checkoutDelivery__type checkoutDelivery__sam">
 									<input class="checkbox" type="radio" name="delivery_type" id="delivery_sam" value="Самовывоз из магазина">
@@ -235,6 +318,30 @@
 					</div>
 				</div>
 
+				<div class="checkoutFrom">
+					<div class="checkout__title">Откуда о нас узнали?</div>
+					<div class="checkoutFrom__field">
+						<input class="checkbox" type="radio" name="checkout_from" id="checkout_facebook" value="Facebook">
+						<label class="icon__radioOn cursor" for="checkout_facebook">Facebook</label>
+					</div>
+					<div class="checkoutFrom__field">
+						<input class="checkbox" type="radio" name="checkout_from" id="checkout_instagram" value="Instagram">
+						<label class="icon__radioOn cursor" for="checkout_instagram">Instagram</label>
+					</div>
+					<div class="checkoutFrom__field">
+						<input class="checkbox" type="radio" name="checkout_from" id="checkout_google" value="Google">
+						<label class="icon__radioOn cursor" for="checkout_google">Google</label>
+					</div>
+					<div class="checkoutFrom__field">
+						<input class="checkbox" type="radio" name="checkout_from" id="checkout_familiars" value="От знакомых">
+						<label class="icon__radioOn cursor" for="checkout_familiars">От знакомых</label>
+					</div>
+					<div class="checkoutFrom__field">
+						<input class="checkbox" type="radio" name="checkout_from" id="checkout_others" value="Другое">
+						<label class="icon__radioOn cursor" for="checkout_others">Другое</label>
+					</div>
+				</div>
+
 
 
 
@@ -262,6 +369,13 @@
 
 
 	</main>
+
+
+	<footer class="footer footer--checkout">
+		<div class="container">
+			<div class="footer__copy">© 2020 Bark&Tail</div>
+		</div>
+	</footer>
 
 
 

@@ -97,10 +97,11 @@ window.onload = function () {
 	var modalCart = document.querySelector('.modalCart'); 
 	var modalCart_open = document.querySelectorAll('.open_cart');
 	var modalCart_close = document.querySelectorAll('.close_cart');
-
 	if (modalCart) {
-
 		var modalCart_inner = modalCart.querySelector('.modal__win');
+	}
+
+	if (modalCart || checkout) {		
 
 		$('.add_promo').on('click', function(){
 			$(this).parents('.promocode__def').slideUp(200);
@@ -274,7 +275,7 @@ window.onload = function () {
 						enableScroll();
 					}
 				}
-			} else {
+				else {
 				if ( !modalReview_open[0].contains(e.target) && !modalReview_inner.contains(e.target) ) { // закрытие формы восстановления пароля
 					modalReview.classList.remove('modalReview--open','modal--open');
 					if (checkModal(modals)) {
@@ -282,6 +283,7 @@ window.onload = function () {
 					}
 				}
 			}
+			} 
 			
 		};
 	}
@@ -312,10 +314,13 @@ window.onload = function () {
 		}
 	}
 
-	var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess,modalReview];
+	var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess];
 
 	if (checkout) {
 		var modals = [modalLogin,modalRegister,modalForgot,modalChange,modalSuccess];
+	}
+	if (modalReview) {
+		var modals = [modalCart,modalWish,modalLogin,modalRegister,modalForgot,modalChange,modalSuccess,modalReview];
 	}
 
 
@@ -642,15 +647,18 @@ window.onload = function () {
 			
 		});
 
-		function validate($btn, $picker, $cur_step, $next_step, $last) { // валидация полей с определенным классом
-			if ($last === undefined) {
+		function validateCheckout($btn, $picker, $cur_step, $next_step, $last) { // валидация оформления заказа
+
+			if ($last === undefined) { // es5 fix
 				$last = false;
 			}
+
 			$btn.on('click', function(e){
 				e.preventDefault();
 				var step_values = $cur_step.find('.checkout__required');
 				var step_inputs = $cur_step.find('.checkout__required');
-				$picker = null;
+
+				$picker = null; // определяет разрешение на отправку заказа
 				
 
 				if ($btn == customer_next) {
@@ -665,7 +673,12 @@ window.onload = function () {
 					var info = [];
 					info[0] = $cur_step.find('.checkoutDelivery__city').val();
 					info[1] = $cur_step.find('input[name=delivery_type]:checked').val();
-					info[2] = $cur_step.find('input[name=delivery_type]:checked ~ input').val();
+					if ($cur_step.find('input[name=delivery_type]:checked').attr('id') == 'delivery_sam') {
+						info[2] = $cur_step.find('input[name=delivery_type]:checked ~ .field input:checked').val();
+					} else {
+						info[2] = $cur_step.find('input[name=delivery_type]:checked ~ input').val();
+					}
+					
 				} else if ($btn == checkout_order) {
 					$picker = false;
 					var pay_types = $cur_step.find('input[name=payment_type]');
@@ -680,7 +693,25 @@ window.onload = function () {
 					});
 				}
 
-				if (step_values.length != 0) {
+				// если выбран способ доставки - самовывоз, валидация выбора магазина
+				if ($cur_step.find('input[name=delivery_type]:checked').attr('id') == 'delivery_sam') { 
+					var store = $cur_step.find('input[name=delivery_type]:checked ~ .field input:checked').val();
+					if (store) {
+						if ($picker != false) {
+							$picker = true;
+							$cur_step.find('input[name=delivery_type]:checked ~ .field label').removeClass('input--err');
+							$cur_step.find('input[name=delivery_type]:checked ~ .field label').addClass('input--ok');							
+						}
+					} else {
+						$picker = false;
+						$cur_step.find('input[name=delivery_type]:checked ~ .field label').removeClass('input--ok');
+						$cur_step.find('input[name=delivery_type]:checked ~ .field label').addClass('input--err');
+					}
+				}
+
+
+				// если имеются обязательные поля с классом required, проверка на заполнение
+				if (step_values.length != 0) { 
 					step_values.each(function(){
 
 						if ($(this).closest('.checkout__hasFields').length != 0 ) {
@@ -717,12 +748,16 @@ window.onload = function () {
 							}
 						}
 					});
+
 					
-				} else {
+				// обязательные поля отсутствуют - разрешение на подтверждение заказа
+				} else { 
 					if ($picker != false) {
 						$picker = true;
 					}
 				}
+
+				
 
 				if (!$last) {
 					$cur_step.find('.checkout__completed span').remove();
@@ -748,6 +783,12 @@ window.onload = function () {
 								$next_step.next().find('.checkout__inner').slideDown(300)
 								$next_step.next().addClass('checkout__step--active');
 							}
+
+							if ($next_step == payment_step) {
+								setTimeout(function(){
+									$('.checkoutFrom').slideDown(300);
+								}, 500);
+							}
 							
 						}						
 					}, 500);
@@ -755,6 +796,8 @@ window.onload = function () {
 					$cur_step.attr('data-complete', '0');
 				}
 
+
+				// если последний шаг - проверка статуса валидности всех шагов, отправка заказа
 				if ($last) {
 					var customer_status = Boolean(parseInt(customer_step.attr('data-complete')));
 					var delivery_status = Boolean(parseInt(delivery_step.attr('data-complete')));
@@ -762,23 +805,32 @@ window.onload = function () {
 
 					if (customer_status && delivery_status && payment_status) {
 						alert('success');
-						console.log(checkout_form.serialize());
+						var checkout_data = checkout_form.serialize(); // собранные данные
+						console.log(checkout_data);
 						//checkout_form.submit();						
 					} else {
-						//alert('Заполнены не все данные!');
+						alert('Заполнены не все данные!');
 					}
 				}
 			});
 			
 		}
 
-		validate(customer_next, customer, customer_step, delivery_step);
-		validate(delivery_next, delivery, delivery_step, payment_step);
-		validate(checkout_order, payment, payment_step, false, true);
+		validateCheckout(customer_next, customer, customer_step, delivery_step); // шаг контактных данных
+		validateCheckout(delivery_next, delivery, delivery_step, payment_step); // шаг доставки
+		validateCheckout(checkout_order, payment, payment_step, false, true); // последний шаг оплата - отправка заказа
 
-		checkout_step_back.on('click', function(){ // проверка прохождения шагов и отправка формы
 
+		// вернуться к редактированию прошлых шагов
+		checkout_step_back.on('click', function(){
 			var current_step = $(this).closest('.checkout__step');
+
+			if (current_step.hasClass('checkoutDelivery')) {
+				customer_step.find('.checkout__inner').slideUp(300);
+				customer_step.addClass('checkout__step--completed');
+				customer_step.removeClass('checkout__step--active');
+			}
+
 			var other_step = current_step.siblings();
 			other_step.find('.checkout__inner').slideUp(300)
 			other_step.removeClass('checkout__step--active');
@@ -787,6 +839,46 @@ window.onload = function () {
 				current_step.removeClass('checkout__step--completed');
 				current_step.addClass('checkout__step--active');
 			}, 500);
+		});
+
+
+
+
+		// если пользователь авторизован - пропустить первый шаг, предполагается что с бека уже будут подтянуты значения в поля
+		if (checkout_form.hasClass('checkout__authorized')) {
+
+			var step_inputs = customer_step.find('.checkoutCustomer__input');
+			var counter = 0;
+			var info = [];
+			step_inputs.each(function(){
+				info[counter] = $(this).val();
+				counter++;
+			});
+
+			customer_step.find('.checkout__completed span').remove();
+
+			for (var i=0;i<info.length;i++) {
+				if (info[i] != '') {
+					customer_step.find('.checkout__completed').append("<span>"+info[i]+"</span>");
+				}				
+			}
+
+			customer_step.attr('data-complete', '1');
+			customer_step.find('.checkout__inner').slideUp(300)
+			customer_step.removeClass('checkout__step--active');
+			setTimeout(function(){
+				customer_step.addClass('checkout__step--completed');
+				delivery_step.find('.checkout__inner').slideDown(300)
+				delivery_step.addClass('checkout__step--active');
+
+				customer_next.trigger('click'); // валидировать поля подтянуты автоматически		
+			}, 500);
+
+		}
+
+		$('.checkout__back').on('click', function(e){
+			e.preventDefault();
+			history.back();
 		});
 		
 	}

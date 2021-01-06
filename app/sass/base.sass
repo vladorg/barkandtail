@@ -72,7 +72,7 @@ textarea
 	resize: none
 
 body.column
-	min-height: 200vh
+	min-height: 100vh
 	+flex(column,0,0,0)
 	.footer
 		margin-top: auto
@@ -178,6 +178,7 @@ body.column
 		+text(14,400,18,$placeholder_color)
 	&--err
 		border-color: #D64B59
+		color: #D64B59
 		&::-webkit-input-placeholder
 			color: #D64B59
 		&::-moz-placeholder
@@ -323,6 +324,7 @@ body.column
 		cursor: pointer
 		line-height: 24px
 		display: block
+		+tran(all,.2s)
 		+before
 			position: absolute
 			top: 0
