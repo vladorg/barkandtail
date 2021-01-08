@@ -5643,3 +5643,89 @@ body.column {
     height: 297px;
     -o-object-fit: cover;
        object-fit: cover; }
+
+.vethelp__content .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.vethelp__info {
+  width: 46%;
+  font-size: 18px; }
+
+.vethelp__form {
+  width: 49%; }
+  .vethelp__form .title {
+    text-transform: uppercase; }
+  .vethelp__form form {
+    max-width: 577px; }
+    .vethelp__form form .field .input {
+      width: 400px; }
+
+.vethelp__sbm {
+  margin-top: 40px; }
+
+.actions__list {
+  display: grid;
+  grid-template-columns: repeat(3, 574px);
+  grid-gap: 18px;
+  padding-top: 78px; }
+
+.actions__name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  color: #fff;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s; }
+
+.actions__item {
+  position: relative; }
+  .actions__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-74.92%, rgba(196, 196, 196, 0)), color-stop(94.35%, #3A3A3C));
+    background: -o-linear-gradient(top, rgba(196, 196, 196, 0) -74.92%, #3A3A3C 94.35%);
+    background: linear-gradient(180deg, rgba(196, 196, 196, 0) -74.92%, #3A3A3C 94.35%);
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+  .actions__item:hover::before {
+    content: '';
+    opacity: 1; }
+  .actions__item:hover .actions__name {
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 1;
+    pointer-events: auto; }
+
+.actions__thumb {
+  display: block;
+  width: 100%;
+  height: 100%; }

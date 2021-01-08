@@ -161,3 +161,65 @@
 			width: 444px
 			height: 297px
 			object-fit: cover
+
+.vethelp
+	&__content
+		.container
+			+flex(0,0,space-between,flex-start)
+	&__info
+		width: 46%
+		font-size: 18px
+	&__form
+		width: 49%
+		.title
+			text-transform: uppercase
+		form
+			max-width: 577px
+			.field
+				.input
+					width: 400px
+	&__sbm
+		margin-top: 40px
+
+.actions
+	&__list
+		display: grid
+		grid-template-columns: repeat(3, 574px)
+		grid-gap: 18px
+		padding-top: 78px
+	&__name
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		text-align: center
+		margin: 0
+		font-weight: 400
+		color: #fff
+		transform: none
+		opacity: 0
+		pointer-events: none
+		+tran(all,.4s)
+	&__item
+		position: relative		
+		+before
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: linear-gradient(180deg, rgba(196, 196, 196, 0) -74.92%, #3A3A3C 94.35%)
+			opacity: 0
+			+tran(all,.4s)
+		+hover
+			+before
+				opacity: 1
+			.actions__name
+				bottom: 50%
+				transform: translateY(50%)
+				opacity: 1
+				pointer-events: auto	
+	&__thumb
+		display: block
+		width: 100%
+		height: 100%
