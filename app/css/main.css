@@ -89,6 +89,16 @@ body {
   font-family: "Roboto";
   overflow-x: hidden;
   background: #F6F1ED;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
@@ -212,7 +222,8 @@ body.column {
     -o-transition: all 0.3s;
     transition: all 0.3s; }
     .btn--dashed:hover {
-      border-color: rgba(0, 0, 0, 0); }
+      border-color: rgba(0, 0, 0, 0);
+      text-decoration: none; }
 
 .social {
   display: -webkit-box;
@@ -263,6 +274,10 @@ body.column {
   @media (max-width: 768px) {
     .no_scroll {
       padding-right: 0; } }
+
+.clear {
+  display: inline-block;
+  clear: both; }
 
 .clearfix::after {
   content: '';
@@ -2530,7 +2545,8 @@ body.column {
 
 .footer {
   background: #202123;
-  padding: 40px 0; }
+  padding: 40px 0;
+  margin-top: auto; }
   @media (max-width: 768px) {
     .footer {
       padding: 40px 0 24px 0; } }
@@ -5729,3 +5745,489 @@ body.column {
   display: block;
   width: 100%;
   height: 100%; }
+
+.account__heading {
+  padding-top: 32px;
+  text-transform: uppercase;
+  margin-bottom: 16px; }
+
+.account__inner {
+  background: #fff;
+  padding: 24px 16px 38px 16px; }
+
+.account__logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #D64B59; }
+
+.account__title {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.account__rowTitle {
+  min-width: 40% !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px; }
+
+.account .field {
+  width: 47%; }
+  .account .field--date .input {
+    width: 63px; }
+
+.accountNav {
+  position: relative; }
+  .accountNav ul {
+    border-bottom: 1px solid #000;
+    padding-bottom: 16px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .accountNav ul li:not(:last-child) {
+      margin-right: 65px; }
+  .accountNav__btn {
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px; }
+    .accountNav__btn--active {
+      color: #755139; }
+  .accountNav__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 210px;
+    height: 3px;
+    background: #755139;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+
+.accountTabs {
+  padding-top: 23px; }
+  .accountTabs__tab {
+    display: none; }
+    .accountTabs__tab--active {
+      display: block; }
+
+.accountCont__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.accountCont__left {
+  width: 55%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.accountCont__right {
+  width: 29%;
+  margin-left: 81px; }
+  .accountCont__right .field {
+    width: 100%; }
+
+.accountCont__sbm {
+  max-width: 388px;
+  margin-top: 38px; }
+
+.accountCont .modalRegister__notif {
+  margin: 93px 0 0 0; }
+
+.accountPet__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.accountPet__left {
+  margin-right: 138px;
+  padding-left: 50px; }
+
+.accountPet__right {
+  width: 53%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .accountPet__right .field {
+    width: 100%; }
+
+.accountPet__col {
+  margin-top: 35px;
+  width: 46%; }
+  .accountPet__col .modalRegister__notif {
+    min-height: 0; }
+    .accountPet__col .modalRegister__notif label {
+      margin-left: auto; }
+  .accountPet__col--short {
+    width: 40%; }
+    .accountPet__col--short .account__rowTitle {
+      min-width: 1px !important; }
+
+.accountPet__thumb {
+  background: #EEEEEE;
+  width: 240px;
+  height: 240px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .accountPet__thumb img {
+    display: block;
+    margin-top: 17px; }
+
+.accountPet__file {
+  display: none; }
+
+.accountPet__addPhoto {
+  position: absolute;
+  padding: 5px 0;
+  max-width: 174px;
+  bottom: 20px; }
+  .accountPet__addPhoto:hover {
+    -webkit-box-shadow: 0 10px 20px -10px #696969;
+            box-shadow: 0 10px 20px -10px #696969; }
+
+.accountPet__loaded {
+  position: absolute;
+  bottom: 3px;
+  line-height: 1;
+  font-size: 12px; }
+
+.accountPet__sbm {
+  max-width: 388px;
+  margin: 40px 0 0 auto; }
+
+.accountAddr__inner {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .accountAddr__inner .accountPet__left {
+    padding-left: 0;
+    margin-right: 310px; }
+
+.accountAddr__items {
+  padding: 9px 9px 0 0;
+  max-height: 330px;
+  overflow: auto; }
+
+.accountAddr__item {
+  padding-left: 35px;
+  position: relative;
+  max-width: 187px; }
+  .accountAddr__item:not(:last-child) {
+    margin-bottom: 33px; }
+
+.accountAddr__check {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.accountAddr__name {
+  padding-right: 15px; }
+
+.accountAddr__address {
+  margin: 4px 0 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #9D9D9D; }
+
+.accountAddr__remove {
+  position: absolute;
+  top: 3px;
+  right: 0; }
+
+.accountWish__wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.accountWish__cats {
+  width: 336px;
+  margin-right: 84px; }
+
+.accountWish__title {
+  padding: 0 0 8px 16px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000; }
+
+.accountWish__inner {
+  width: calc(100% - 336px - 84px); }
+
+.accountWish__item {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #3A3A3C;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .accountWish__item:not(:first-child) {
+    padding-top: 33px; }
+
+.accountWish__thumb {
+  width: 219px;
+  margin-right: 9px;
+  display: block; }
+
+.accountWish__info {
+  width: calc(100% - 228px - 262px);
+  margin-right: 64px; }
+
+.accountWish__name {
+  display: block;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
+  color: #000; }
+
+.accountWish__articul {
+  display: inline-block;
+  margin-bottom: 0; }
+
+.accountWish__stock {
+  display: inline-block;
+  margin: 15px 0 15px 15px; }
+
+.accountWish__disc {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #FF4A4A; }
+
+.accountWish__old {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #A1A1A1; }
+
+.accountWish__total {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #3A3A3C; }
+
+.accountWish__tools {
+  width: 198px; }
+
+.accountWish__buy {
+  padding: 6px 0; }
+
+.accountWish__watch {
+  padding: 16px 0 0 0;
+  position: relative; }
+  .accountWish__watch .field {
+    width: auto;
+    display: inline-block;
+    margin-bottom: 13px; }
+    .accountWish__watch .field label {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px; }
+
+.accountWishTooltip {
+  display: inline-block;
+  float: right;
+  font-weight: 500; }
+  .accountWishTooltip__content {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 0px 15px 0px #696969;
+            box-shadow: 0 0px 15px 0px #696969;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+  .accountWishTooltip__hover {
+    cursor: pointer;
+    font-weight: 700;
+    width: auto; }
+  .accountWishTooltip:hover .accountWishTooltip__content {
+    opacity: 1;
+    pointer-events: auto; }
+
+.accountHistory__hidden {
+  display: none; }
+
+.accountHistory__toolsHidden {
+  display: none;
+  border: 0;
+  padding: 0;
+  margin-top: 20px; }
+  .accountHistory__toolsHidden .modalCart__row {
+    padding: 0; }
+
+.accountHistory__visible {
+  margin-top: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.accountHistory__quant {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.accountHistory__cost {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.accountHistory__articul {
+  margin-bottom: 23px;
+  text-align: right; }
+
+.accountHistory__date {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.accountHistory__name {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; }
+
+.accountHistory__addr {
+  max-width: 152px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #9D9D9D; }
+
+.accountHistory__close {
+  display: none;
+  margin-top: 24px; }
+
+.accountHistory__item {
+  position: relative;
+  padding-right: 10px; }
+  .accountHistory__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background: #fff;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(9px);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  .accountHistory__item--click::before {
+    content: '';
+    opacity: 1;
+    pointer-events: auto; }

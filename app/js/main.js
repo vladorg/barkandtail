@@ -283,10 +283,10 @@ window.onload = function () {
 					}
 				}
 			}
-			} 
-			
-		};
-	}
+		} 
+
+	};
+}
 
 
 	function modal($modal,$open,$close,$class,$others) { // открытие/закрытие модальных окон
@@ -751,50 +751,50 @@ window.onload = function () {
 
 					
 				// обязательные поля отсутствуют - разрешение на подтверждение заказа
-				} else { 
-					if ($picker != false) {
-						$picker = true;
-					}
+			} else { 
+				if ($picker != false) {
+					$picker = true;
 				}
+			}
 
-				
 
-				if (!$last) {
-					$cur_step.find('.checkout__completed span').remove();
 
-					for (var i=0;i<info.length;i++) {
-						if (info[i] != '') {
-							$cur_step.find('.checkout__completed').append("<span>"+info[i]+"</span>");
-						}				
-					}
+			if (!$last) {
+				$cur_step.find('.checkout__completed span').remove();
+
+				for (var i=0;i<info.length;i++) {
+					if (info[i] != '') {
+						$cur_step.find('.checkout__completed').append("<span>"+info[i]+"</span>");
+					}				
 				}
+			}
 
-				if ($picker) {
-					$cur_step.attr('data-complete', '1');
-					$cur_step.find('.checkout__inner').slideUp(300)
-					$cur_step.removeClass('checkout__step--active');
-					setTimeout(function(){
-						$cur_step.addClass('checkout__step--completed');
-						if ($next_step) {
-							if (!$next_step.hasClass('checkout__step--completed')) {								
-								$next_step.find('.checkout__inner').slideDown(300)
-								$next_step.addClass('checkout__step--active');
-							} else {								
-								$next_step.next().find('.checkout__inner').slideDown(300)
-								$next_step.next().addClass('checkout__step--active');
-							}
+			if ($picker) {
+				$cur_step.attr('data-complete', '1');
+				$cur_step.find('.checkout__inner').slideUp(300)
+				$cur_step.removeClass('checkout__step--active');
+				setTimeout(function(){
+					$cur_step.addClass('checkout__step--completed');
+					if ($next_step) {
+						if (!$next_step.hasClass('checkout__step--completed')) {								
+							$next_step.find('.checkout__inner').slideDown(300)
+							$next_step.addClass('checkout__step--active');
+						} else {								
+							$next_step.next().find('.checkout__inner').slideDown(300)
+							$next_step.next().addClass('checkout__step--active');
+						}
 
-							if ($next_step == payment_step) {
-								setTimeout(function(){
-									$('.checkoutFrom').slideDown(300);
-								}, 500);
-							}
-							
-						}						
-					}, 500);
-				} else {
-					$cur_step.attr('data-complete', '0');
-				}
+						if ($next_step == payment_step) {
+							setTimeout(function(){
+								$('.checkoutFrom').slideDown(300);
+							}, 500);
+						}
+
+					}						
+				}, 500);
+			} else {
+				$cur_step.attr('data-complete', '0');
+			}
 
 
 				// если последний шаг - проверка статуса валидности всех шагов, отправка заказа
@@ -813,8 +813,8 @@ window.onload = function () {
 					}
 				}
 			});
-			
-		}
+
+}
 
 		validateCheckout(customer_next, customer, customer_step, delivery_step); // шаг контактных данных
 		validateCheckout(delivery_next, delivery, delivery_step, payment_step); // шаг доставки
@@ -881,6 +881,104 @@ window.onload = function () {
 			history.back();
 		});
 		
+	}
+
+
+	// account =========================================
+
+
+	var account = $('.account');
+	var tab_changer = $('.accountNav__btn');
+	var open_order_detail = $('.open_order_detail');
+	var close_order_detail = $('.close_order_detail');
+
+	if (account) {
+
+		tab_changer.on('click', function(){ // переключатель табов и кнопок навигации
+			var offsetContainer = $('.accountNav').offset().left;
+			var offsetBtn = $(this).offset().left - offsetContainer;
+			var data_nav = $(this).data('nav');
+			var changer_width = $(this).width();
+
+			$('.accountNav__line').css({
+				'left': offsetBtn,
+				'width': changer_width
+			});
+
+			$(this).parent().siblings().find('.accountNav__btn').removeClass('accountNav__btn--active');
+			$(this).addClass('accountNav__btn--active');
+
+			$('.accountTabs__tab').each(function(){
+				var $this = $(this);
+				if ( $(this).data('nav') == data_nav ) {
+					$(this).siblings().fadeOut(200);
+					setTimeout(function(){
+						$this.fadeIn(200);
+					}, 200);
+				}
+			});
+		});
+
+		$('.accountPet__addPhoto').on('click', function(){
+			$('.accountPet__file').trigger('click');
+			$('.accountPet__file').on('change', function(){
+				$('.accountPet__loaded').text('');
+				$('.accountPet__loaded').text( $(this).val() );
+			});
+		});
+
+		open_order_detail.on('click', function(){
+			var order_item = $(this).closest('.accountWish__item');
+
+			var order_detail = order_item.find('.accountHistory__hidden');
+			var order_quant = order_item.find('.accountHistory__visible');
+			var order_tools = order_item.find('.accountHistory__toolsHidden');
+			var order_open = order_item.find('.accountHistory__open');
+			var order_close = order_item.find('.accountHistory__close');
+
+
+			order_item.addClass('accountHistory__item--click');
+
+			setTimeout(function(){
+				order_item.removeClass('accountHistory__item--click');
+			}, 600);
+
+			setTimeout(function(){
+				order_detail.slideToggle(200);
+				order_quant.slideToggle(200);
+				order_tools.slideToggle(200);
+				order_open.slideToggle(200);
+				order_close.slideToggle(200);
+			}, 400);
+
+		});
+
+		close_order_detail.on('click', function(){
+			var order_item = $(this).closest('.accountWish__item');
+
+			var order_detail = $(this).closest('.accountWish__item').find('.accountHistory__hidden');
+			var order_quant = $(this).closest('.accountWish__item').find('.accountHistory__visible');
+			var order_tools = $(this).closest('.accountWish__item').find('.accountHistory__toolsHidden');
+			var order_open = $(this).closest('.accountWish__item').find('.accountHistory__open');
+			var order_close = $(this).closest('.accountWish__item').find('.accountHistory__close');
+
+			order_item.addClass('accountHistory__item--click');
+
+			setTimeout(function(){
+				order_item.removeClass('accountHistory__item--click');
+			}, 600);
+
+			setTimeout(function(){
+				order_detail.slideToggle(200);
+				order_quant.slideToggle(200);
+				order_tools.slideToggle(200);
+				order_open.slideToggle(200);
+				order_close.slideToggle(200);
+			}, 400);
+
+		});
+
+
 	}
 
 	

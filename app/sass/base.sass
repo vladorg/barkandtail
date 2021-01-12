@@ -44,6 +44,8 @@ body
 	font-family: $ff
 	overflow-x: hidden
 	background: $prim_color
+	min-height: 100vh
+	+flex(column,0,0,0)
 	+text($fz,$fw,24,$text_color)
 img
 	max-width: 100%
@@ -129,6 +131,7 @@ body.column
 		+tran(all,.3s)
 		+hover
 			border-color: $transparent
+			text-decoration: none
 
 .social
 	+flex(0,0,flex-start,center)
@@ -153,6 +156,10 @@ body.column
 	padding-right: 16px
 	+xs
 		padding-right: 0
+
+.clear
+	display: inline-block
+	clear: both
 
 .clearfix
 	+after

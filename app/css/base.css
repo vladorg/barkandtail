@@ -48,6 +48,16 @@ body {
   font-family: "Roboto";
   overflow-x: hidden;
   background: #F6F1ED;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
@@ -171,7 +181,8 @@ body.column {
     -o-transition: all 0.3s;
     transition: all 0.3s; }
     .btn--dashed:hover {
-      border-color: rgba(0, 0, 0, 0); }
+      border-color: rgba(0, 0, 0, 0);
+      text-decoration: none; }
 
 .social {
   display: -webkit-box;
@@ -222,6 +233,10 @@ body.column {
   @media (max-width: 768px) {
     .no_scroll {
       padding-right: 0; } }
+
+.clear {
+  display: inline-block;
+  clear: both; }
 
 .clearfix::after {
   content: '';
