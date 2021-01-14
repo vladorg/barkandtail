@@ -47,6 +47,17 @@ body
 	min-height: 100vh
 	+flex(column,0,0,0)
 	+text($fz,$fw,24,$text_color)
+	+before
+		position: fixed
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		opacity: 0
+		pointer-events: none
+		z-index: 11
+		background: rgba(0,0,0,.5)
+		+tran(all,.4s)
 img
 	max-width: 100%
 button
@@ -78,6 +89,10 @@ body.column
 	+flex(column,0,0,0)
 	.footer
 		margin-top: auto
+body.shadow
+		+before
+			opacity: 1
+			pointer-events: auto
 .main
 	padding-bottom: 80px
 	&__heading
@@ -716,6 +731,18 @@ body.column
 			text-decoration: none !important
 
 @keyframes fadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+@keyframes progLine
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+@keyframes progCircle
 	from
 		opacity: 0
 	to

@@ -86,4 +86,25 @@ $product_content_size_medium_checkout: calc(100% - 320px - 25px)
 @mixin tran($on, $time)
 	transition: $on $time
 
+@mixin progLine($name, $w, $t, $d, $last: 0)
+	@keyframes #{$name}
+		from
+			width: 0
+		to
+			@if $last != 0
+				width: calc(100% - 59px)
+			@else				
+				width: $w+px
+	animation: $name $t $d
+	animation-fill-mode: forwards
+
+@mixin progCircle($name, $t, $d)
+	@keyframes #{$name}
+		from
+			background: #C4C4C4
+		to
+			background: #006B38
+	animation: $name $t $d
+	animation-fill-mode: forwards
+
 

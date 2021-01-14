@@ -1,11 +1,23 @@
+@media (max-width: 768px) {
+  .account {
+    padding-bottom: 45px; } }
+
 .account__heading {
   padding-top: 32px;
   text-transform: uppercase;
   margin-bottom: 16px; }
+  @media (max-width: 768px) {
+    .account__heading {
+      padding-top: 16px; } }
 
 .account__inner {
   background: #fff;
-  padding: 24px 16px 38px 16px; }
+  padding: 24px 16px 38px 16px;
+  min-height: 400px; }
+  @media (max-width: 768px) {
+    .account__inner {
+      background: rgba(0, 0, 0, 0);
+      padding: 0; } }
 
 .account__logout {
   position: absolute;
@@ -15,6 +27,16 @@
   font-weight: 400;
   line-height: 24px;
   color: #D64B59; }
+  @media (max-width: 768px) {
+    .account__logout {
+      display: none; } }
+  .account__logout--m {
+    display: none; }
+    @media (max-width: 768px) {
+      .account__logout--m {
+        display: block;
+        position: static;
+        margin: 35px auto 0 auto; } }
 
 .account__title {
   width: 100%;
@@ -30,14 +52,30 @@
 
 .account .field {
   width: 47%; }
+  @media (max-width: 768px) {
+    .account .field {
+      width: 100%; } }
+  .account .field--poroda {
+    width: calc(60% - 8px) !important; }
+    @media (max-width: 768px) {
+      .account .field--poroda {
+        width: auto !important; } }
+    .account .field--poroda label {
+      margin-left: 0 !important; }
   .account .field--date .input {
     width: 63px; }
+    @media (max-width: 768px) {
+      .account .field--date .input:not(:last-child) {
+        margin-right: 26px; } }
 
 .accountNav {
   position: relative; }
+  @media (max-width: 768px) {
+    .accountNav {
+      width: 100vw;
+      margin-left: calc(50% - 50vw); } }
   .accountNav ul {
     border-bottom: 1px solid #000;
-    padding-bottom: 16px;
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -51,17 +89,44 @@
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+    @media (max-width: 768px) {
+      .accountNav ul {
+        padding: 0 0 0 4%; } }
     .accountNav ul li:not(:last-child) {
       margin-right: 65px; }
+      @media (max-width: 1600px) {
+        .accountNav ul li:not(:last-child) {
+          margin-right: 20px; } }
+      @media (max-width: 768px) {
+        .accountNav ul li:not(:last-child) {
+          margin-right: 65px; } }
   .accountNav__btn {
+    padding-bottom: 16px;
+    white-space: nowrap;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px; }
+    @media (max-width: 1600px) {
+      .accountNav__btn {
+        font-size: 16px; } }
+    @media (max-width: 1199px) {
+      .accountNav__btn {
+        font-size: 13px; } }
+    @media (max-width: 992px) {
+      .accountNav__btn {
+        padding-bottom: 5px; } }
+    @media (max-width: 768px) {
+      .accountNav__btn {
+        font-size: 18px; } }
     .accountNav__btn--active {
       color: #755139; }
+      @media (max-width: 992px) {
+        .accountNav__btn--active {
+          border-color: #755139; } }
   .accountNav__line {
     position: absolute;
     bottom: 0;
@@ -72,6 +137,17 @@
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s; }
+    @media (max-width: 992px) {
+      .accountNav__line {
+        display: none; } }
+  .accountNav .slick-list {
+    width: calc(100% - 75px); }
+    @media (max-width: 768px) {
+      .accountNav .slick-list {
+        width: 100%; } }
+  @media (max-width: 992px) {
+    .accountNav .slick-slide {
+      text-align: center; } }
 
 .accountTabs {
   padding-top: 23px; }
@@ -93,6 +169,11 @@
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 1199px) {
+    .accountCont__form {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
 
 .accountCont__left {
   width: 55%;
@@ -111,19 +192,50 @@
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 1199px) {
+    .accountCont__left {
+      width: 100%; } }
+  @media (max-width: 768px) {
+    .accountCont__left {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .accountCont__right {
   width: 29%;
   margin-left: 81px; }
+  @media (max-width: 1199px) {
+    .accountCont__right {
+      width: 50%;
+      margin: 0 auto; } }
+  @media (max-width: 992px) {
+    .accountCont__right {
+      width: 85%; } }
+  @media (max-width: 768px) {
+    .accountCont__right {
+      width: 100%; } }
   .accountCont__right .field {
     width: 100%; }
 
 .accountCont__sbm {
   max-width: 388px;
   margin-top: 38px; }
+  @media (max-width: 1199px) {
+    .accountCont__sbm {
+      max-width: 100%; } }
 
 .accountCont .modalRegister__notif {
   margin: 93px 0 0 0; }
+  @media (max-width: 1199px) {
+    .accountCont .modalRegister__notif {
+      margin: 20px auto;
+      width: 100%;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .accountPet__form {
   display: -webkit-box;
@@ -138,10 +250,24 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (max-width: 1199px) {
+    .accountPet__form {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .accountPet__left {
   margin-right: 138px;
   padding-left: 50px; }
+  @media (max-width: 1600px) {
+    .accountPet__left {
+      margin-right: 50px;
+      padding-left: 0; } }
+  @media (max-width: 768px) {
+    .accountPet__left {
+      margin-right: 0; } }
 
 .accountPet__right {
   width: 53%;
@@ -160,12 +286,32 @@
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 1600px) {
+    .accountPet__right {
+      width: 100%; } }
   .accountPet__right .field {
     width: 100%; }
+    @media (max-width: 768px) {
+      .accountPet__right .field {
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+    @media (max-width: 768px) {
+      .accountPet__right .field span {
+        width: 100%;
+        display: block;
+        margin-bottom: 24px; } }
 
 .accountPet__col {
   margin-top: 35px;
   width: 46%; }
+  @media (max-width: 768px) {
+    .accountPet__col {
+      width: 100%; } }
   .accountPet__col .modalRegister__notif {
     min-height: 0; }
     .accountPet__col .modalRegister__notif label {
@@ -174,6 +320,17 @@
     width: 40%; }
     .accountPet__col--short .account__rowTitle {
       min-width: 1px !important; }
+
+@media (max-width: 1199px) {
+  .accountPet__title {
+    display: none; } }
+
+.accountPet__title--m {
+  display: none; }
+  @media (max-width: 1199px) {
+    .accountPet__title--m {
+      display: block;
+      margin-bottom: 16px; } }
 
 .accountPet__thumb {
   background: #EEEEEE;
@@ -217,15 +374,54 @@
 .accountPet__sbm {
   max-width: 388px;
   margin: 40px 0 0 auto; }
+  @media (max-width: 1199px) {
+    .accountPet__sbm {
+      margin: 40px auto 0 auto; } }
 
 .accountAddr__inner {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 1199px) {
+    .accountAddr__inner {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  @media (max-width: 768px) {
+    .accountAddr__inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   .accountAddr__inner .accountPet__left {
     padding-left: 0;
     margin-right: 310px; }
+    @media (max-width: 1600px) {
+      .accountAddr__inner .accountPet__left {
+        margin-right: 30px; } }
+    @media (max-width: 768px) {
+      .accountAddr__inner .accountPet__left {
+        width: 100%; } }
+  @media (max-width: 992px) {
+    .accountAddr__inner .accountPet__right {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  @media (max-width: 768px) {
+    .accountAddr__inner .accountPet__right {
+      margin-top: 31px; } }
+  @media (max-width: 992px) {
+    .accountAddr__inner .accountPet__col {
+      width: 100%; } }
+  @media (max-width: 768px) {
+    .accountAddr__inner .accountPet__col {
+      margin-top: 24px; } }
 
 .accountAddr__items {
   padding: 9px 9px 0 0;
@@ -235,7 +431,10 @@
 .accountAddr__item {
   padding-left: 35px;
   position: relative;
-  max-width: 187px; }
+  width: 187px; }
+  @media (max-width: 768px) {
+    .accountAddr__item {
+      width: 100%; } }
   .accountAddr__item:not(:last-child) {
     margin-bottom: 33px; }
 
@@ -272,10 +471,28 @@
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start; }
+  @media (max-width: 768px) {
+    .accountWish__wrap {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
 
 .accountWish__cats {
   width: 336px;
   margin-right: 84px; }
+  @media (max-width: 1199px) {
+    .accountWish__cats {
+      width: 250px;
+      margin-right: 40px; } }
+  @media (max-width: 992px) {
+    .accountWish__cats {
+      width: 210px;
+      margin-right: 25px; } }
+  @media (max-width: 768px) {
+    .accountWish__cats {
+      width: 100%;
+      margin-right: 0;
+      position: relative; } }
 
 .accountWish__title {
   padding: 0 0 8px 16px;
@@ -283,9 +500,24 @@
   font-weight: 400;
   line-height: 24px;
   color: #000; }
+  @media (max-width: 768px) {
+    .accountWish__title {
+      display: none; } }
 
 .accountWish__inner {
   width: calc(100% - 336px - 84px); }
+  @media (max-width: 1199px) {
+    .accountWish__inner {
+      width: calc(100% - 250px - 40px); } }
+  @media (max-width: 992px) {
+    .accountWish__inner {
+      width: calc(100% - 210px - 25px); } }
+  @media (max-width: 768px) {
+    .accountWish__inner {
+      width: 100%; } }
+
+.accountWish__sortList--open {
+  left: 0; }
 
 .accountWish__item {
   padding-bottom: 16px;
@@ -302,17 +534,59 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (max-width: 768px) {
+    .accountWish__item {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      position: relative;
+      padding-right: 20px; } }
   .accountWish__item:not(:first-child) {
     padding-top: 33px; }
+    .accountWish__item:not(:first-child) .accountWish__del {
+      top: 33px; }
 
 .accountWish__thumb {
   width: 219px;
   margin-right: 9px;
   display: block; }
+  @media (max-width: 1199px) {
+    .accountWish__thumb {
+      width: 100px; } }
+  @media (max-width: 768px) {
+    .accountWish__thumb {
+      width: 86px;
+      height: 86px;
+      -o-object-fit: contain;
+         object-fit: contain; } }
+  @media (max-width: 500px) {
+    .accountWish__thumb {
+      width: 65px;
+      height: 65px; } }
 
 .accountWish__info {
   width: calc(100% - 228px - 262px);
   margin-right: 64px; }
+  @media (max-width: 1400px) {
+    .accountWish__info {
+      margin-right: 20px; } }
+  @media (max-width: 1199px) {
+    .accountWish__info {
+      width: calc(100% - 100px - 195px); } }
+  @media (max-width: 992px) {
+    .accountWish__info {
+      width: calc(100% - 100px - 140px); } }
+  @media (max-width: 768px) {
+    .accountWish__info {
+      margin-right: 0;
+      width: calc(100% - 100px); } }
+  @media (max-width: 500px) {
+    .accountWish__info {
+      width: calc(100% - 75px); } }
 
 .accountWish__name {
   display: block;
@@ -320,14 +594,29 @@
   font-weight: 300;
   line-height: 40px;
   color: #000; }
+  @media (max-width: 1400px) {
+    .accountWish__name {
+      font-size: 20px;
+      line-height: 26px; } }
+  @media (max-width: 992px) {
+    .accountWish__name {
+      font-size: 14px;
+      line-height: 16px; } }
 
 .accountWish__articul {
   display: inline-block;
-  margin-bottom: 0; }
+  margin: 0 15px 0 0; }
+  @media (max-width: 768px) {
+    .accountWish__articul {
+      margin: 8px 0 0 0;
+      display: block; } }
 
 .accountWish__stock {
   display: inline-block;
-  margin: 15px 0 15px 15px; }
+  margin: 15px 0; }
+  @media (max-width: 768px) {
+    .accountWish__stock {
+      margin: 12px 0; } }
 
 .accountWish__disc {
   display: inline-block;
@@ -338,6 +627,8 @@
 
 .accountWish__old {
   display: inline-block;
+  text-decoration: line-through;
+  margin-left: 14px;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -348,16 +639,43 @@
   font-weight: 400;
   line-height: 24px;
   color: #3A3A3C; }
+  @media (max-width: 768px) {
+    .accountWish__total {
+      position: relative; } }
 
 .accountWish__tools {
   width: 198px; }
+  @media (max-width: 1199px) {
+    .accountWish__tools {
+      width: 150px; } }
+  @media (max-width: 992px) {
+    .accountWish__tools {
+      width: 110px; } }
+  @media (max-width: 768px) {
+    .accountWish__tools {
+      width: auto;
+      margin: 8px 0 0 100px;
+      text-align: center; } }
+  @media (max-width: 500px) {
+    .accountWish__tools {
+      margin-left: 75px; } }
 
 .accountWish__buy {
   padding: 6px 0; }
+  @media (max-width: 992px) {
+    .accountWish__buy {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    .accountWish__buy {
+      font-size: 18px;
+      width: 198px; } }
 
 .accountWish__watch {
   padding: 16px 0 0 0;
   position: relative; }
+  @media (max-width: 768px) {
+    .accountWish__watch {
+      position: static; } }
   .accountWish__watch .field {
     width: auto;
     display: inline-block;
@@ -366,6 +684,69 @@
       font-size: 16px;
       font-weight: 300;
       line-height: 24px; }
+      @media (max-width: 768px) {
+        .accountWish__watch .field label {
+          display: block;
+          margin-right: 5px; } }
+
+.accountWish__sort {
+  display: none; }
+  @media (max-width: 768px) {
+    .accountWish__sort {
+      display: block;
+      margin-bottom: 32px; } }
+  @media (max-width: 768px) {
+    .accountWish__sort--open {
+      margin-left: 10px; } }
+
+@media (max-width: 768px) {
+  .accountWish__sortList {
+    left: -100%;
+    top: 100%;
+    background: #e2d9d2; } }
+
+.accountWish__sortList::before {
+  content: '';
+  display: none; }
+
+@media (max-width: 768px) {
+  .accountWish__sortList.category__sort--open {
+    left: 0; } }
+
+.accountWish__openSort {
+  display: none; }
+  @media (max-width: 768px) {
+    .accountWish__openSort {
+      display: block;
+      margin-bottom: 32px; } }
+  .accountWish__openSort.open_sort--open {
+    margin-left: 10px; }
+
+@media (max-width: 768px) {
+  .accountWish__del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    border: 0; }
+    .accountWish__del::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url(../img/icons/trash.svg); } }
+
+@media (max-width: 1199px) {
+  .accountWish .filter__title {
+    font-size: 14px; } }
+
+@media (max-width: 992px) {
+  .accountWish .blog__categories {
+    padding: 6px; } }
+
+@media (max-width: 992px) {
+  .accountWish .blog__category:not(:first-child) {
+    margin-top: 5px; } }
 
 .accountWishTooltip {
   display: inline-block;
@@ -382,28 +763,49 @@
     -webkit-box-shadow: 0 0px 15px 0px #696969;
             box-shadow: 0 0px 15px 0px #696969;
     padding: 10px;
+    z-index: 1;
     font-size: 14px;
     font-weight: 300;
     line-height: 18px;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s; }
+    @media (max-width: 768px) {
+      .accountWishTooltip__content {
+        top: 100%; } }
   .accountWishTooltip__hover {
     cursor: pointer;
     font-weight: 700;
     width: auto; }
+    @media (max-width: 1199px) {
+      .accountWishTooltip__hover {
+        display: none; } }
+    @media (max-width: 768px) {
+      .accountWishTooltip__hover {
+        display: block; } }
   .accountWishTooltip:hover .accountWishTooltip__content {
     opacity: 1;
     pointer-events: auto; }
 
 .accountHistory__hidden {
   display: none; }
+  @media (max-width: 768px) {
+    .accountHistory__hidden {
+      font-size: 16px; } }
+
+@media (max-width: 768px) {
+  .accountHistory__addrWrap {
+    width: calc(100% + 75px);
+    margin-left: -75px; } }
 
 .accountHistory__toolsHidden {
   display: none;
   border: 0;
   padding: 0;
   margin-top: 20px; }
+  @media (max-width: 768px) {
+    .accountHistory__toolsHidden {
+      margin-top: 0; } }
   .accountHistory__toolsHidden .modalCart__row {
     padding: 0; }
 
@@ -426,22 +828,41 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 24px; }
+  @media (max-width: 768px) {
+    .accountHistory__quant {
+      font-size: 16px; } }
 
 .accountHistory__cost {
   margin-left: 16px;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px; }
+  @media (max-width: 768px) {
+    .accountHistory__cost {
+      font-size: 16px; } }
 
 .accountHistory__articul {
   margin-bottom: 23px;
   text-align: right; }
+  @media (max-width: 768px) {
+    .accountHistory__articul {
+      display: none; } }
+  .accountHistory__articul--m {
+    display: none; }
+    @media (max-width: 768px) {
+      .accountHistory__articul--m {
+        display: block;
+        margin: 8px 0 0 0; } }
 
 .accountHistory__date {
   margin-top: 8px;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px; }
+  @media (max-width: 768px) {
+    .accountHistory__date {
+      margin-left: 75px;
+      font-size: 16px; } }
 
 .accountHistory__name {
   margin-top: 8px;
@@ -456,10 +877,16 @@
   font-weight: 400;
   line-height: 18px;
   color: #9D9D9D; }
+  @media (max-width: 768px) {
+    .accountHistory__addr {
+      max-width: 100%; } }
 
 .accountHistory__close {
   display: none;
   margin-top: 24px; }
+  @media (max-width: 768px) {
+    .accountHistory__close {
+      margin: 8px auto 0 auto; } }
 
 .accountHistory__item {
   position: relative;
@@ -479,7 +906,363 @@
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
+    @media (max-width: 768px) {
+      .accountHistory__item::before {
+        background: #F6F1ED; } }
   .accountHistory__item--click::before {
     content: '';
     opacity: 1;
     pointer-events: auto; }
+
+@media (max-width: 768px) {
+  .accountHistory .accountWish__tools {
+    margin-left: 0;
+    width: 100%; } }
+
+.accountDisc__header {
+  border-bottom: 1px solid #755139;
+  padding-bottom: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (max-width: 1199px) {
+    .accountDisc__header {
+      display: none; } }
+  .accountDisc__header .account__title {
+    width: 50%; }
+    @media (max-width: 1199px) {
+      .accountDisc__header .account__title {
+        display: none; } }
+
+.accountDisc__title {
+  display: none; }
+  @media (max-width: 1199px) {
+    .accountDisc__title {
+      display: block;
+      margin-bottom: 16px; } }
+
+.accountDisc__inner {
+  padding-top: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (max-width: 1199px) {
+    .accountDisc__inner {
+      padding-top: 0; } }
+
+.accountDisc__value {
+  width: 50%;
+  padding-left: 75px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #755139; }
+  @media (max-width: 768px) {
+    .accountDisc__value {
+      padding-left: 0; } }
+
+.accountDisc__desc {
+  width: 100%;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #755139;
+  padding-right: 35%; }
+  @media (max-width: 1199px) {
+    .accountDisc__desc {
+      padding-right: 0; } }
+
+.accountDiscProgress {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .accountDiscProgress::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 59px;
+    width: 344px;
+    height: 24px;
+    background: #C4C4C4;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    @media (max-width: 500px) {
+      .accountDiscProgress::before {
+        left: 50%;
+        width: 95%;
+        height: 17px;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); } }
+  .accountDiscProgress::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 59px;
+    width: 0;
+    height: 24px;
+    background: #006B38;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border-radius: 0px 16px 16px 0px; }
+    @media (max-width: 500px) {
+      .accountDiscProgress::after {
+        left: 40px;
+        height: 17px; } }
+  @media (max-width: 1199px) {
+    .accountDiscProgress {
+      margin: 24px 0; } }
+  @media (max-width: 500px) {
+    .accountDiscProgress {
+      margin: 24px auto;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 100%; } }
+  .accountDiscProgress__stage {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #C4C4C4;
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #F6F1ED; }
+    @media (max-width: 500px) {
+      .accountDiscProgress__stage {
+        width: 47px;
+        height: 47px; } }
+    .accountDiscProgress__stage:not(:last-child) {
+      margin-right: 135px; }
+      @media (max-width: 500px) {
+        .accountDiscProgress__stage:not(:last-child) {
+          margin-right: 104px;
+          margin-right: 0; } }
+  .accountDiscProgress--prog1::after {
+    content: '';
+    -webkit-animation: progLine1 1s 0.5s;
+            animation: progLine1 1s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progLine1 {
+  from {
+    width: 0; }
+  to {
+    width: 115px; } }
+
+@keyframes progLine1 {
+  from {
+    width: 0; }
+  to {
+    width: 115px; } }
+    @media (max-width: 500px) {
+      .accountDiscProgress--prog1::after {
+        -webkit-animation: progLine1 1s 0.5s;
+                animation: progLine1 1s 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards; }
+      @-webkit-keyframes progLine1 {
+        from {
+          width: 0; }
+        to {
+          width: 60px; } }
+      @keyframes progLine1 {
+        from {
+          width: 0; }
+        to {
+          width: 60px; } } }
+  .accountDiscProgress--prog1 .accountDiscProgress__stage--prec5 {
+    -webkit-animation: progCircle1 0.3s 0.5s;
+            animation: progCircle1 0.3s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progCircle1 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+
+@keyframes progCircle1 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--prog2::after {
+    content: '';
+    -webkit-animation: progLine2 1s 0.5s;
+            animation: progLine2 1s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progLine2 {
+  from {
+    width: 0; }
+  to {
+    width: 300px; } }
+
+@keyframes progLine2 {
+  from {
+    width: 0; }
+  to {
+    width: 300px; } }
+    @media (max-width: 500px) {
+      .accountDiscProgress--prog2::after {
+        -webkit-animation: progLine2 1s 0.5s;
+                animation: progLine2 1s 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards; }
+      @-webkit-keyframes progLine2 {
+        from {
+          width: 0; }
+        to {
+          width: 200px; } }
+      @keyframes progLine2 {
+        from {
+          width: 0; }
+        to {
+          width: 200px; } } }
+  .accountDiscProgress--prog2 .accountDiscProgress__stage--prec5 {
+    -webkit-animation: progCircle2 0.3s 0.5s;
+            animation: progCircle2 0.3s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progCircle2 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+
+@keyframes progCircle2 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--prog2 .accountDiscProgress__stage--prec7 {
+    -webkit-animation: progCircle2 0.3s 0.8s;
+            animation: progCircle2 0.3s 0.8s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@keyframes progCircle2 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--prog3::after {
+    content: '';
+    -webkit-animation: progLine3 1s 0.5s;
+            animation: progLine3 1s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progLine3 {
+  from {
+    width: 0; }
+  to {
+    width: calc(100% - 59px); } }
+
+@keyframes progLine3 {
+  from {
+    width: 0; }
+  to {
+    width: calc(100% - 59px); } }
+  .accountDiscProgress--prog3 .accountDiscProgress__stage--prec5 {
+    -webkit-animation: progCircle3 0.3s 0.5s;
+            animation: progCircle3 0.3s 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes progCircle3 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+
+@keyframes progCircle3 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--prog3 .accountDiscProgress__stage--prec7 {
+    -webkit-animation: progCircle3 0.3s 0.7s;
+            animation: progCircle3 0.3s 0.7s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@keyframes progCircle3 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--prog3 .accountDiscProgress__stage--prec10 {
+    -webkit-animation: progCircle3 0.3s 1s;
+            animation: progCircle3 0.3s 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@keyframes progCircle3 {
+  from {
+    background: #C4C4C4; }
+  to {
+    background: #006B38; } }
+  .accountDiscProgress--visited::after {
+    content: '';
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-duration: .0001s;
+            animation-duration: .0001s; }
+  .accountDiscProgress--visited .accountDiscProgress__stage {
+    -webkit-animation-duration: .0001s;
+            animation-duration: .0001s;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; }

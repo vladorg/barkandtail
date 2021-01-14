@@ -7,6 +7,7 @@ window.onload = function () {
 	var quant = document.querySelectorAll('.quantly');
 	var checkout = document.querySelector('.checkout');	
 	var drop_open = $('.dropdown__title');
+	var about_slider = $('.about__photos');
 
 	if (drop_open) { // default drop
 		drop_open.on('click', function(){
@@ -22,6 +23,14 @@ window.onload = function () {
 	}
 	function enableScroll() { // включить скролл при закрытии модалок
 		body.classList.remove('no_scroll');
+	}
+
+	function mobile() { // проверка ширины экрана
+		if ( $(window).width() < 768 ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	function checkModal($modals) { // проверить есть ли в данный момент открытые модалки
@@ -87,6 +96,27 @@ window.onload = function () {
 		$(this).addClass('dropdown__row--active');
 		$(this).siblings().removeClass('dropdown__row--active');
 	});
+
+	if (about_slider) {
+
+		if ( mobile() ) {
+			about_slider.slick({
+				infinite: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				responsive: [
+				{
+					breakpoint: 1400,
+					settings: {
+						//slidesToShow: 6,
+					}
+				},
+				]
+			});
+		}
+
+	}
+		
 
 
 
@@ -437,6 +467,7 @@ window.onload = function () {
 		});
 	}
 
+
 	if (category) {
 
 		for(var i=0;i<filter_btn_showAll.length;i++) {
@@ -459,6 +490,8 @@ window.onload = function () {
 				cat_sort.classList.toggle('category__sort--open');
 			});
 		}
+
+		
 
 	}
 
@@ -887,10 +920,11 @@ window.onload = function () {
 	// account =========================================
 
 
-	var account = $('.account');
 	var tab_changer = $('.accountNav__btn');
 	var open_order_detail = $('.open_order_detail');
 	var close_order_detail = $('.close_order_detail');
+	var account = $('.account');
+	
 
 	if (account) {
 
@@ -911,12 +945,24 @@ window.onload = function () {
 			$('.accountTabs__tab').each(function(){
 				var $this = $(this);
 				if ( $(this).data('nav') == data_nav ) {
+					
+					// $(this).siblings().removeClass('accountTabs__tab--active');
+					// setTimeout(function(){
+					//  	$this.addClass('accountTabs__tab--active');
+					// }, 400);					
 					$(this).siblings().fadeOut(200);
 					setTimeout(function(){
 						$this.fadeIn(200);
 					}, 200);
 				}
 			});
+
+			if ($(this).data('nav') == 'discount') {
+				setTimeout(function(){
+					$('.accountDiscProgress').addClass('accountDiscProgress--visited');
+				}, 3000);
+			}
+
 		});
 
 		$('.accountPet__addPhoto').on('click', function(){
@@ -977,6 +1023,46 @@ window.onload = function () {
 			}, 400);
 
 		});
+
+		$('.accountNav ul').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			dots: false,
+			arrows: false,
+			variableWidth: true,
+			infinite: false,
+			responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 4,
+					variableWidth: false,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 650,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			]
+		});
+
+
+		for(var i=0;i<open_sort.length;i++) { // открыть сортировку на моб
+			open_sort[i].addEventListener('click', function(e){
+				this.classList.toggle('open_sort--open');
+				this.parentNode.querySelector('.accountWish__sortList').classList.toggle('category__sort--open');
+				$('body').toggleClass('shadow');
+			});
+		}
+
 
 
 	}

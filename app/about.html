@@ -333,7 +333,11 @@
 
 	<main class="main info about">
 		<div class="info__banner">
-			<img src="img/info/about.jpg" alt="">
+			<picture>
+				<source media="(max-width: 768px)" srcset="img/info/about--m.jpg">
+					<img srcset="img/info/about.jpg" class="productInfo__banner">
+				</picture>
+			<!-- <img src="img/info/about.jpg" alt=""> -->
 			<h1 class="info__heading">bark and tail</h1>
 		</div>
 		<div class="about__content">
@@ -349,7 +353,7 @@
 					<p>Животные достойны и заслуживают самого лучшего - кушать полезное из красивых мисок, отдыхать на королевских лежанках и носить изысканные ошейники.</p>
 				</div>
 			</div>
-			<div class="about__photos">
+			<div class="about__photos slideshowTools">
 				<img src="img/info/image24.jpg" alt="">
 				<img src="img/info/image25.jpg" alt="">
 				<img src="img/info/image26.jpg" alt="">
@@ -370,7 +374,7 @@
 					<img src="img/info/image28.jpg" alt="">
 				</div>
 			</div>
-			<div class="about__photos">
+			<div class="about__photos slideshowTools">
 				<img src="img/info/image24.jpg" alt="">
 				<img src="img/info/image25.jpg" alt="">
 				<img src="img/info/image26.jpg" alt="">
