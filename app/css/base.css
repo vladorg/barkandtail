@@ -94,6 +94,10 @@ a {
 
 p {
   margin-bottom: 20px; }
+  @media (max-width: 768px) {
+    p {
+      font-size: 16px;
+      color: #000; } }
 
 hr {
   background: #755139;
@@ -143,7 +147,13 @@ body.shadow::before {
   @media (max-width: 768px) {
     .title {
       text-align: center;
-      font-size: 24px; } }
+      font-size: 24px;
+      line-height: 32px; } }
+  @media (max-width: 768px) {
+    .title--blog {
+      font-size: 32px;
+      line-height: 40px;
+      text-transform: uppercase; } }
 
 .subtitle {
   font-size: 18px;
@@ -441,7 +451,7 @@ body.shadow::before {
         margin-top: 24px; } }
   .field label {
     margin-right: 12px;
-    min-width: 100px;
+    min-width: 65px;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px; }

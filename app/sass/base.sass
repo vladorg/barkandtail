@@ -74,6 +74,9 @@ a
 
 p
 	margin-bottom: 20px
+	+xs
+		font-size: 16px
+		color: #000
 
 hr
 	background: $btn_color
@@ -109,6 +112,12 @@ body.shadow
 	+xs
 		text-align: center
 		font-size: 24px
+		line-height: 32px
+	&--blog
+		+xs
+			font-size: 32px
+			line-height: 40px
+			text-transform: uppercase
 .subtitle
 	+text(18,400,24,$text_color)
 .heading
@@ -292,7 +301,7 @@ body.shadow
 			margin-top: 24px
 	label
 		margin-right: 12px
-		min-width: 100px
+		min-width: 65px
 		+text(14,400,18,0)
 		+xs
 			display: none

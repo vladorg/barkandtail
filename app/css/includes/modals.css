@@ -308,7 +308,12 @@
   .modalAuth__submit {
     margin-top: 32px; }
   .modalAuth__forg {
-    margin: 24px auto 0 auto;
+    margin: 12px auto 0 auto;
+    display: block;
+    font-size: 12px;
+    border-bottom: 0; }
+  .modalAuth__reg {
+    margin: 16px auto 0 auto;
     display: block; }
   .modalAuthAlt {
     margin-top: 32px;

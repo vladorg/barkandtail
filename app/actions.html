@@ -336,11 +336,14 @@
 
 	<main class="main info actions">
 		<div class="info__banner">
-			<img src="img/actions.jpg" alt="">
+			<picture>
+				<source media="(max-width: 768px)" srcset="img/actions--m.jpg">
+					<img srcset="img/actions.jpg" class="productInfo__banner">
+				</picture>
 			<h1 class="info__heading">Наши акции</h1>
 		</div>
 		<div class="info__content">
-			<div class="container">
+			<div class="container actions__inner">
 				<div class="actions__list">
 					<a href="#" class="actions__item">
 						<img src="img/actions/1.jpg" alt="" class="actions__thumb">
