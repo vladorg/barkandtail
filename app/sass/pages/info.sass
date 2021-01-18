@@ -389,23 +389,131 @@
 .contacts
 	&__inner
 		+flex(0,0,space-between,flex-start)
+		+sm
+			flex-direction: column
 	&__title
 		padding-top: 24px
 	&__item
 		width: 49%
 		position: relative
+		+sm
+			width: 100%
+		&:not(:last-child)
+			+sm
+				margin-bottom: 32px
 		iframe
 			width: 100%
+			height: 635px
+			+md
+				height: 430px
+			+xs
+				height: 288px
 	&Widget
 		padding: 23px
 		background: $btn_color
 		position: absolute
 		top: 23px
+		border-radius: 4px
+		+xs
+			position: static
 		li
+			+flex(0,0,flex-start,center)
 			+text(24,400,32,#fff)
+			+xs
+				font-size: 18px
+			+before
+				margin-right: 8px
+			&:not(:first-child)
+				+xs
+					margin-top: 15px
 			a
 				+text(24,400,32,#fff)
+				+xs
+					font-size: 18px
 		&--first
 			left: 8%
 		&--second
 			left: 30px
+
+.partners
+	&__inner
+		position: relative
+	&__img
+		min-height: 750px
+		object-fit: cover
+		+xxs
+			object-position: -400px 0
+	&__wrap
+		position: absolute
+		top: 17%
+		left: 7%
+		max-width: 453px
+		+break(1400)
+			max-width: 365px
+			left: 5%
+			top: 50%
+			transform: translateY(-50%)
+		+xs
+			left: 50%
+			transform: translate(-50%, -50%)
+			max-width: 100%
+			width: 75%
+		+xxs
+			width: 92%
+			top: 24px
+			transform: translateX(-50%)
+	&__title
+		+text(32,300,40,#fff)
+		+xs
+			font-size: 32px
+			line-height: 40px
+		+xxs
+			text-align: center
+	&__desc
+		margin: 24px 0
+		+text(16,300,24,#fff)
+		+xs
+			font-size: 16px
+			line-height: 24px
+	&__form
+		.field
+			&:not(:first-child)
+				margin-top: 24px
+				+md
+					margin-top: 14px
+				+xs
+					margin-top: 16px
+			input, textarea
+				background: #fff
+				width: 100%
+				height: 60px
+				border-radius: 4px
+				+xs
+					height: 56px
+			textarea
+				height: 112px
+				padding-top: 11px
+	&__file
+		display: none
+	&__add
+		max-width: 218px
+		padding: 8px 0
+		+md
+			font-size: 14px
+			padding: 4px 0
+			max-width: 50%
+		+xxs
+			margin-top: 16px
+	&__path
+		color: #fff
+		font-size: 12px
+		padding-left: 20px
+	&__sbm
+		margin-top: 24px
+		padding: 24px 0
+		+md
+			margin-top: 14px
+			padding: 13px 0
+		+xs
+			padding: 14px 0
+			margin-top: 16px

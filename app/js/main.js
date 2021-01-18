@@ -1067,6 +1067,25 @@ window.onload = function () {
 		}
 	}
 
+
+
+
+
+
+	// partners =========================================
+	var partners = document.querySelector('.partners');
+
+
+	if (partners) {
+		$('.partners__add').on('click', function(){
+			$('.partners__file').trigger('click');
+			$('.partners__file').on('change', function(){
+				$('.partners__path').text('');
+				$('.partners__path').text( $(this).val() );
+			});
+		});
+	}
+
 	
 
 	
