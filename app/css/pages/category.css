@@ -374,6 +374,8 @@
     @media (max-width: 768px) {
       .category .products {
         padding-top: 25px; } }
+  .category--main {
+    padding-top: 0; }
   .category--dog .slideshow--cat {
     display: none; }
   .category--cat .slideshow .slick-prev, .category--cat .slideshow .slick-next {

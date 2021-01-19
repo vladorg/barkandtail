@@ -89,7 +89,8 @@
 
 .blog__categories {
   background: rgba(117, 81, 57, 0.15);
-  padding: 16px; }
+  padding: 16px;
+  max-width: 336px; }
 
 .blog__category {
   padding: 0; }
@@ -368,10 +369,10 @@
         max-width: 100%; } }
 
 .about .slideshowTools .slick-prev, .about .slideshowTools .slick-next {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important; }
+  display: block !important; }
+  .about .slideshowTools .slick-prev::before, .about .slideshowTools .slick-next::before {
+    content: '';
+    margin: 0 auto; }
 
 .vethelp__content .container {
   display: -webkit-box;
@@ -625,11 +626,17 @@
   padding: 23px;
   background: #755139;
   position: absolute;
-  top: 23px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   border-radius: 4px; }
   @media (max-width: 768px) {
     .contactsWidget {
-      position: static; } }
+      position: static;
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; } }
   .contactsWidget li {
     display: -webkit-box;
     display: -webkit-flex;
@@ -746,7 +753,7 @@
 .partners__form .field input, .partners__form .field textarea {
   background: #fff;
   width: 100%;
-  height: 60px;
+  padding: 17px 0 17px 8px;
   border-radius: 4px; }
   @media (max-width: 768px) {
     .partners__form .field input, .partners__form .field textarea {

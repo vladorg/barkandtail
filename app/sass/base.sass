@@ -108,6 +108,7 @@ body.shadow
 
 .title
 	margin-bottom: 35px
+	text-transform: uppercase
 	+text(32,300,40,$text_color)
 	+xs
 		text-align: center
@@ -284,6 +285,10 @@ body.shadow
 		background: transparent
 	&::-webkit-scrollbar-thumb
 		background: $btn_color
+@-moz-document url-prefix()
+.scroll
+  scrollbar-color: $btn_color rgba(0,0,0,0)
+  scrollbar-width: thin
 
 .heading
 	padding: 7px 0
@@ -310,6 +315,8 @@ body.shadow
 		+xs
 			width: 100%
 			background: $transparent
+	&--textarea
+		align-items: flex-start
 
 .checkbox
 	display: none
@@ -756,3 +763,4 @@ body.shadow
 		opacity: 0
 	to
 		opacity: 1
+

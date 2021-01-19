@@ -181,6 +181,7 @@ body.shadow::before {
 
 .title {
   margin-bottom: 35px;
+  text-transform: uppercase;
   font-size: 32px;
   font-weight: 300;
   line-height: 40px;
@@ -461,6 +462,10 @@ body.shadow::before {
 .scroll::-webkit-scrollbar-thumb {
   background: #755139; }
 
+@-moz-document url-prefix() {}.scroll {
+  scrollbar-color: #755139 rgba(0, 0, 0, 0);
+  scrollbar-width: thin; }
+
 .heading {
   padding: 7px 0;
   background: #fff; }
@@ -505,6 +510,11 @@ body.shadow::before {
       .field .input {
         width: 100%;
         background: rgba(0, 0, 0, 0); } }
+  .field--textarea {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
 
 .checkbox {
   display: none; }
@@ -1432,7 +1442,9 @@ body.shadow::before {
     width: 100%;
     max-width: 674px;
     background: #fff;
-    position: relative; }
+    position: relative;
+    max-height: 100vh;
+    overflow: auto; }
     @media (max-width: 768px) {
       .modal__win {
         max-width: 100%;
@@ -1581,6 +1593,11 @@ body.shadow::before {
             align-items: center; }
     .modalCart__row:not(:first-child) {
       margin-top: 8px; }
+      @media (max-width: 500px) {
+        .modalCart__row:not(:first-child) {
+          margin-top: 4px;
+          font-size: 14px;
+          line-height: 16px; } }
   .modalCart__val {
     color: #3A3A3C; }
   .modalCart__total {
@@ -1600,22 +1617,16 @@ body.shadow::before {
       font-size: 24px;
       color: #000; }
   .modalCart__tools {
-    padding: 25px 16px 24px 16px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    padding: 25px 16px 24px 16px; }
+    @media (max-width: 500px) {
+      .modalCart__tools {
+        padding: 8px 16px; } }
+    .modalCart__tools a {
+      display: block; }
   .modalCart__continue {
-    margin-top: 16px; }
+    margin-top: 16px;
+    display: block;
+    margin: 16px auto 0 auto; }
   .modalWish--open .modal__win {
     right: 0; }
   .modalWish .modalCart__title {
@@ -3350,6 +3361,8 @@ body.shadow::before {
     @media (max-width: 768px) {
       .category .products {
         padding-top: 25px; } }
+  .category--main {
+    padding-top: 0; }
   .category--dog .slideshow--cat {
     display: none; }
   .category--cat .slideshow .slick-prev, .category--cat .slideshow .slick-next {
@@ -5568,7 +5581,8 @@ body.shadow::before {
 
 .blog__categories {
   background: rgba(117, 81, 57, 0.15);
-  padding: 16px; }
+  padding: 16px;
+  max-width: 336px; }
 
 .blog__category {
   padding: 0; }
@@ -5847,10 +5861,10 @@ body.shadow::before {
         max-width: 100%; } }
 
 .about .slideshowTools .slick-prev, .about .slideshowTools .slick-next {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important; }
+  display: block !important; }
+  .about .slideshowTools .slick-prev::before, .about .slideshowTools .slick-next::before {
+    content: '';
+    margin: 0 auto; }
 
 .vethelp__content .container {
   display: -webkit-box;
@@ -6104,11 +6118,17 @@ body.shadow::before {
   padding: 23px;
   background: #755139;
   position: absolute;
-  top: 23px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   border-radius: 4px; }
   @media (max-width: 768px) {
     .contactsWidget {
-      position: static; } }
+      position: static;
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; } }
   .contactsWidget li {
     display: -webkit-box;
     display: -webkit-flex;
@@ -6225,7 +6245,7 @@ body.shadow::before {
 .partners__form .field input, .partners__form .field textarea {
   background: #fff;
   width: 100%;
-  height: 60px;
+  padding: 17px 0 17px 8px;
   border-radius: 4px; }
   @media (max-width: 768px) {
     .partners__form .field input, .partners__form .field textarea {
@@ -6629,7 +6649,11 @@ body.shadow::before {
   position: absolute;
   padding: 5px 0;
   max-width: 174px;
-  bottom: 20px; }
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
   .accountPet__addPhoto:hover {
     -webkit-box-shadow: 0 10px 20px -10px #696969;
             box-shadow: 0 10px 20px -10px #696969; }

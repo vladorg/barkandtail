@@ -35,6 +35,8 @@
 		max-width: 674px
 		background: #fff
 		position: relative
+		max-height: 100vh
+		overflow: auto
 		+xs
 			max-width: 100%
 			background: $prim_color
@@ -133,6 +135,10 @@
 			+flex(0,0,space-between,center)
 			&:not(:first-child)
 				margin-top: 8px
+				+xxs
+					margin-top: 4px
+					font-size: 14px
+					line-height: 16px
 		&__key
 		&__val			
 			color: #3A3A3C
@@ -151,9 +157,16 @@
 				color: #000
 		&__tools
 			padding: 25px 16px 24px 16px
-			+flex(column,0,0,center)
+			//height: 100%
+			//+flex(column,0,0,center)
+			+xxs
+				padding: 8px 16px
+			a
+				display: block
 		&__continue
 			margin-top: 16px
+			display: block
+			margin: 16px auto 0 auto
 	&Wish		
 		&--open
 			.modal__win

@@ -250,70 +250,21 @@ window.onload = function () {
 			if ( !modalCart_open[0].contains(e.target) && !modalCart_inner.contains(e.target) ) { // закрытие дропдауна корзины
 				modalCart.classList.remove('modalCart--open','modal--open');
 				if (checkModal(modals)) {
-					enableScroll();
+					setTimeout(enableScroll, 400);
 				}
 			}
 			if ( !modalWish_open[0].contains(e.target) && !modalWish_inner.contains(e.target) ) { // закрытие дропдауна избранное
 				modalWish.classList.remove('modalWish--open','modal--open');
 				if (checkModal(modals)) {
-					enableScroll();
-				}
-			}
-			if (review_auth) {
-				if ( !modalLogin_open[0].contains(e.target) && !modalLogin_open[1].contains(e.target) && !modalLogin_open[2].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
-					modalLogin.classList.remove('modalLogin--open','modal--open');
-					if (checkModal(modals)) {
-						enableScroll();
-					}
-				}
-			} else {
-				if ( !modalLogin_open[0].contains(e.target) && !modalLogin_inner.contains(e.target) && !modalRegister_inner.contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие авторизации
-					modalLogin.classList.remove('modalLogin--open','modal--open');
-					if (checkModal(modals)) {
-						enableScroll();
-					}
-				}
-			}
-			if ( !modalRegister_open[0].contains(e.target) && !modalRegister_inner.contains(e.target) && !modalLogin_open[0].contains(e.target) ) { // закрытие регистрации
-				modalRegister.classList.remove('modalRegister--open','modal--open');
-				if (checkModal(modals)) {
-					enableScroll();
+					setTimeout(enableScroll, 400);
 				}
 			}
 			if ( !modalSearch_open[0].contains(e.target) && !search.contains(e.target) ) { // закрытие поиска
 				search.classList.remove('search--open');
 				if (checkModal(modals)) {
-					enableScroll();
+					setTimeout(enableScroll, 400);
 				}
 			}
-			if ( !modalForgot_open[0].contains(e.target) && !modalForgot_inner.contains(e.target) ) { // закрытие формы сброса пароля
-				modalForgot.classList.remove('modalForgot--open','modal--open');
-				if (checkModal(modals)) {
-					enableScroll();
-				}
-			}
-			if ( !modalChange_open[0].contains(e.target) && !modalChange_inner.contains(e.target) ) { // закрытие формы восстановления пароля
-				modalChange.classList.remove('modalChange--open','modal--open');
-				if (checkModal(modals)) {
-					enableScroll();
-				}
-			}
-			if (modalReview_open[1]) {
-				if ( !modalReview_open[0].contains(e.target) && !modalReview_open[1].contains(e.target) && !modalReview_inner.contains(e.target) ) { // закрытие формы восстановления пароля
-					modalReview.classList.remove('modalReview--open','modal--open');
-					if (checkModal(modals)) {
-						enableScroll();
-					}
-				}
-				else {
-				if ( !modalReview_open[0].contains(e.target) && !modalReview_inner.contains(e.target) ) { // закрытие формы восстановления пароля
-					modalReview.classList.remove('modalReview--open','modal--open');
-					if (checkModal(modals)) {
-						enableScroll();
-					}
-				}
-			}
-		} 
 
 	};
 }
@@ -1085,7 +1036,6 @@ window.onload = function () {
 			});
 		});
 	}
-
 	
 
 	

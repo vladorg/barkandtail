@@ -65,6 +65,7 @@
 	&__categories
 		background: rgba(117, 81, 57, .15)
 		padding: 16px
+		max-width: 336px
 	&__category
 		padding: 0
 		a
@@ -241,7 +242,9 @@
 			+xs
 				max-width: 100%
 	.slideshowTools .slick-prev, .slideshowTools .slick-next
-		display: flex !important
+		display: block !important
+		+before
+			margin: 0 auto
 
 .vethelp
 	&__content
@@ -412,10 +415,12 @@
 		padding: 23px
 		background: $btn_color
 		position: absolute
-		top: 23px
+		top: 50%
+		transform: translateY(-50%)
 		border-radius: 4px
 		+xs
 			position: static
+			transform: none
 		li
 			+flex(0,0,flex-start,center)
 			+text(24,400,32,#fff)
@@ -486,7 +491,7 @@
 			input, textarea
 				background: #fff
 				width: 100%
-				height: 60px
+				padding: 17px 0 17px 8px
 				border-radius: 4px
 				+xs
 					height: 56px
