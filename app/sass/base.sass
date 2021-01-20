@@ -119,6 +119,7 @@ body.shadow
 			font-size: 32px
 			line-height: 40px
 			text-transform: uppercase
+			margin-bottom: 16px
 .subtitle
 	+text(18,400,24,$text_color)
 .heading
@@ -267,7 +268,7 @@ body.shadow
 		+text(29,300,0,$btn_color)
 	&__plus
 		margin-left: 12px
-		+text(25,300,0,$btn_color)
+		+text(22,300,0,$btn_color)
 	input
 		width: 32px
 		max-width: 32px
@@ -404,9 +405,11 @@ body.shadow
 	grid-template-columns: repeat(4,22%)
 	grid-gap: 56px
 	justify-content: space-between
+	padding: 0 24px
 	+md
 		grid-template-columns: repeat(3, 29%)
 		grid-gap: 20px
+		padding: 0
 	+sm
 		grid-template-columns: repeat(2, 48%)
 	+xxs

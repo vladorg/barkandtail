@@ -18,10 +18,12 @@
 	&__main
 		margin-bottom: 67px
 		max-height: 610px
+		padding-left: 80px
 		overflow: hidden
 		+flex(0,0,space-between,flex-start)
 		+md
 			align-items: center
+			padding-left: 0
 		+sm
 			align-items: flex-start
 		+xs
@@ -104,6 +106,7 @@
 				border-top: 1px solid rgba(117, 81, 57, 0.25)
 		&__title
 			margin-bottom: 8px
+			text-transform: none
 			+md
 				font-size: 24px
 				line-height: 28px
@@ -326,6 +329,7 @@
 		border-bottom: 1px solid $btn_color
 		+xs
 			padding: 0
+			border-bottom: 0
 		.btn--dashed
 			+text(18,400,0,0)
 	&__add

@@ -201,9 +201,10 @@
       margin-top: 8px; }
       @media (max-width: 500px) {
         .modalCart__row:not(:first-child) {
-          margin-top: 4px;
           font-size: 14px;
           line-height: 16px; } }
+  .modalCart__key {
+    font-size: 18px; }
   .modalCart__val {
     color: #3A3A3C; }
   .modalCart__total {
@@ -217,7 +218,7 @@
     @media (max-width: 768px) {
       .modalCart__total {
         border-color: #755139;
-        padding: 14px 0 0 0;
+        padding: 24px 0 24px 0;
         margin: 13px 16px 0 16px; } }
     .modalCart__total .modalCart__val {
       font-size: 24px;

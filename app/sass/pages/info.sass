@@ -51,21 +51,30 @@
 .blog
 	+xs
 		width: 100%
+	.inner
+		justify-content: flex-start
 	.sidebar
+		width: 248px
 		+sm
 			width: 200px
 		+xs
 			width: 100%
 			padding: 0 4%
+			margin-bottom: 0
 	.main
+		max-width: 1167px
+		margin-left: 35px
+		width: calc(100% - 248px - 35px)
 		+sm
 			width: calc(100% - 200px - 30px)
+			margin-left: 30px
 		+xs
 			width: 100%
+			margin-left: 0
 	&__categories
 		background: rgba(117, 81, 57, .15)
 		padding: 16px
-		max-width: 336px
+		max-width: 248px
 	&__category
 		padding: 0
 		a
@@ -78,7 +87,6 @@
 			margin-top: 16px
 
 .articles
-	max-width: 1167px
 	+flex(0,wrap,space-between,flex-start)
 	&__thumb
 		width: 100%
@@ -107,7 +115,7 @@
 			width: 100%
 		&:nth-child(7n + 1)
 			width: 100%
-			margin-bottom: 15px
+			margin-bottom: 24px
 			max-width: 100%
 			+md
 				width: 49%
@@ -124,6 +132,7 @@
 			+md
 				width: 49%
 				max-width: 100%
+				margin-bottom: 15px
 			+xxs
 				width: 100%
 		&:nth-child(7n + 7)
@@ -160,6 +169,10 @@
 			transform: translateX(50%)
 			max-width: 160px
 			padding: 8px 0
+		+xxs
+			transform: none
+			right: 17px
+			bottom: 17px
 
 .article
 	&__content
@@ -294,11 +307,11 @@
 	&__name
 		position: absolute
 		bottom: 0
-		left: 0
+		left: 21px
 		right: 0
-		text-align: center
 		margin: 0
 		font-weight: 400
+		font-size: 28px
 		color: #fff
 		transform: none
 		opacity: 0
@@ -319,8 +332,7 @@
 			+before
 				opacity: 1
 			.actions__name
-				bottom: 50%
-				transform: translateY(50%)
+				bottom: 46px
 				opacity: 1
 				pointer-events: auto	
 	&__thumb
@@ -443,9 +455,13 @@
 .partners
 	&__inner
 		position: relative
+		max-width: 1920px
+		margin: 0 auto
 	&__img
 		min-height: 750px
 		object-fit: cover
+		width: 100%
+		display: block
 		+xxs
 			object-position: -400px 0
 	&__wrap
