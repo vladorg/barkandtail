@@ -350,7 +350,7 @@
 						<img src="img/products/image2-3.png" alt="">
 					</div>
 					<div>
-						<iframe width="90" height="90" src="https://www.youtube.com/embed/dvteEDJBS8Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="90" height="90" src="https://www.youtube.com/embed/wnqS761_ZN4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<div>
 						<img src="img/product_page/image15.png" alt="">
@@ -371,7 +371,7 @@
 						<img src="img/products/image2-3.png" alt="">
 					</div>
 					<div>
-						<iframe src="https://www.youtube.com/embed/dvteEDJBS8Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/wnqS761_ZN4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<div>
 						<img src="img/product_page/image15.png" alt="">
@@ -406,15 +406,74 @@
 								<input type="radio" class="radio" name="ob" id="ob5">
 								<label for="ob5">5 кг</label>
 							</div>
-							<div class="productInfoOptions__option productInfoOptions__option">
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
 								<input type="radio" class="radio radio--disabled" name="ob" id="ob10">
 								<label for="ob10">10 кг</label>
 							</div>
-							<div class="productInfoOptions__option productInfoOptions__option">
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
 								<input type="radio" class="radio radio--disabled" name="ob" id="ob20">
 								<label for="ob20">20 кг</label>
 							</div>
 						</div>
+
+						<div class="productInfoOptions__item">
+							<div class="productInfoOptions__title">Размер упаковки, см: </div>
+							<div class="productInfoOptions__option">
+								<input type="radio" class="radio" name="size" id="size1" checked>
+								<label for="size1">26х48х87 см</label>
+							</div>
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
+								<input type="radio" class="radio radio--disabled" name="size" id="size3">
+								<label for="size3">36х48х87 см</label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" class="radio" name="size" id="size5">
+								<label for="size5">46х48х87 см</label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" class="radio radio--disabled" name="size" id="size10">
+								<label for="size10">56х48х87 см</label>
+							</div>
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
+								<input type="radio" class="radio" name="size" id="size20">
+								<label for="size20">76х48х87 см</label>
+							</div>
+						</div>
+
+						<!-- if color option -->
+						<div class="productInfoOptions__item productInfoOptions__item--color">
+							<div class="productInfoOptions__title">Выберите цвет: </div>
+
+							<div class="productInfoOptions__option">
+								<input type="radio" name="color" id="color_white" checked>
+								<label for="color_white" style="background: url('img/colors/white.png');"></label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" name="color" id="color_grafitovyj">
+								<label for="color_grafitovyj" style="background: url('img/colors/grafitovyj.png');"></label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" name="color" id="color_kirpichnyj">
+								<label for="color_kirpichnyj" style="background: url('img/colors/kirpichnyj.png');"></label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" name="color" id="color_korich">
+								<label for="color_korich" style="background: url('img/colors/korich.png');"></label>
+							</div>
+							<div class="productInfoOptions__option">
+								<input type="radio" name="color" id="color_krasnyj">
+								<label for="color_krasnyj" style="background: url('img/colors/krasnyj.png');"></label>
+							</div>
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
+								<input type="radio" name="color" id="color_seryj">
+								<label for="color_seryj" style="background: url('img/colors/seryj.png');"></label>
+							</div>
+							<div class="productInfoOptions__option productInfoOptions__option--dis">
+								<input type="radio" name="color" id="color_zelen">
+								<label for="color_zelen" style="background: url('img/colors/zelen.png');"></label>
+							</div>
+						</div>
+						<!-- endif -->
 
 					</form>
 					
@@ -435,6 +494,7 @@
 					<button class="btn ic_heart_red productInfo__wish"><span class="btn--dashed">Добавить в избранное</span></button>
 				</div>
 
+				<!-- показать баннер только если не зарегистрирован -->
 				<a href="#">
 					<picture>
 						<source media="(max-width: 768px)" srcset="img/product_page/akc--m.jpg"> <!-- banner for mobile -->
@@ -1027,7 +1087,7 @@
 						</div>						
 					</div>
 
-				</section>
+			</section>
 
 
 
@@ -1037,7 +1097,7 @@
 				<section class="related">
 					<div class="container">
 						<div class="title">Смотрите также</div>
-						<div class="products">
+						<div class="products products--slider">
 
 							<div class="preview">
 								<div class="preview__sticker ic_discount">-10%</div>

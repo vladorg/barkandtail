@@ -141,4 +141,7 @@
       transition: all 0.2s; }
     .brands__item:hover img {
       -webkit-filter: none;
-              filter: none; }
+              filter: none;
+      -webkit-transform: scale(1.15);
+          -ms-transform: scale(1.15);
+              transform: scale(1.15); }

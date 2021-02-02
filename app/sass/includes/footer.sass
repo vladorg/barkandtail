@@ -122,14 +122,27 @@
 					margin: 0 24px 0 0
 	&__chat
 		position: fixed
-		bottom: 180px
-		right: 21px
+		bottom: 25px
+		left: 15px
 		z-index: 10
 		background: #A16B25
 		border-radius: 50%
-		padding: 14px
+		padding: 15px
+		opacity: 0
+		pointer-events: none
 		+tran(all,.4s)
+		+before
+			background: url(../img/icons/arrow_slider.svg) no-repeat
+			display: block
+			width: 20px
+			height: 20px
+			background-size: contain
+			background-position: center
+			transform: rotate(90deg)
 		+hover
 			background: $btn_color
 		+sm
 			bottom: 60px
+		&--show
+			opacity: 1
+			pointer-events: auto

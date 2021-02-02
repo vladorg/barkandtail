@@ -177,6 +177,10 @@ body.shadow::before {
     .container {
       width: 92%; } }
 
+.open_cart, .open_wish {
+  position: relative;
+  display: block; }
+
 .btn {
   border: none;
   outline: none;
@@ -597,6 +601,16 @@ body.shadow::before {
 .preview {
   width: 100%;
   max-width: 386px;
+  min-height: 510px;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative; }
   @media (max-width: 500px) {
     .preview {
@@ -680,6 +694,7 @@ body.shadow::before {
   .preview__price {
     min-height: 50px;
     margin-bottom: 19px;
+    margin-top: auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -743,7 +758,6 @@ body.shadow::before {
   .dropdown__list {
     display: none;
     border: 1px solid #755139;
-    padding: 11px 19px 11px 8px;
     border-radius: 4px;
     background: #fff;
     position: absolute;
@@ -751,17 +765,27 @@ body.shadow::before {
     left: 0;
     right: 0;
     z-index: 2; }
-  .dropdown__row:not(:last-child) {
-    margin-bottom: 8px; }
-  .dropdown__row label {
-    cursor: pointer; }
-    .dropdown__row label:hover {
-      text-decoration: underline; }
-  .dropdown__row input {
-    display: none; }
-  .dropdown__row--active label {
-    color: #755139;
-    font-weight: 500; }
+  .dropdown__row {
+    padding: 0 19px 0 8px;
+    height: 32px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .dropdown__row:hover {
+      background: #f4f3f5;
+      cursor: pointer; }
+    .dropdown__row label {
+      cursor: pointer; }
+    .dropdown__row input {
+      display: none; }
+    .dropdown__row--active label {
+      color: #755139;
+      font-weight: 500; }
 
 .seo {
   padding: 56px 0 20px 0;
@@ -1136,3 +1160,17 @@ body.shadow::before {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.products--slider {
+  margin: 0 -28px;
+  display: block;
+  grid-gap: 0;
+  grid-template-columns: none; }
+  @media (max-width: 500px) {
+    .products--slider {
+      margin: 0 -10px; } }
+  .products--slider .preview {
+    margin: 0 28px; }
+    @media (max-width: 500px) {
+      .products--slider .preview {
+        margin: 0 10px; } }

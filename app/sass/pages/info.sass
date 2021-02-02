@@ -192,6 +192,8 @@
 				display: none
 
 .about
+	&__content
+		overflow: hidden
 	&__text
 		padding: 150px 0 80px 0
 		+flex(0,0,space-between,center)
@@ -246,18 +248,27 @@
 		margin: 0 auto 20px auto
 	
 	&__photos
+		margin: 0 -25px
 		+flex(0,0,space-between,flex-start)
+		+xs
+			margin: 0 -10px
 		img
 			width: 444px
 			height: 297px
-			max-width: 25%
+			//max-width: 25%
 			object-fit: cover
+			margin: 0 25px
+			display: block
 			+xs
 				max-width: 100%
+				margin: 0 10px
 	.slideshowTools .slick-prev, .slideshowTools .slick-next
 		display: block !important
 		+before
 			margin: 0 auto
+	.slick-track
+		+before
+			display: none
 
 .vethelp
 	&__content
@@ -347,6 +358,7 @@
 		margin: 0 auto
 	&__thumb
 		border-radius: 50%
+		border: 2px solid #3A3A3C
 	&__title
 		position: absolute
 		top: -36px

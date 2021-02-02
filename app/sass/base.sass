@@ -132,6 +132,10 @@ body.shadow
 	+break(1800)
 		width: 92%
 
+.open_cart, .open_wish
+	position: relative
+	display: block
+
 .btn
 	border: none
 	outline: none
@@ -419,6 +423,9 @@ body.shadow
 .preview
 	width: 100%
 	max-width: 386px
+	min-height: 510px
+	display: flex !important
+	flex-direction: column
 	position: relative
 	+xxs
 		margin: 0 auto
@@ -476,6 +483,7 @@ body.shadow
 	&__price
 		min-height: 50px
 		margin-bottom: 19px
+		margin-top: auto
 		+flex(column,0,center,0)
 		+text(24,500,32,0)
 	&__discount
@@ -517,7 +525,7 @@ body.shadow
 	&__list
 		display: none
 		border: 1px solid $btn_color
-		padding: 11px 19px 11px 8px
+		//padding: 11px 19px 11px 8px
 		border-radius: 4px
 		background: #fff
 		position: absolute
@@ -527,12 +535,14 @@ body.shadow
 		z-index: 2
 	&__checked
 	&__row
-		&:not(:last-child)
-			margin-bottom: 8px
+		padding: 0 19px 0 8px
+		height: 32px
+		+flex(0,0,0,center)
+		+hover
+			background: #f4f3f5
+			cursor: pointer
 		label
 			cursor: pointer
-			+hover
-				text-decoration: underline
 		input
 			display: none
 		&--active
@@ -766,4 +776,18 @@ body.shadow
 		opacity: 0
 	to
 		opacity: 1
+
+
+
+.products--slider
+	margin: 0 -28px
+	display: block
+	grid-gap: 0
+	grid-template-columns: none
+	+xxs
+		margin: 0 -10px
+	.preview
+		margin: 0 28px
+		+xxs
+			margin: 0 10px
 

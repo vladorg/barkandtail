@@ -211,17 +211,33 @@
             margin: 0 24px 0 0; } }
   .footer__chat {
     position: fixed;
-    bottom: 180px;
-    right: 21px;
+    bottom: 25px;
+    left: 15px;
     z-index: 10;
     background: #A16B25;
     border-radius: 50%;
-    padding: 14px;
+    padding: 15px;
+    opacity: 0;
+    pointer-events: none;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s; }
+    .footer__chat::before {
+      content: '';
+      background: url(../img/icons/arrow_slider.svg) no-repeat;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-position: center;
+      -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+              transform: rotate(90deg); }
     .footer__chat:hover {
       background: #755139; }
     @media (max-width: 992px) {
       .footer__chat {
         bottom: 60px; } }
+    .footer__chat--show {
+      opacity: 1;
+      pointer-events: auto; }
